@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>grá CEYLON | Artisanal Tea & Botanical Wellness Treasures</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="A love affair with Ceylon's finest treasures. Indulge in ultra-luxury, single-origin Ceylon white teas, wild-harvested cinnamon infusions, and botanical wellness elixirs from Sri Lanka.">
+  <meta name="keywords"
+    content="Ceylon Tea, Silver Tips, Luxury Tea, Sri Lanka Tea, Cinnamon Infusion, Botanical Spa Oil, Wellness Ceylon, Premium Organic Tea">
+  <meta name="author" content="grá CEYLON">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="grá CEYLON | Luxury Artisanal Tea & Botanical Wellness">
+  <meta property="og:description"
+    content="Savor rare Silver Tips tea, organic wild cinnamon infusion, and premium spa elements sourced ethically from the mist-covered mountains of Ceylon.">
+  <meta property="og:image" content="assets/hero.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="grá CEYLON | Luxury Artisanal Tea & Botanical Wellness">
+  <meta property="twitter:description"
+    content="Savor rare Silver Tips tea, organic wild cinnamon infusion, and premium spa elements sourced ethically from the mist-covered mountains of Ceylon.">
+  <meta property="twitter:image" content="assets/hero.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon 512x512.png">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+  <!-- --- HEADER / NAVIGATION --- -->
+  <header class="header" id="mainHeader">
+    <div class="container">
+      <div class="logo-wrapper">
+        <a href="#" aria-label="grá CEYLON Home">
+          <img src="assets/logo.png" alt="grá CEYLON Logo" class="brand-logo-svg" id="headerLogo">
+        </a>
+      </div>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#story" class="nav-link" id="navLinkStory">Our Heritage</a></li>
+          <li><a href="#collection" class="nav-link" id="navLinkCollection">The Collection</a></li>
+          <li><a href="#selector" class="nav-link" id="navLinkQuiz">Sensory Matcher</a></li>
+          <li><a href="#testimonials" class="nav-link" id="navLinkReviews">Experiences</a></li>
+          <li><a href="sanctuary-chronicles.html" class="nav-link" id="navLinkBlog">The Sanctuary Chronicles</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Interactive Cart Trigger Button -->
+        <button class="cart-icon-btn" id="cartOpenBtn" aria-label="Open Shopping Cart" aria-haspopup="dialog">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+            <path d="M3 6h18" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation menu"
+          aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="menuIconOpen">
+            <line x1="4" x2="20" y1="12" y2="12" />
+            <line x1="4" x2="20" y1="6" y2="6" />
+            <line x1="4" x2="20" y1="18" y2="18" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="menuIconClose"
+            style="display:none;">
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- --- HERO SECTION --- -->
+  <section class="hero" id="hero">
+    <div class="hero-background">
+      <img src="assets/hero.png" alt="Misty morning light rising over lush emerald Sri Lankan tea estates">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-tagline reveal">Artisanal Tea &amp; Wellness Treasures</span>
+        <h1 class="hero-title reveal delay-1">A Love Affair with <span class="gradient-text">Ceylon’s Finest</span></h1>
+        <p class="hero-description reveal delay-2">We bottle and pack the soul of Sri Lanka's mist-veiled mountains.
+          Single-estate white teas, ancient wild spices, and botanical therapy oils sourced with absolute devotion.</p>
+        <div class="hero-actions reveal delay-3">
+          <a href="#collection" class="btn btn-primary" id="heroPrimaryCTA">Explore The Collection</a>
+          <a href="#story" class="btn btn-secondary" id="heroSecondaryCTA">Our Heritage</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span>Scroll to Discover</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- --- BRAND STORY SECTION --- -->
+  <section class="story-section" id="story">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-visuals reveal">
+          <img src="assets/hero.png" alt="Lush, organic Ceylon highlands farming">
+          <div class="story-badge">
+            <span class="story-badge-number">100%</span>
+            <span class="story-badge-text">Single-Origin<br>Organic Sourced</span>
+          </div>
+        </div>
+
+        <div class="story-details">
+          <span class="section-label reveal">The Legacy of Love</span>
+          <h2 class="story-title reveal delay-1">Where Passion Meets Heritage</h2>
+          <p class="story-text reveal delay-1">Derived from the Gaelic word <span class="accent-text-red">grá</span> for
+            <em>love</em> and the historic, fertile lands of <span class="accent-text-cyan">Ceylon</span>, our brand is
+            a passionate tribute to Sri Lanka’s unparalleled natural treasures.
+          </p>
+          <p class="story-text reveal delay-2">Every single leaf and bark quill is hand-harvested by local
+            multi-generational farming communities, ensuring the preservation of both ancient farming traditions and the
+            surrounding delicate ecosystems.</p>
+
+          <div class="story-pillars">
+            <div class="pillar-item reveal delay-2">
+              <div class="pillar-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+                  <path d="m9 12 2 2 4-4" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="pillar-title">Artisanal Harvesting</h4>
+                <p class="pillar-desc">Only the absolute top two leaves and a tender bud are hand-picked at precise
+                  morning dew hours.</p>
+              </div>
+            </div>
+
+            <div class="pillar-item reveal delay-3">
+              <div class="pillar-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                  <path d="M2 12h20" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="pillar-title">Ethical Foundations</h4>
+                <p class="pillar-desc">Reinvesting 15% of all proceeds directly back into the education and healthcare
+                  of Sri Lankan estate communities.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- PRODUCT COLLECTION SECTION --- -->
+  <section class="collection-section" id="collection">
+    <div class="container">
+      <div class="collection-header">
+        <div class="collection-intro">
+          <span class="section-label reveal">The Signature Flight</span>
+          <h2 class="story-title reveal delay-1">Exquisite Creations</h2>
+          <p class="story-text reveal delay-2">Uncompromising quality packaged in premium, recyclable glass and metal
+            vessels, designed to preserve the delicate aroma and flavor compounds of each blend.</p>
+        </div>
+      </div>
+
+      <div class="collection-grid">
+        <!-- Product 1 -->
+        <article class="product-card glass-panel reveal" id="productCardSilverTips">
+          <div class="product-image-container">
+            <span class="product-badge">Rare Harvest</span>
+            <img src="assets/silver_tips.png" alt="Royal Silver Tips Ceylon White Tea Jar">
+            <div class="product-overlay">
+              <button class="btn btn-secondary add-cart-instant-btn" data-id="gr-silvertips"
+                data-name="Royal Silver Tips" data-price="48.00" data-img="assets/silver_tips.png"
+                data-category="White Tea">Quick Add</button>
+            </div>
+          </div>
+          <div style="padding: 0 1.8rem 1.8rem 1.8rem; display: flex; flex-direction: column; flex-grow: 1;">
+            <div class="product-meta">
+              <span class="product-category">Highland White Tea</span>
+              <div class="product-stars" aria-label="5 out of 5 stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+            </div>
+            <h3 class="product-title">Royal Silver Tips</h3>
+            <p class="product-description">The ultimate tea connoisseur's prize. Entirely handmade, velvety white buds
+              dried solely in natural sunlight. Clean, floral, and packed with rare antioxidants.</p>
+            <div class="product-footer">
+              <button class="add-cart-btn add-cart-trigger" data-id="gr-silvertips" data-name="Royal Silver Tips"
+                data-price="48.00" data-img="assets/silver_tips.png" data-category="White Tea"
+                aria-label="Add Royal Silver Tips to Cart">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" x2="12" y1="5" y2="19" />
+                  <line x1="5" x2="19" y1="12" y2="12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 2 -->
+        <article class="product-card glass-panel reveal delay-1" id="productCardCinnamon">
+          <div class="product-image-container">
+            <span class="product-badge">Estate Blend</span>
+            <img src="assets/cinnamon.png" alt="Wild Cinnamon &amp; Rosebud Tea Tin">
+            <div class="product-overlay">
+              <button class="btn btn-secondary add-cart-instant-btn" data-id="gr-cinnamon"
+                data-name="Wild Cinnamon Rose" data-price="32.00" data-img="assets/cinnamon.png"
+                data-category="Botanical Infusion">Quick Add</button>
+            </div>
+          </div>
+          <div style="padding: 0 1.8rem 1.8rem 1.8rem; display: flex; flex-direction: column; flex-grow: 1;">
+            <div class="product-meta">
+              <span class="product-category">Botanical Infusion</span>
+              <div class="product-stars" aria-label="4.9 out of 5 stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+            </div>
+            <h3 class="product-title">Wild Cinnamon Rose</h3>
+            <p class="product-description">Rare Ceylon "true" cinnamon bark, hand-ground and infused with organic pink
+              damask rosebuds. A sweet, warm, deeply comforting wood-and-floral sensory escape.</p>
+            <div class="product-footer">
+              <button class="add-cart-btn add-cart-trigger" data-id="gr-cinnamon" data-name="Wild Cinnamon Rose"
+                data-price="32.00" data-img="assets/cinnamon.png" data-category="Botanical Infusion"
+                aria-label="Add Wild Cinnamon Rose to Cart">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" x2="12" y1="5" y2="19" />
+                  <line x1="5" x2="19" y1="12" y2="12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 3 -->
+        <article class="product-card glass-panel reveal delay-2" id="productCardWellnessOil">
+          <div class="product-image-container">
+            <span class="product-badge">Spa Grade</span>
+            <img src="assets/wellness_oil.png" alt="Royal Elixir Spa &amp; Wellness Massage Oil Dropper">
+            <div class="product-overlay">
+              <button class="btn btn-secondary add-cart-instant-btn" data-id="gr-wellnessoil"
+                data-name="Royal Elixir Spa Oil" data-price="64.00" data-img="assets/wellness_oil.png"
+                data-category="Wellness Elixir">Quick Add</button>
+            </div>
+          </div>
+          <div style="padding: 0 1.8rem 1.8rem 1.8rem; display: flex; flex-direction: column; flex-grow: 1;">
+            <div class="product-meta">
+              <span class="product-category">Wellness Elixir</span>
+              <div class="product-stars" aria-label="5 out of 5 stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+            </div>
+            <h3 class="product-title">Royal Elixir Spa Oil</h3>
+            <p class="product-description">Highly concentrated nourishing oil infused with active black tea polyphenols,
+              wild cinnamon essential extract, and cold-pressed organic jojoba. Restores skin and calms the mind.</p>
+            <div class="product-footer">
+              <button class="add-cart-btn add-cart-trigger" data-id="gr-wellnessoil" data-name="Royal Elixir Spa Oil"
+                data-price="64.00" data-img="assets/wellness_oil.png" data-category="Wellness Elixir"
+                aria-label="Add Royal Elixir Spa Oil to Cart">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" x2="12" y1="5" y2="19" />
+                  <line x1="5" x2="19" y1="12" y2="12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 4 -->
+        <article class="product-card glass-panel reveal delay-3" id="productCardNutmeg">
+          <div class="product-image-container">
+            <span class="product-badge">Wild Harvest</span>
+            <img src="assets/nutmeg.png" alt="Premium Ceylon Nutmeg Jar">
+            <div class="product-overlay">
+              <button class="btn btn-secondary add-cart-instant-btn" data-id="gr-nutmeg"
+                data-name="Premium Ceylon Nutmeg" data-price="38.00" data-img="assets/nutmeg.png"
+                data-category="Highland Spice">Quick Add</button>
+            </div>
+          </div>
+          <div style="padding: 0 1.8rem 1.8rem 1.8rem; display: flex; flex-direction: column; flex-grow: 1;">
+            <div class="product-meta">
+              <span class="product-category">Highland Spice</span>
+              <div class="product-stars" aria-label="5 out of 5 stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+            </div>
+            <h3 class="product-title">Premium Ceylon Nutmeg</h3>
+            <p class="product-description">Sourced from the fertile mid-country heights of Matale. Hand-picked ripe
+              fruits cleanly split to reveal dark kernels wrapped in brilliant red mace, rich in myristicin and warming
+              wellness compounds.</p>
+            <div class="product-footer">
+              <button class="add-cart-btn add-cart-trigger" data-id="gr-nutmeg" data-name="Premium Ceylon Nutmeg"
+                data-price="38.00" data-img="assets/nutmeg.png" data-category="Highland Spice"
+                aria-label="Add Premium Ceylon Nutmeg to Cart">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" x2="12" y1="5" y2="19" />
+                  <line x1="5" x2="19" y1="12" y2="12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- SENSORY SELECTOR (QUIZ SECTION) --- -->
+  <section class="selector-section" id="selector">
+    <div class="container">
+      <div class="selector-grid">
+        <div>
+          <span class="section-label reveal">Sensory Discovery</span>
+          <h2 class="story-title reveal delay-1">Find Your Perfect <br>Ceylon Blend</h2>
+          <p class="story-text reveal delay-2">Unsure which treasure matches your frequency? Engage our 3-step Sensory
+            Matcher. Based on ancient wellness frameworks and flavor psychology, we will uncover your ideal match.</p>
+          <div class="experience-card glass-panel reveal delay-3"
+            style="padding: 1.8rem; display: flex; gap: 1.2rem; align-items: center; border-radius: 12px; margin-top: 2rem;">
+            <span style="font-size: 2.2rem;">✨</span>
+            <p style="font-size: 0.85rem; margin: 0; color: white;"><strong>Over 14,000 pairings made this
+                month.</strong> Take the 30-second ritual and unlock a personalized gift in your recommendation.</p>
+          </div>
+        </div>
+
+        <div class="selector-card glass-panel reveal">
+          <!-- Quiz Progress Indicator -->
+          <div class="quiz-progress-bar">
+            <div class="quiz-progress-fill" id="quizProgressFill"></div>
+          </div>
+
+          <!-- Quiz Interactive Form -->
+          <div id="quizContainer">
+            <!-- Step 1 -->
+            <div class="quiz-step active" data-step="1">
+              <h3 class="quiz-step-title">1. What is your desired state of mind?</h3>
+              <div class="quiz-options">
+                <div class="quiz-option" data-value="calm">
+                  <div class="quiz-option-dot"></div>
+                  <span class="quiz-option-text">Calm &amp; Grounded</span>
+                </div>
+                <div class="quiz-option" data-value="energized">
+                  <div class="quiz-option-dot"></div>
+                  <span class="quiz-option-text">Energized &amp; Radiant</span>
+                </div>
+                <div class="quiz-option" data-value="restored">
+                  <div class="quiz-option-dot"></div>
+                  <span class="quiz-option-text">Restored &amp; Balanced</span>
+                </div>
+                <div class="quiz-option" data-value="meditative">
+                  <div class="quiz-option-dot"></div>
+                  <span class="quiz-option-text">Meditative &amp; Creative</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="quiz-step" data-step="2">
+              <h3 class="quiz-step-title">2. Choose your preferred aroma &amp; taste?</h3>
+              <div class="quiz-options">
+                <div class="quiz-option" data-value="floral">
+                  <div class="quiz-option-dot"></div>
+                  <span class="quiz-option-text">Silky &amp; Floral</span>
+                </div>
+                <div class="quiz-option" data-value="spicy">
+                  <div class="quiz-option-dot"></div>
+                  <span class="quiz-option-text">Warm &amp; Spicy</span>
+                </div>
+                <div class="quiz-option" data-value="earthy">
+                  <div class="quiz-option-dot"></div>
+                  <span class="quiz-option-text">Fresh &amp; Earthy</span>
+                </div>
+                <div class="quiz-option" data-value="sweet">
+                  <div class="quiz-option-dot"></div>
+                  <span class="quiz-option-text">Honey &amp; Nectar</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="quiz-step" data-step="3">
+              <h3 class="quiz-step-title">3. When do you wish to indulge?</h3>
+              <div class="quiz-options">
+                <div class="quiz-option" data-value="morning">
+                  <div class="quiz-option-dot"></div>
+                  <span class="quiz-option-text">Sunrisen Mornings</span>
+                </div>
+                <div class="quiz-option" data-value="midday">
+                  <div class="quiz-option-dot"></div>
+                  <span class="quiz-option-text">Midday Sanctuary</span>
+                </div>
+                <div class="quiz-option" data-value="evening">
+                  <div class="quiz-option-dot"></div>
+                  <span class="quiz-option-text">Evening Twilight</span>
+                </div>
+                <div class="quiz-option" data-value="midnight">
+                  <div class="quiz-option-dot"></div>
+                  <span class="quiz-option-text">Midnight Solitude</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quiz Action Footer -->
+          <div class="quiz-footer" id="quizFooter">
+            <button class="quiz-nav-btn" id="quizPrevBtn" disabled>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m15 18-6-6 6-6" />
+              </svg> Back
+            </button>
+            <button class="btn btn-cyan" id="quizNextBtn" disabled>Continue</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- THE SENSORY PILLARS / EXPERIENCE --- -->
+  <section class="experience-section">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label" style="display:inline-flex;">Unmatched Purity Standards</span>
+        <h2 class="story-title" style="font-size:3rem; margin-top:1rem;">Crafted Without Compromise</h2>
+      </div>
+
+      <div class="experience-grid">
+        <div class="experience-card glass-panel text-center reveal">
+          <span class="experience-icon">🥀</span>
+          <h3 class="experience-card-title">Single Estate Purity</h3>
+          <p class="experience-card-desc">We never blend estates. Every package is a snapshot of one specific harvest,
+            soil elevation, and localized rainfall cycle.</p>
+        </div>
+
+        <div class="experience-card glass-panel text-center reveal delay-1">
+          <span class="experience-icon">🌊</span>
+          <h3 class="experience-card-title">Pristine Rainforest Sourced</h3>
+          <p class="experience-card-desc">Sourced bordering protected virgin rainforest biomes, absorbing unique
+            atmospheric richness found nowhere else on earth.</p>
+        </div>
+
+        <div class="experience-card glass-panel text-center reveal delay-2">
+          <span class="experience-icon">🏺</span>
+          <h3 class="experience-card-title">Luxury UV Protection</h3>
+          <p class="experience-card-desc">Packaged in thick obsidian Miron violet-glass jars that completely block all
+            visible light, extending potency and aroma indefinitely.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- TESTIMONIALS SECTION --- -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 4rem;">
+        <span class="section-label" style="display:inline-flex;">The Global Connoisseurs</span>
+      </div>
+
+      <div class="testimonials-container reveal">
+        <div class="testimonial-slider" id="testimonialSlider">
+          <!-- Slide 1 -->
+          <div class="testimonial-slide">
+            <blockquote class="testimonial-quote">
+              "The Royal Silver Tips is an astounding revelation. It possesses a velvety texture and an astonishing
+              complexity of notes—honey, sweet grass, and wild orchid. Truly, Ceylon's crown jewel."
+            </blockquote>
+            <p class="testimonial-author">Chef Hélène Duquesne</p>
+            <p class="testimonial-role">Three Michelin-Starred Gastronomist, Paris</p>
+          </div>
+          <!-- Slide 2 -->
+          <div class="testimonial-slide">
+            <blockquote class="testimonial-quote">
+              "grá CEYLON has successfully elevated wellness tea into an absolute art form. Sourcing is impeccable, and
+              the Wild Cinnamon infusion's therapeutic qualities are unparalleled."
+            </blockquote>
+            <p class="testimonial-author">Dr. Evelyn Sterling</p>
+            <p class="testimonial-role">Director of Holistic Wellness, Aman Retreats</p>
+          </div>
+          <!-- Slide 3 -->
+          <div class="testimonial-slide">
+            <blockquote class="testimonial-quote">
+              "The Royal Elixir Spa Oil is standard-setting. The botanical synergy of Ceylon black tea polyphenols and
+              rare cinnamon oil instantly relieves tension while radiating the skin."
+            </blockquote>
+            <p class="testimonial-author">Liam MacNamara</p>
+            <p class="testimonial-role">Founder of MacNamara Wellness Spa, Dublin</p>
+          </div>
+        </div>
+
+        <div class="slider-controls" id="sliderControls">
+          <button class="slider-dot active" data-index="0" aria-label="Go to testimonial slide 1"></button>
+          <button class="slider-dot" data-index="1" aria-label="Go to testimonial slide 2"></button>
+          <button class="slider-dot" data-index="2" aria-label="Go to testimonial slide 3"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- NEWSLETTER LEAD CAPTURE --- -->
+  <section class="newsletter-section" id="newsletter">
+    <div class="container">
+      <div class="newsletter-content reveal">
+        <span class="section-label" style="display:inline-flex; color:hsl(var(--accent-cyan));">Exclusive Tasting
+          Circle</span>
+        <h2 class="newsletter-title">Reserve Your Tasting Flight</h2>
+        <p class="newsletter-desc">Join our exclusive private circle. Receive invitations to rare highland crop auctions
+          and secure an invitation to our limited micro-batch tea releases. Enter your email to begin your journey.</p>
+
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" class="newsletter-input" id="newsletterEmailInput"
+            placeholder="Enter your private email address" required aria-label="Email address for exclusive circle">
+          <button type="submit" class="btn btn-primary newsletter-submit" id="newsletterSubmitBtn">Join The
+            Circle</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- FOOTER --- -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <img src="assets/logo.png" alt="grá CEYLON Logo" class="footer-brand-logo" id="footerLogo">
+          <p class="footer-tagline">Artisanal, high-altitude single estate Ceylon treasures built on love and absolute
+            pure heritage.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#collection">The Collection</a></li>
+            <li><a href="#story">Our Heritage</a></li>
+            <li><a href="#selector">Sensory Selector</a></li>
+            <li><a href="#testimonials">Experiences</a></li>
+            <li><a href="sanctuary-chronicles.html">The Sanctuary Chronicles</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Our Treasures</h4>
+          <ul class="footer-links">
+            <li><a href="#collection">Royal Silver Tips</a></li>
+            <li><a href="#collection">Wild Cinnamon Rose</a></li>
+            <li><a href="#collection">Royal Elixir Spa Oil</a></li>
+            <li><a href="#collection">Premium Ceylon Nutmeg</a></li>
+            <li><a href="#">Corporate Gifting</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <ul class="footer-links">
+            <li><a href="#">curator@graceylon.com</a></li>
+            <li><a href="#">Spas &amp; Hospitality</a></li>
+            <li><a href="#">Estate Headquarters, Ella</a></li>
+            <li><a href="#">Support Center</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2026 grá CEYLON. Sourced globally, packaged with love. All rights reserved.</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/gra_ceylon/" target="_blank" rel="noopener noreferrer"
+            aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+            </svg></a>
+          <a href="https://www.facebook.com/graceylonproducts" target="_blank" rel="noopener noreferrer"
+            aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg></a>
+          <a href="#" aria-label="Pinterest"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path
+                d="M8 22a8.62 8.62 0 0 1-5.18-1.58c.24-1.39.63-3.13.91-4.44C3.12 14.88 2 12.83 2 10.15 2 5.56 5.86 2 10.75 2C15.64 2 19 5.39 19 9.8c0 4.96-2.58 7.84-5.75 7.84-1.05 0-2.03-.54-2.37-1.19l-.98 3.72c-.36 1.34-1.07 2.68-1.63 3.6A8.75 8.75 0 0 0 8 22z" />
+            </svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- --- SHOPPING CART DRAWER --- -->
+  <div class="cart-overlay" id="cartOverlay" role="dialog" aria-modal="true" aria-labelledby="cartDrawerTitle">
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <h3 class="cart-header-title" id="cartDrawerTitle">Your Tasting Flight</h3>
+        <button class="cart-close-btn" id="cartCloseBtn" aria-label="Close Shopping Cart">&times;</button>
+      </div>
+
+      <!-- Cart Items list -->
+      <div class="cart-items" id="cartItemsContainer">
+        <!-- Rendered dynamically by javascript -->
+        <div class="cart-empty-message" id="cartEmptyMessage">
+          <img src="assets/logo.png" alt="grá CEYLON Logo" class="cart-empty-logo">
+          <p>Your flight is currently empty.</p>
+          <p style="font-size: 0.75rem; margin-top: 0.5rem; color: hsl(var(--text-muted));">Begin your love affair with
+            Ceylon by adding one of our signature treasures.</p>
+        </div>
+      </div>
+
+      <!-- Cart Footer summary -->
+      <div class="cart-footer">
+        <!-- Contact Email Field for Custom Quote Request -->
+        <div class="cart-quote-email-group">
+          <label for="cartQuoteEmail" class="quote-email-label">Your Contact Email</label>
+          <input type="email" id="cartQuoteEmail" class="quote-email-input"
+            placeholder="Enter your private email address" required>
+        </div>
+
+        <button class="btn btn-primary checkout-btn" id="checkoutBtn">Request Quote</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- --- TOAST NOTIFICATIONS --- -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- --- CHECKOUT MODAL (SUCCESS) --- -->
+  <div class="modal-overlay" id="checkoutModalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="checkout-modal glass-panel">
+      <img src="assets/logo.png" alt="grá CEYLON Logo" class="modal-brand-logo"
+        style="height: 50px; width: auto; margin: 0 auto 2.2rem auto; display: block; opacity: 0.95;">
+      <div class="success-icon-animation">✓</div>
+      <h3 class="modal-title" id="modalTitle">Order Succeeded</h3>
+      <p class="modal-desc">Thank you for embarking on this sensory journey. Your exclusive artisanal treasures are
+        being prepared. A private dispatch email will reach your inbox shortly.</p>
+      <button class="btn btn-primary" id="modalCloseBtn">Return to Sanctuary</button>
+    </div>
+  </div>
+
+  <!-- Javascript Core Logic -->
+  <script src="index.js"></script>
+</body>
+
+</html>

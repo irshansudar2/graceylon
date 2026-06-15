@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Sanctuary Chronicles | grá CEYLON | Artisanal Tea & Wellness</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Delve into The Sanctuary Chronicles by grá CEYLON. Explore tea rituals, single-origin botanical wellness heritage, sustainable wild harvests, and deep holistic guides.">
+  <meta name="keywords"
+    content="Ceylon Tea Blog, Silver Tips Ritual, Wellness Tea Guide, True Cinnamon benefits, Botanical Wellness, Ella Sri Lanka, Slow Living">
+  <meta name="author" content="grá CEYLON">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The Sanctuary Chronicles | Luxury Tea & Wellness Blog">
+  <meta property="og:description"
+    content="Step into our sanctuary. Stories of ancient harvesting heritages, sunlight tea curation, and natural home spa rituals.">
+  <meta property="og:image" content="assets/hero.png">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="index.css">
+
+  <!-- Custom Blog Layout Styles -->
+  <style>
+    /* Hero Blog Styling */
+    .blog-hero {
+      position: relative;
+      padding: 12rem 0 6rem 0;
+      background: radial-gradient(circle at center, rgba(10, 10, 10, 0.4) 0%, rgba(5, 5, 5, 0.98) 90%), url('assets/hero.png') no-repeat center center;
+      background-size: cover;
+      text-align: center;
+      border-bottom: 1px solid var(--border-glass);
+    }
+
+    .blog-hero-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Category Filter Pills */
+    .filter-container {
+      margin: 4rem 0 3rem 0;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-pill {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-glass);
+      color: hsl(var(--text-secondary));
+      padding: 0.6rem 1.6rem;
+      border-radius: 50px;
+      cursor: pointer;
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: var(--transition-smooth);
+    }
+
+    .filter-pill:hover,
+    .filter-pill.active {
+      background: white;
+      color: black;
+      border-color: white;
+      box-shadow: 0 5px 15px rgba(255, 255, 255, 0.15);
+      transform: translateY(-2px);
+    }
+
+    /* Blog Grid & Cards */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 3rem;
+      margin-bottom: 8rem;
+    }
+
+    .blog-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      transition: var(--transition-smooth);
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .blog-card.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .blog-card-image-container {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 16 / 10;
+      border: 1px solid var(--border-glass);
+      background-color: #0c0c0c;
+    }
+
+    .blog-card-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition-smooth);
+    }
+
+    .blog-card:hover .blog-card-image-container img {
+      transform: scale(1.04);
+    }
+
+    .blog-card-body {
+      padding: 1.5rem 0.5rem 0.5rem 0.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .blog-card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.8rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .blog-card-category {
+      color: hsl(var(--accent-cyan));
+      font-weight: 500;
+    }
+
+    .blog-card-date {
+      color: hsl(var(--text-muted));
+    }
+
+    .blog-card-title {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: white;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+      transition: var(--transition-fast);
+    }
+
+    .blog-card:hover .blog-card-title {
+      color: hsl(var(--accent-gold));
+    }
+
+    .blog-card-excerpt {
+      font-size: 0.9rem;
+      color: hsl(var(--text-secondary));
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .blog-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-glass);
+      padding-top: 1.2rem;
+    }
+
+    .blog-read-time {
+      font-size: 0.7rem;
+      color: hsl(var(--text-muted));
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .read-more-link {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: hsl(var(--accent-gold));
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+    }
+
+    .read-more-link svg {
+      transition: var(--transition-fast);
+    }
+
+    .read-more-link:hover svg {
+      transform: translateX(5px);
+      color: white;
+    }
+
+    /* Article Modal Overlay */
+    .article-modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1000;
+      background: rgba(5, 5, 5, 0.95);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .article-modal-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .article-modal-container {
+      width: 90%;
+      max-width: 800px;
+      max-height: 85vh;
+      overflow-y: auto;
+      border-radius: 20px;
+      border: 1px solid var(--border-glass);
+      background: hsl(var(--bg-secondary));
+      position: relative;
+      transform: scale(0.95) translateY(30px);
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
+    }
+
+    .article-modal-overlay.active .article-modal-container {
+      transform: scale(1) translateY(0);
+    }
+
+    .article-modal-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-glass);
+      color: white;
+      font-size: 1.5rem;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: var(--transition-fast);
+    }
+
+    .article-modal-close:hover {
+      background: white;
+      color: black;
+      border-color: white;
+      transform: rotate(90deg);
+    }
+
+    .article-modal-banner {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-bottom: 1px solid var(--border-glass);
+    }
+
+    .article-modal-body {
+      padding: 3rem;
+    }
+
+    .article-modal-title {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: white;
+      margin-bottom: 1.5rem;
+    }
+
+    .article-modal-meta {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border-glass);
+      padding-bottom: 1.5rem;
+      font-size: 0.8rem;
+      color: hsl(var(--text-muted));
+    }
+
+    .article-modal-meta span strong {
+      color: hsl(var(--text-secondary));
+    }
+
+    .article-modal-content {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: hsl(var(--text-secondary));
+    }
+
+    .article-modal-content p {
+      margin-bottom: 1.8rem;
+      font-weight: 300;
+    }
+
+    .article-modal-content h3 {
+      font-size: 1.4rem;
+      color: white;
+      margin: 2.5rem 0 1.2rem 0;
+      font-weight: 500;
+    }
+
+    .article-modal-content blockquote {
+      border-left: 2px solid hsl(var(--accent-gold));
+      padding-left: 1.5rem;
+      font-style: italic;
+      color: white;
+      margin: 2rem 0;
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+    }
+
+    /* Modal Integrated Product Suggestion card */
+    .article-product-card {
+      margin-top: 3.5rem;
+      padding: 2rem;
+      border-radius: 16px;
+      border: 1px solid rgba(197, 168, 90, 0.25);
+      background: linear-gradient(135deg, rgba(20, 20, 20, 0.8) 0%, rgba(10, 10, 10, 0.95) 100%);
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .article-product-img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid var(--border-glass);
+      background: #0f0f0f;
+    }
+
+    .article-product-info {
+      flex-grow: 1;
+    }
+
+    .article-product-title {
+      font-size: 1.2rem;
+      margin-bottom: 0.4rem;
+      color: white;
+    }
+
+    .article-product-price {
+      color: hsl(var(--accent-gold));
+      font-weight: 600;
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      display: block;
+      margin-bottom: 0.8rem;
+    }
+
+    /* --- ARTICLE INTER TYPOGRAPHY OVERRIDES --- */
+    .blog-card,
+    .article-modal-container {
+      font-family: var(--font-inter), sans-serif;
+    }
+
+    .blog-card-title,
+    .article-modal-title,
+    .article-modal-content h3 {
+      font-family: var(--font-inter), sans-serif;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+
+    .blog-card-excerpt,
+    .article-modal-content p,
+    .article-modal-content li {
+      font-family: var(--font-inter), sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    .blog-card-meta,
+    .blog-read-time,
+    .read-more-link,
+    .article-modal-meta {
+      font-family: var(--font-inter), sans-serif;
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .blog-hero {
+        padding: 10rem 0 4rem 0;
+      }
+      .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .article-modal-body {
+        padding: 1.8rem;
+      }
+      .article-modal-banner {
+        height: 200px;
+      }
+      .article-product-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.2rem;
+      }
+      .article-product-img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- --- HEADER / NAVIGATION --- -->
+  <header class="header" id="mainHeader">
+    <div class="container">
+      <div class="logo-wrapper">
+        <a href="index.html" aria-label="grá CEYLON Home">
+          <img src="assets/logo.png" alt="grá CEYLON Logo" class="brand-logo-svg" id="headerLogo">
+        </a>
+      </div>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html#collection" class="nav-link" id="navLinkCollection">The Collection</a></li>
+          <li><a href="index.html#story" class="nav-link" id="navLinkStory">Our Heritage</a></li>
+          <li><a href="index.html#selector" class="nav-link" id="navLinkQuiz">Sensory Matcher</a></li>
+          <li><a href="index.html#testimonials" class="nav-link" id="navLinkReviews">Experiences</a></li>
+          <li><a href="sanctuary-chronicles.html" class="nav-link active" id="navLinkBlog">The Sanctuary Chronicles</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Interactive Cart Trigger Button -->
+        <button class="cart-icon-btn" id="cartOpenBtn" aria-label="Open Shopping Cart" aria-haspopup="dialog">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+            <path d="M3 6h18" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation menu"
+          aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="menuIconOpen">
+            <line x1="4" x2="20" y1="12" y2="12" />
+            <line x1="4" x2="20" y1="6" y2="6" />
+            <line x1="4" x2="20" y1="18" y2="18" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="menuIconClose"
+            style="display:none;">
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- --- BLOG HERO SECTION --- -->
+  <section class="blog-hero">
+    <div class="container">
+      <div class="blog-hero-content">
+        <span class="hero-tagline" style="margin-bottom:1rem;">Stories, Rituals &amp; Heritage</span>
+        <h1 class="story-title" style="font-size: clamp(2.2rem, 5vw, 3.8rem); margin-bottom: 1.5rem; line-height: 1.15;">
+          The Sanctuary <span class="gradient-text">Chronicles</span>
+        </h1>
+        <p class="hero-description" style="margin-bottom:0;">
+          A mindful space for the tea connoisseur. Delve into the deep ancestral heritage, organic harvesting science, 
+          and botanical self-care formulations crafted from our mountain sanctuary.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- BLOG FILTER AND MAIN GRID --- -->
+  <main class="container">
+    <!-- Category Filter Bar -->
+    <div class="filter-container">
+      <button class="filter-pill active" data-category="all">All Chronicles</button>
+      <button class="filter-pill" data-category="rituals">Tasting Rituals</button>
+      <button class="filter-pill" data-category="heritage">Botanical Heritage</button>
+      <button class="filter-pill" data-category="wellness">Wellness Philosophy</button>
+    </div>
+
+    <!-- Blog Posts Grid -->
+    <div class="blog-grid" id="blogGrid">
+      
+      <!-- Article 1 -->
+      <article class="blog-card glass-panel" data-category="rituals" id="post-1">
+        <div class="blog-card-image-container">
+          <img src="assets/hero.png" alt="Misty morning light rising over Ceylon tea valleys">
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-card-category">Tasting Rituals</span>
+            <span class="blog-card-date">May 24, 2026</span>
+          </div>
+          <h2 class="blog-card-title">The Art of the Dawn Harvest: Why Silver Tips Need Sunlight</h2>
+          <p class="blog-card-excerpt">High up in the mist-veiled peaks of Ella, at exactly 5:30 AM, a silent, sacred multi-generational ritual begins. We explore the deep, biological reason why Ceylon's rarest white tea buds are cured solely by the soft rays of the morning sun.</p>
+          <div class="blog-card-footer">
+            <span class="blog-read-time">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              4 Min Read
+            </span>
+            <span class="read-more-link" onclick="openArticle(1)">
+              Read Chronicle
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 2 -->
+      <article class="blog-card glass-panel" data-category="heritage" id="post-2">
+        <div class="blog-card-image-container">
+          <img src="assets/cinnamon.png" alt="Wild Ceylon true cinnamon bark sticks on deep background">
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-card-category">Botanical Heritage</span>
+            <span class="blog-card-date">May 18, 2026</span>
+          </div>
+          <h2 class="blog-card-title">True Cinnamon vs. Cassia: Sourcing the World’s Finest Bark</h2>
+          <p class="blog-card-excerpt">Unveiling the delicate organic chemistry of Ceylon’s wild-harvested true cinnamon (Cinnamomum verum) and how its gentle, complex flavor compounds differ from commercial varieties to calm the mind and body.</p>
+          <div class="blog-card-footer">
+            <span class="blog-read-time">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              5 Min Read
+            </span>
+            <span class="read-more-link" onclick="openArticle(2)">
+              Read Chronicle
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 3 -->
+      <article class="blog-card glass-panel" data-category="wellness" id="post-3">
+        <div class="blog-card-image-container">
+          <img src="assets/wellness_oil.png" alt="Royal Elixir wellness oil resting on obsidian glass plate">
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-card-category">Wellness Philosophy</span>
+            <span class="blog-card-date">May 10, 2026</span>
+          </div>
+          <h2 class="blog-card-title">Creating a Home Sanctuary: A 3-Step Botanical Tea Bath Ritual</h2>
+          <p class="blog-card-excerpt">Transform your evening space into a deep sensory retreat. How active black tea antioxidants, wild lavender, and cold-pressed organic jojoba work in synergy to reset cortisol levels and restore skin luster.</p>
+          <div class="blog-card-footer">
+            <span class="blog-read-time">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              6 Min Read
+            </span>
+            <span class="read-more-link" onclick="openArticle(3)">
+              Read Chronicle
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 4 -->
+      <article class="blog-card glass-panel" data-category="heritage" id="post-4">
+        <div class="blog-card-image-container">
+          <img src="assets/cinnamon.png" alt="A bundle of delicate, golden Ceylon Alba cinnamon quills">
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-card-category">Botanical Heritage</span>
+            <span class="blog-card-date">May 25, 2026</span>
+          </div>
+          <h2 class="blog-card-title">The Gradations of Purity: Sourcing Ceylon’s Rare Alba Cinnamon</h2>
+          <p class="blog-card-excerpt">Not all cinnamon is created equal. Beyond the distinction of true Ceylon cinnamon lies the highly refined craft of quill grading. We explore the hand-rolled precision behind the rare Alba grade and how to identify pure, chemical-free spice.</p>
+          <div class="blog-card-footer">
+            <span class="blog-read-time">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              5 Min Read
+            </span>
+            <span class="read-more-link" onclick="openArticle(4)">
+              Read Chronicle
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 5 -->
+      <article class="blog-card glass-panel" data-category="rituals" id="post-5">
+        <div class="blog-card-image-container">
+          <img src="assets/wild_pepper.png" alt="High-quality whole black peppercorns showing rich dark texture">
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-card-category">Tasting Rituals</span>
+            <span class="blog-card-date">May 26, 2026</span>
+          </div>
+          <h2 class="blog-card-title">King of Spices: The Unrivaled Pungency of Ceylon's Wild Pepper</h2>
+          <p class="blog-card-excerpt">Renowned in the global spice market for its outstanding heat and woodsy complexity, Ceylon pepper dominates all other varieties. We delve into the science behind its high piperine content and the ancient rituals of sun-drying.</p>
+          <div class="blog-card-footer">
+            <span class="blog-read-time">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              4 Min Read
+            </span>
+            <span class="read-more-link" onclick="openArticle(5)">
+              Read Chronicle
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 6 -->
+      <article class="blog-card glass-panel" data-category="wellness" id="post-6">
+        <div class="blog-card-image-container">
+          <img src="assets/royal_cloves.png" alt="Royal Elixir wellness oil resting on obsidian glass plate surrounded by botanical leaves">
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-card-category">Wellness Philosophy</span>
+            <span class="blog-card-date">May 26, 2026</span>
+          </div>
+          <h2 class="blog-card-title">Bothal Karabu: The Mystic Healing of Ceylon's Royal Cloves</h2>
+          <p class="blog-card-excerpt">Deep in the wet mid-country peaks of Kandy and Matale grows a rare evergreen bud prized for its deep anesthetic warmth and antiseptic purity. We explore the heritage of 'Bothal Karabu' cloves and their restorative power in high-end aromatherapy.</p>
+          <div class="blog-card-footer">
+            <span class="blog-read-time">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              5 Min Read
+            </span>
+            <span class="read-more-link" onclick="openArticle(6)">
+              Read Chronicle
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 7 -->
+      <article class="blog-card glass-panel" data-category="heritage" id="post-7">
+        <div class="blog-card-image-container">
+          <img src="assets/nutmeg_mace.png" alt="A freshly harvested Ceylon nutmeg sliced in half, revealing the vibrant crimson mace aril wrapping the seed">
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-card-category">Botanical Heritage</span>
+            <span class="blog-card-date">May 27, 2026</span>
+          </div>
+          <h2 class="blog-card-title">Double Treasure: The Sacred Harvest of Ceylon Nutmeg and Mace</h2>
+          <p class="blog-card-excerpt">Derived from the same evergreen tree, nutmeg and mace represent a rare botanical duality. We explore the intricate geometry of the crimson aril, the mineral-rich soils of Matale, and the ancient wellness secrets of this warming spice.</p>
+          <div class="blog-card-footer">
+            <span class="blog-read-time">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              5 Min Read
+            </span>
+            <span class="read-more-link" onclick="openArticle(7)">
+              Read Chronicle
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- --- FOOTER --- -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <img src="assets/logo.png" alt="grá CEYLON Logo" class="footer-brand-logo" id="footerLogo">
+          <p class="footer-tagline">Artisanal, high-altitude single estate Ceylon treasures built on love and absolute
+            pure heritage.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#collection">The Collection</a></li>
+            <li><a href="index.html#story">Our Heritage</a></li>
+            <li><a href="index.html#selector">Sensory Selector</a></li>
+            <li><a href="index.html#testimonials">Experiences</a></li>
+            <li><a href="sanctuary-chronicles.html">The Sanctuary Chronicles</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Our Treasures</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#collection">Royal Silver Tips</a></li>
+            <li><a href="index.html#collection">Wild Cinnamon Rose</a></li>
+            <li><a href="index.html#collection">Royal Elixir Spa Oil</a></li>
+            <li><a href="index.html#collection">Premium Ceylon Nutmeg</a></li>
+            <li><a href="#">Corporate Gifting</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <ul class="footer-links">
+            <li><a href="#">curator@graceylon.com</a></li>
+            <li><a href="#">Spas &amp; Hospitality</a></li>
+            <li><a href="#">Estate Headquarters, Ella</a></li>
+            <li><a href="#">Support Center</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2026 grá CEYLON. Sourced globally, packaged with love. All rights reserved.</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/gra_ceylon/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+            </svg></a>
+          <a href="https://www.facebook.com/graceylonproducts" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg></a>
+          <a href="#" aria-label="Pinterest"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path
+                d="M8 22a8.62 8.62 0 0 1-5.18-1.58c.24-1.39.63-3.13.91-4.44C3.12 14.88 2 12.83 2 10.15 2 5.56 5.86 2 10.75 2C15.64 2 19 5.39 19 9.8c0 4.96-2.58 7.84-5.75 7.84-1.05 0-2.03-.54-2.37-1.19l-.98 3.72c-.36 1.34-1.07 2.68-1.63 3.6A8.75 8.75 0 0 0 8 22z" />
+            </svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- --- SHOPPING CART DRAWER --- -->
+  <div class="cart-overlay" id="cartOverlay" role="dialog" aria-modal="true" aria-labelledby="cartDrawerTitle">
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <h3 class="cart-header-title" id="cartDrawerTitle">Your Tasting Flight</h3>
+        <button class="cart-close-btn" id="cartCloseBtn" aria-label="Close Shopping Cart">&times;</button>
+      </div>
+
+      <!-- Cart Items list -->
+      <div class="cart-items" id="cartItemsContainer">
+        <div class="cart-empty-message" id="cartEmptyMessage">
+          <img src="assets/logo.png" alt="grá CEYLON Logo" class="cart-empty-logo">
+          <p>Your flight is currently empty.</p>
+          <p style="font-size: 0.75rem; margin-top: 0.5rem; color: hsl(var(--text-muted));">Begin your love affair with
+            Ceylon by adding one of our signature treasures.</p>
+        </div>
+      </div>
+
+      <!-- Cart Footer summary -->
+      <div class="cart-footer">
+        <!-- Contact Email Field for Custom Quote Request -->
+        <div class="cart-quote-email-group">
+          <label for="cartQuoteEmail" class="quote-email-label">Your Contact Email</label>
+          <input type="email" id="cartQuoteEmail" class="quote-email-input" placeholder="Enter your private email address" required>
+        </div>
+
+        <button class="btn btn-primary checkout-btn" id="checkoutBtn">Request Quote</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- --- TOAST NOTIFICATIONS --- -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- --- CHECKOUT MODAL (SUCCESS) --- -->
+  <div class="modal-overlay" id="checkoutModalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="checkout-modal glass-panel">
+      <img src="assets/logo.png" alt="grá CEYLON Logo" class="modal-brand-logo"
+        style="height: 50px; width: auto; margin: 0 auto 2.2rem auto; display: block; opacity: 0.95;">
+      <div class="success-icon-animation">✓</div>
+      <h3 class="modal-title" id="modalTitle">Order Succeeded</h3>
+      <p class="modal-desc">Thank you for embarking on this sensory journey. Your exclusive artisanal treasures are
+        being prepared. A private dispatch email will reach your inbox shortly.</p>
+      <button class="btn btn-primary" id="modalCloseBtn">Return to Sanctuary</button>
+    </div>
+  </div>
+
+  <!-- --- DETAIL ARTICLE VIEW OVERLAY MODAL --- -->
+  <div class="article-modal-overlay" id="articleModal" role="dialog" aria-modal="true" aria-labelledby="articleTitle">
+    <div class="article-modal-container">
+      <button class="article-modal-close" onclick="closeArticle()">&times;</button>
+      <img src="" alt="" class="article-modal-banner" id="articleBanner">
+      <div class="article-modal-body">
+        <h2 class="article-modal-title" id="articleTitle">Title</h2>
+        <div class="article-modal-meta">
+          <span>Category: <strong id="articleCategory">Ritual</strong></span>
+          <span>Published: <strong id="articleDate">May 24, 2026</strong></span>
+        </div>
+        <div class="article-modal-content" id="articleContent">
+          <!-- Populated Dynamically -->
+        </div>
+
+        <!-- Integrated Call-to-Action Product Purchase Box -->
+        <div class="article-product-card" id="articleProductCta">
+          <img src="" alt="" class="article-product-img" id="articleProductImg">
+          <div class="article-product-info">
+            <span class="product-category" style="color:hsl(var(--accent-gold)); font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; font-weight:600;">Sourced Directly</span>
+            <h4 class="article-product-title" id="articleProductTitle">Product Title</h4>
+            <p style="font-size:0.8rem; margin:0 0 1.2rem 0; color:hsl(var(--text-secondary));">Indulge in this exact botanical ritual today. Safely packaged in our Miron violet-glass jars.</p>
+            <button class="btn btn-primary add-cart-instant-btn" id="articleProductAddBtn" style="padding:0.7rem 1.6rem; font-size:0.75rem;">Add to Flight</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shared Javascript Core Logic -->
+  <script src="index.js"></script>
+
+  <!-- Dedicated Blog Page Interactions -->
+  <script>
+    // Blog Post Database (Premium Content)
+    const ARTICLES_DB = {
+      1: {
+        title: "The Art of the Dawn Harvest: Why Silver Tips Need Sunlight",
+        category: "Tasting Rituals",
+        date: "May 24, 2026",
+        banner: "assets/hero.png",
+        product: {
+          id: "gr-silvertips",
+          name: "Royal Silver Tips",
+          price: "$48.00",
+          rawPrice: "48.00",
+          img: "assets/silver_tips.png",
+          category: "White Tea"
+        },
+        content: `
+          <p>High up in the mist-veiled peaks of Ella, Sri Lanka, at exactly 5:30 AM, a silent, sacred ritual begins. Before the tropical sun climbs high enough to warm the dew-kissed leaves, pickers step into the emerald tea rows to harvest Ceylon’s rarest treasure: the <strong>Royal Silver Tips</strong>.</p>
+          
+          <p>Unlike standard black teas where entire branches of leaves are chopped or machine-plucked, Silver Tips consist entirely of individual, young, unopened white buds. These buds are covered in a beautiful, velvety silver down, containing the highest concentration of L-theanine and delicate polyphenols found in the tea plant.</p>
+          
+          <h3>The Chemistry of Natural Sunlight Curing</h3>
+          <p>Once gathered with extreme care in hand-woven baskets, the buds are brought directly to the high-elevation drying racks. Here lies the true secret of our white tea. While commercial white teas are often forced-dried with high-temperature hot air, our Silver Tips are cured solely by the soft rays of the highland sun over three consecutive mornings.</p>
+          <blockquote>"To apply machine heat is to burn the soul of the leaf. Sunlight acts as a slow, natural alchemist, preserving the enzymes while encouraging a subtle, sweet oxidation."</blockquote>
+          <p>This slow sunlight evaporation technique prevents the chlorophyll from darkening, preserving the shimmering silver sheen. The resulting liquor is a bright, pale-champagne gold, releasing an incredibly complex floral bouquet of honey, wild orchid, and sweet highland grasses with absolutely zero bitterness.</p>
+          
+          <h3>How to Conduct the Silver Tips Ritual at Home</h3>
+          <p>To experience the absolute pure flavor compounds of this sunlight-cured treasure, prepare your sanctuary:</p>
+          <ol style="margin-left: 1.5rem; margin-bottom: 1.8rem; display: flex; flex-direction: column; gap: 0.6rem; font-weight: 300;">
+            <li><strong>Water Purity:</strong> Use filtered spring water. Boil to 80°C (176°F)—never pour boiling water on delicate white buds, as it will scorch their sweet nectar notes.</li>
+            <li><strong>The Vessel:</strong> Use a transparent glass teapot or a porcelain gaiwan to observe the buds stand vertically in the water as they expand.</li>
+            <li><strong>The Steep:</strong> Allow 5 to 7 full minutes. Because the buds are unopened, they require a longer, gentle infusion time to fully unpack their rich antioxidants.</li>
+          </ol>
+          <p>Close your eyes, breathe in the rising steam, and savor the love story of Ceylon's high peaks.</p>
+        `
+      },
+      2: {
+        title: "True Cinnamon vs. Cassia: Sourcing the World’s Finest Bark",
+        category: "Botanical Heritage",
+        date: "May 18, 2026",
+        banner: "assets/cinnamon.png",
+        product: {
+          id: "gr-cinnamon",
+          name: "Wild Cinnamon Rose",
+          price: "$32.00",
+          rawPrice: "32.00",
+          img: "assets/cinnamon.png",
+          category: "Botanical Infusion"
+        },
+        content: `
+          <p>For centuries, explorers, emperors, and traders risked their lives crossing uncharted oceans to discover a mysterious bark grown exclusively on the island of Ceylon. Today, cinnamon is found in every pantry, yet the vast majority of consumers have never tasted real cinnamon.</p>
+          
+          <p>What you buy in regular supermarkets is almost always <strong>Cassia</strong> (typically sourced from Indonesia or Vietnam). True cinnamon (<em>Cinnamomum verum</em>), native solely to the southern coastline and central forests of Sri Lanka, is an entirely different botanical species—and a true medical and sensory sanctuary.</p>
+
+          <h3>The Molecular Difference: Coumarin Risks</h3>
+          <p>Beyond the taste, the primary reason to choose true Ceylon cinnamon lies in its organic compounds. Cassia cinnamon contains extremely high levels of <strong>coumarin</strong>, a naturally occurring toxin that can cause liver damage when consumed regularly in moderate quantities. True Ceylon cinnamon, on the other hand, contains only trace amounts of coumarin, making it perfectly safe for daily wellness infusions.</p>
+
+          <blockquote>"True Ceylon cinnamon is a delicate, multi-layered quill that can be crushed easily by hand. Cassia is a thick, dark, rock-hard single curve of bark that lacks complexity."</blockquote>
+
+          <h3>A Flavor Profile of Unmatched Complexity</h3>
+          <p>Sourced from the wild borders of Ceylon's rainforests, our true cinnamon offers a sweet, warm, deeply comforting wood-and-floral sensory escape. By infusing these delicate, hand-ground bark layers with organic pink damask rosebuds, we create our signature <strong>Wild Cinnamon Rose</strong> infusion—a sensory bridge that naturally reduces cortisol levels while stimulating healthy metabolism.</p>
+          
+          <p>To experience it, steep one teaspoon in fresh 95°C water for 5 minutes. Savor the warm spice balanced by the delicate, cooling breath of hand-picked roses.</p>
+        `
+      },
+      3: {
+        title: "Creating a Home Sanctuary: A 3-Step Botanical Tea Bath Ritual",
+        category: "Wellness Philosophy",
+        date: "May 10, 2026",
+        banner: "assets/wellness_oil.png",
+        product: {
+          id: "gr-wellnessoil",
+          name: "Royal Elixir Spa Oil",
+          price: "$64.00",
+          rawPrice: "64.00",
+          img: "assets/wellness_oil.png",
+          category: "Wellness Elixir"
+        },
+        content: `
+          <p>In our modern, high-frequency lives, finding moments of true stillness is a rare privilege. At grá CEYLON, we believe that self-care is not a luxury, but a vital returning to sanctuary. One of the most powerful, historically-proven wellness rituals you can do tonight is the <strong>Botanical Tea Bath</strong>.</p>
+          
+          <p>For centuries, the royalty of ancient Sri Lanka used warm mineral waters infused with freshly plucked highland tea leaves and active forest oils to restore the body’s moisture, heal skin irritation, and completely quiet the nervous system.</p>
+
+          <h3>The Healing Science of Tea Bathing</h3>
+          <p>When high-altitude black tea leaves are steeped in warm bathwater, they release highly concentrated tea polyphenols (specifically epigallocatechin gallate or EGCG) and tannins directly into the water. These antioxidants are absorbed through the skin, instantly neutralizing free radicals, calming inflammation, and tightening skin pores for a natural, youthful glow.</p>
+
+          <blockquote>"A warm bath is a physical reset; a botanical tea bath is a sensory transformation that grounds both the skin and the soul."</blockquote>
+
+          <h3>Your 3-Step Home Sanctuary Ritual</h3>
+          <p>Follow this simple ritual tonight to reset your body and calm the mind:</p>
+          <ol style="margin-left: 1.5rem; margin-bottom: 1.8rem; display: flex; flex-direction: column; gap: 0.8rem; font-weight: 300;">
+            <li><strong>Step 1: The Botanical Steep.</strong> Draw a warm bath. Fill a large muslin bag (or a clean cotton pouch) with loose black tea leaves, wild lavender buds, and pink rose petals. Toss the pouch into the running bathwater, allowing it to steep and turn the water a beautiful, light amber.</li>
+            <li><strong>Step 2: The Sensory Atmosphere.</strong> Dim the lights. Light a natural soy candle. Pour yourself a hot cup of our comforting <em>Wild Cinnamon Rose</em> infusion to harmonize your body's temperature from the inside out.</li>
+            <li><strong>Step 3: The Elixir Massage.</strong> Immerse yourself for 20 minutes. Once you step out and gently towel dry, immediately apply 3-5 drops of our highly concentrated <strong>Royal Elixir Spa Oil</strong> to your damp skin. The wild cinnamon extract and active black tea extract will lock in hydration while leaving a faint, warm scent of the rainforest.</li>
+          </ol>
+        `
+      },
+      4: {
+        title: "The Gradations of Purity: Sourcing Ceylon’s Rare Alba Cinnamon",
+        category: "Botanical Heritage",
+        date: "May 25, 2026",
+        banner: "assets/cinnamon.png",
+        product: {
+          id: "gr-cinnamon",
+          name: "Wild Cinnamon Rose",
+          price: "$32.00",
+          rawPrice: "32.00",
+          img: "assets/cinnamon.png",
+          category: "Botanical Infusion"
+        },
+        content: `
+          <p>Ceylon cinnamon—the unrivaled legend of the spice world—stands apart as the fourth most expensive spice on Earth. Grown native in the mineral-rich soils of Sri Lanka, this exquisite botanical is valued for its warm, complex sweetness and highly therapeutic properties.</p>
+          
+          <p>Yet, beyond the basic distinction of true Ceylon cinnamon (*Cinnamomum verum*) lies an even deeper, highly guarded craft: the art of quill grading. Based on physical thickness, density, and chemical concentration, Ceylon cinnamon is meticulously separated into distinct continental, Mexican, and Hamburg classifications. Today, we demystify the grades—ranging from the delicate Alba to coarse H1—and explore why authentic sourcing matters.</p>
+
+          <h3>Alba Grade: The Ultimate Peeler’s Masterpiece</h3>
+          <p>At the absolute pinnacle of the grading hierarchy sits **Alba**. With a diameter of only 6 millimeters (about the size of a standard pencil), Alba quills are incredibly thin and highly concentrated in flavor. Preparing Alba sticks requires a level of micro-precision that only master peelers possess.</p>
+          <p>Alba is harvested strictly from the youngest, most slender shoots of the cinnamon tree. The inner bark is shaved down to a paper-thin thickness, then rolled sequentially by hand into multiple, beautiful concentric quill layers. Because of this high ratio of delicate inner bark, Alba quills possess a marvelous, sweet flavor and a soft, pale-golden appearance. It boasts the highest concentration of essential oils (principally cinnamaldehyde), creating an unmatched sensory experience.</p>
+
+          <blockquote>"While industrial spice companies grind thick, low-quality bark into dust, we source Alba and high-continental grades to preserve the active, healing compounds in their purest, oil-rich form."</blockquote>
+
+          <h3>From Continental Sweetness to Hamburg Strength</h3>
+          <p>Below Alba, the quills are sorted into three major grade families:</p>
+          <ol style="margin-left: 1.5rem; margin-bottom: 1.8rem; display: flex; flex-direction: column; gap: 0.8rem; font-weight: 300;">
+            <li><strong>Continental Grades (C5-Special, C5, C4):</strong> These are exceptionally high-quality quills ranging from 10mm to 15mm in diameter. They are remarkably sweet, low in woodiness, and have a beautiful, light tan color. They are perfect for delicate infusions.</li>
+            <li><strong>Mexican Grades (M5, M4):</strong> Slightly thicker and coarser, these quills have a rougher texture but still retain a pleasant, medium-intensity flavor profile.</li>
+            <li><strong>Hamburg Grades (H1, H2):</strong> These represent the thickest, most rugged quills, often exceeding 25mm. They are coarse, dark, and highly woodsy. While commonly ground for bulk culinary powders, they lack the delicate, floral spice notes found in Alba and C5 quills.</li>
+          </ol>
+
+          <h3>Chemical Purity: Free of Sulfur and Coumarin Risks</h3>
+          <p>Beyond visual beauty, authentic sourcing is about health. Unlike mass-market Cassia, which contains toxic levels of coumarin (a compound linked to liver toxicity), Ceylon cinnamon contains less than 0.004% coumarin—making it entirely safe for daily wellness routines. Furthermore, some distributors bleach low-grade quills with sulfur dioxide to artificially lighten their color. Sourcing directly from reputable, organic farms ensures that each quill is entirely chemical-free, naturally dried, and packed with pure, raw wellness.</p>
+        `
+      },
+      5: {
+        title: "King of Spices: The Unrivaled Pungency of Ceylon's Wild Pepper",
+        category: "Tasting Rituals",
+        date: "May 26, 2026",
+        banner: "assets/wild_pepper.png",
+        product: {
+          id: "gr-wellnessoil",
+          name: "Royal Elixir Spa Oil",
+          price: "$64.00",
+          rawPrice: "64.00",
+          img: "assets/wellness_oil.png",
+          category: "Wellness Elixir"
+        },
+        content: `
+          <p>Renowned for centuries as the **"King of Spices"**, pepper (*Piper nigrum*) has dominated global culinary trade routes since the dawn of antiquities. While common black pepper is found on every dining table, a rare, wild variety native to the mist-covered wet zones of Sri Lanka holds an unrivaled reputation among connoisseurs for its sheer sensory power and physical health benefits.</p>
+          
+          <p>Ceylon pepper is uniquely revered in the international market due to its exceptionally **high piperine content, strong woodsy aroma, and piercing, multi-layered heat**. Today, we explore the ancient harvesting rituals, the processing secrets that separate black and white pepper, and how this potent spice serves as a key wellness catalyst.</p>
+
+          <h3>The Piperine Factor: Why Ceylon Pepper is Supreme</h3>
+          <p>The secret behind pepper's heat and medicinal power is **piperine**, an active alkaloid compound. In standard global black pepper, piperine levels hover around 3% to 5%. However, Ceylon’s native climbing vines, nourished by deep loamy highland soils and annual tropical rains, yield peppercorns containing **up to 7% to 15% piperine**.</p>
+          <p>This unusually rich concentration results in a piercing, crisp heat that is immediately warm rather than bitter. It also yields a remarkably complex bouquet of forest wood, clean citrus, and damp earth. Medically, piperine is a highly potent antioxidant and anti-inflammatory agent, widely recognized for relieving joint discomfort (arthritis), boosting metabolism, and stimulating natural cell renewal.</p>
+
+          <blockquote>"In the world of holistic wellness, piperine is known as a supreme bio-enhancer—it dramatically increases the cellular absorption of other active botanicals, making your entire self-care routine more powerful."</blockquote>
+
+          <h3>Black vs. White Pepper: The Two Processing Rituals</h3>
+          <p>Both commercial varieties originate from the very same climbing vine shrub, yet they represent two completely different artistic drying rituals:</p>
+          <ol style="margin-left: 1.5rem; margin-bottom: 1.8rem; display: flex; flex-direction: column; gap: 0.8rem; font-weight: 300;">
+            <li><strong>Black Pepper (The Sun-Dured Berry):</strong> Ripe, plump green peppercorn spikes are hand-harvested during the Yala and Maha monsoons. They are separated and laid on massive woven mats under the high-altitude Sri Lankan sun. As they dry, a natural enzymatic reaction shrivels the outer skin and turns it a beautiful, wrinkled obsidian black, sealing in a highly complex, woodsy, and smoky aroma.</li>
+            <li><strong>White Pepper (The Smooth Core):</strong> White pepper is prepared by removing the outer pericarp membrane. The ripe berries are soaked in slow-running spring water to naturally peel away the outer skin, exposing the smooth white seed within. White pepper yields a clean, creamy appearance and delivers a highly direct, intensely sharp, and slightly floral heat favored by gourmet chefs.</li>
+          </ol>
+
+          <h3>A Wellness Catalyst in Your Sanctuary</h3>
+          <p>To incorporate this powerful spice into your evening self-care rituals, utilize its bio-enhancing properties. Enjoying a warm, freshly ground cup of tea followed by a deep massage with our active-infused **Royal Elixir Spa Oil** creates a synergistic thermodynamic effect on the skin. The heat of the spice stimulates micro-circulation, allowing the active tea polyphenols and organic jojoba in the spa oil to penetrate deeply, releasing muscle tension and restoring a radiant, youthful glow.</p>
+        `
+      },
+      6: {
+        title: "Bothal Karabu: The Mystic Healing of Ceylon's Royal Cloves",
+        category: "Wellness Philosophy",
+        date: "May 26, 2026",
+        banner: "assets/royal_cloves.png",
+        product: {
+          id: "gr-wellnessoil",
+          name: "Royal Elixir Spa Oil",
+          price: "$64.00",
+          rawPrice: "64.00",
+          img: "assets/wellness_oil.png",
+          category: "Wellness Elixir"
+        },
+        content: `
+          <p>Tucked deep in the mist-shrouded wet zones and steep, red-earth valleys of Matale, Kegalle, and Kandy, stands a magnificent, medium-sized evergreen tree. Part of the *Myrtaceae* family, this tree (*Eugenia caryophyllus* or *Syzygium aromaticum*) holds a legendary place in ancient global trade. It produces the highly prized unopened flower buds known to the world as **Cloves**.</p>
+          
+          <p>While cloves are traded across every continent, Sri Lanka produces a legendary, rare variety known historically as **Bothal Karabu**. Celebrated for its exceptionally large, robust buds and high oil concentration, Bothal Karabu holds a sacred place in holistic wellness. Today, we delve into the science behind its therapeutic properties, the art of harvesting, and its place in high-end aromatherapy.</p>
+
+          <h3>Bothal Karabu: The Crown Jewel of Clove Trees</h3>
+          <p>In the quiet high-altitude hills, select clove trees yield buds of a size and density unmatched by other crops. Locals refer to these special botanicals as **Bothal Karabu** (meaning bottle cloves, referring to their plump, robust shape). These trees thrive exclusively in deep rich loams packed with forest humus and organic matter, absorbing the clean mountain rainfall.</p>
+          <p>To capture their therapeutic power, harvesting must be timed with absolute precision. Pickers watch the buds daily, waiting for the green flower petals to blush into a beautiful, yellow-pink shade. If the bud is allowed to open and bloom, its precious essential oils vanish. Hand-plucked at their peak, these buds are carefully sun-dried, transforming into the familiar deep brown, nail-shaped spice rich in active wellness compounds.</p>
+
+          <blockquote>"Clove is a botanical powerhouse. The simple bud contains an extraordinary concentration of eugenol, giving it powerful anti-oxidant, antiseptic, and natural local anesthetic properties."</blockquote>
+
+          <h3>A History of Healing: Eugenol and Dental Relief</h3>
+          <p>For generations, cloves have served as a vital cornerstone in Eastern and Western medicine. The primary active component in clove oil is **eugenol**, a powerful organic compound that acts as a highly effective **local anesthetic and pain reliever**. Historically, dentists in Western countries utilized clove oil directly as a safe, natural painkiller for soothing toothaches and healing gums.</p>
+          <p>Due to its highly concentrated anti-bacterial and anti-fungal properties, clove oil is also an exceptional remedy for deep skin restoration, effectively clearing acne, calming blemishes, and relieving minor dermal infections without stripping the skin's natural moisture barrier.</p>
+
+          <h3>Creating a Restorative Aroma Ritual</h3>
+          <p>To experience the deep, warming benefits of Bothal Karabu, combine it with a luxury home spa ritual. Applying 3-5 drops of our concentrated **Royal Elixir Spa Oil**—which blends active tea polyphenols with wild cinnamon and clove extracts—on the neck and temples creates an instant sensory escape. The soothing, spicy warmth of the cloves quietens the nervous system, immediately lowering stress, clearing the mind, and encouraging deep, meditative breathing.</p>
+        `
+      },
+      7: {
+        title: "Double Treasure: The Sacred Harvest of Ceylon Nutmeg and Mace",
+        category: "Botanical Heritage",
+        date: "May 27, 2026",
+        banner: "assets/nutmeg_mace.png",
+        product: {
+          id: "gr-wellnessoil",
+          name: "Royal Elixir Spa Oil",
+          price: "$64.00",
+          rawPrice: "64.00",
+          img: "assets/wellness_oil.png",
+          category: "Wellness Elixir"
+        },
+        content: `
+          <p>Deep within the mist-kissed, red-earth valleys of Matale, Kandy, and Kegalle grows a spectacular evergreen tree that holds a legendary status in botanical history. Belonging to the family <em>Myristicaceae</em>, the <strong>Myristica fragrans</strong> tree is the only plant in the world that produces not one, but two entirely distinct commercial spices: <strong>Nutmeg</strong> and <strong>Mace</strong>.</p>
+          
+          <p>For centuries, ancient merchants braved treacherous sea voyages to trade this double treasure. In Sri Lanka’s lush mid-country highlands, this evergreen giant thrives at elevations up to 600 meters, drawing rich nutrients from well-drained loamy soils packed with organic forest matter.</p>
+          
+          <h3>The Duality of Nutmeg and Mace</h3>
+          <p>To witness the fresh fruit of the nutmeg tree is to observe a beautiful geometric marvel of nature. The tree produces fleshy, golden-yellow fruits that resemble small peaches. As they ripen under the tropical sun, the fruits split cleanly down a longitudinal ridge, revealing a striking sight:</p>
+          
+          <ol style="margin-left: 1.5rem; margin-bottom: 1.8rem; display: flex; flex-direction: column; gap: 0.8rem; font-weight: 300;">
+            <li><strong>Mace (The Crimson Lace):</strong> A brilliant, bright red, net-like outer covering (technically called an aril) that closely wraps around the seed shell. When dried, this crimson aril turns a beautiful amber-gold, offering a highly refined, warm flavor profile that combines subtle notes of citrus, cinnamon, and pepper.</li>
+            <li><strong>Nutmeg (The Obsidian Core):</strong> The solid, dark, egg-shaped kernel nestled beneath the protective seed shell. Grating this core yields a sweet, deeply woody, and highly aromatic spice valued worldwide for gourmet baking and holistic therapy.</li>
+          </ol>
+          
+          <blockquote>"Nature rarely gives us such elegance. While the nutmeg kernel holds a heavy, sweet warmth, the crimson mace represents its ethereal, delicate counterpart."</blockquote>
+
+          <h3>The Cultivation of a High-Altitude Sanctuary</h3>
+          <p>Growing nutmeg is a patient art form. The seeds lose their viability within just ten days of harvest, requiring prompt, delicate sowing in shaded highland nurseries. Once transplanted into sheltered valleys to protect the young trees from harsh mountain winds, it takes up to eight years of nurturing before a single tree bears fruit. Well-managed, mature trees can yield up to 10,000 nuts annually, harvested at precise intervals when the fruit naturally opens.</p>
+
+          <h3>Active Wellness and Therapeutic Healing</h3>
+          <p>Beyond their culinary prestige, nutmeg and mace contain powerful active compounds that serve as cornerstones for holistic self-care. Both spices are packed with potent antioxidants, anti-fungal agents, and digestive enzymes. The essential oils from nutmeg contain <em>myristicin</em> and <em>elemicin</em>, widely studied for their ability to relieve joint discomfort, soothe muscle tension, and naturally quiet an overactive nervous system.</p>
+          
+          <p>To harness these warming, restorative benefits, we infuse active nutmeg and clove extracts into our signature <strong>Royal Elixir Spa Oil</strong>. When massaged into tired limbs, the natural warmth of these highland spices stimulates cellular circulation while active tea polyphenols work in synergy to hydrate, calm, and restore the skin’s radiant glow.</p>
+        `
+      }
+    };
+
+    // Category Filtering Interaction
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterPills = document.querySelectorAll('.filter-pill');
+      const blogGrid = document.getElementById('blogGrid');
+      const blogCards = document.querySelectorAll('.blog-card');
+
+      // Trigger card reveal on scroll/load
+      setTimeout(() => {
+        blogCards.forEach((card, index) => {
+          setTimeout(() => {
+            card.classList.add('revealed');
+          }, index * 100);
+        });
+      }, 100);
+
+      filterPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          // Set active pill
+          filterPills.forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+
+          const category = pill.dataset.category;
+
+          blogCards.forEach(card => {
+            const cardCategory = card.dataset.category;
+            
+            if (category === 'all' || cardCategory === category) {
+              card.style.display = 'flex';
+              // Trigger smooth fade in
+              setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+              }, 50);
+            } else {
+              card.style.opacity = '0';
+              card.style.transform = 'translateY(20px)';
+              setTimeout(() => {
+                card.style.display = 'none';
+              }, 300);
+            }
+          });
+        });
+      });
+    });
+
+    // Detail Modal Controller
+    const modal = document.getElementById('articleModal');
+    const modalBanner = document.getElementById('articleBanner');
+    const modalTitle = document.getElementById('articleTitle');
+    const modalCategory = document.getElementById('articleCategory');
+    const modalDate = document.getElementById('articleDate');
+    const modalContent = document.getElementById('articleContent');
+
+    // Product CTA Elements
+    const prodTitle = document.getElementById('articleProductTitle');
+    const prodPrice = document.getElementById('articleProductPrice');
+    const prodImg = document.getElementById('articleProductImg');
+    const prodAddBtn = document.getElementById('articleProductAddBtn');
+
+    function openArticle(id) {
+      const article = ARTICLES_DB[id];
+      if (!article) return;
+
+      // Populate article text fields
+      modalBanner.src = article.banner;
+      modalBanner.alt = article.title;
+      modalTitle.textContent = article.title;
+      modalCategory.textContent = article.category;
+      modalDate.textContent = article.date;
+      modalContent.innerHTML = article.content;
+
+      // Populate Product purchase CTA details
+      if (prodTitle) prodTitle.textContent = article.product.name;
+      if (prodPrice) prodPrice.textContent = article.product.price;
+      if (prodImg) {
+        prodImg.src = article.product.img;
+        prodImg.alt = article.product.name;
+      }
+
+      // Bind dynamic product to cart drawer button
+      prodAddBtn.onclick = () => {
+        // Trigger cart add using local storage / DOM trigger
+        const p = article.product;
+        
+        // Emulate instant click trigger to main cart logic in index.js
+        const event = new CustomEvent('add-to-cart-trigger', {
+          detail: { id: p.id, name: p.name, price: p.rawPrice, img: p.img, category: p.category }
+        });
+        
+        // Check if addToCart function is defined in global scope or dispatch click
+        const instantBtn = document.querySelector(`.add-cart-instant-btn[data-id="${p.id}"]`);
+        if (instantBtn) {
+          instantBtn.click();
+        } else {
+          // Fallback direct storage add
+          let cart = JSON.parse(localStorage.getItem('graceylon_cart') || '[]');
+          const item = cart.find(x => x.id === p.id);
+          if (item) {
+            item.quantity += 1;
+          } else {
+            cart.push({ id: p.id, name: p.name, price: parseFloat(p.rawPrice), img: p.img, category: p.category, quantity: 1 });
+          }
+          localStorage.setItem('graceylon_cart', JSON.stringify(cart));
+          // Refresh page or open cart if possible
+          const cartBtn = document.getElementById('cartOpenBtn');
+          if (cartBtn) cartBtn.click();
+        }
+        
+        closeArticle();
+      };
+
+      // Open Modal
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Lock background scroll
+    }
+
+    function closeArticle() {
+      modal.classList.remove('active');
+      document.body.style.overflow = ''; // Unlock background scroll
+    }
+
+    // Close on overlay clicking
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeArticle();
+    });
+  </script>
+</body>
+
+</html>
