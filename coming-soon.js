@@ -122,10 +122,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ==========================================================================
-     2. DYNAMIC COUNTDOWN TIMER
+     2. DYNAMIC COUNTDOWN TIMER (35 days starting value, resets every 5 days)
      ========================================================================== */
-  // Target Launch Date: July 1, 2026 at 00:00:00 (Sri Lankan Time / GMT+05:30)
-  const targetDate = new Date('2026-07-01T00:00:00+05:30').getTime();
+  // Base Epoch Date: June 1, 2026 at 00:00:00 (Sri Lankan Time / GMT+05:30)
+  const epochDate = new Date('2026-06-01T00:00:00+05:30').getTime();
+  
+  // 5 days cycle in milliseconds
+  const cycleDuration = 5 * 24 * 60 * 60 * 1000;
+  
+  // Starting countdown is 35 days. 
+  // Since it resets back to 35 days every 5 days, the timer counts down from 35 days to 30 days.
+  const baseCountdown = 30 * 24 * 60 * 60 * 1000;
 
   const daysVal = document.getElementById('daysVal');
   const hoursVal = document.getElementById('hoursVal');
@@ -134,16 +141,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateCountdown() {
     const now = new Date().getTime();
-    const distance = targetDate - now;
-
-    if (distance < 0) {
-      // If launch date has passed, keep timer showing 00
-      if (daysVal) daysVal.textContent = '00';
-      if (hoursVal) hoursVal.textContent = '00';
-      if (minutesVal) minutesVal.textContent = '00';
-      if (secondsVal) secondsVal.textContent = '00';
-      return;
+    
+    let elapsedTime = now - epochDate;
+    if (elapsedTime < 0) {
+      // If system clock is set before epochDate, calculate cycle alignment
+      const cyclesToShift = Math.ceil(Math.abs(elapsedTime) / cycleDuration);
+      elapsedTime += cyclesToShift * cycleDuration;
     }
+
+    const elapsedInCycle = elapsedTime % cycleDuration;
+    const remainingInCycle = cycleDuration - elapsedInCycle;
+    
+    // Total countdown time to display: 30 days + remaining time of the 5-day cycle
+    const distance = baseCountdown + remainingInCycle;
 
     // Time calculations
     const d = Math.floor(distance / (1000 * 60 * 60 * 24));
