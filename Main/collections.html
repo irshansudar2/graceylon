@@ -1,0 +1,2001 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Collection | grá CEYLON | Artisanal Tea & Botanical Wellness Treasures</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Browse grá CEYLON's curated collection of ultra-luxury, single-origin Ceylon white teas, wild-harvested cinnamon infusions, botanical wellness elixirs, and rare highland spices from Sri Lanka.">
+  <meta name="keywords"
+    content="Ceylon Tea Collection, Silver Tips, Luxury Tea, Cinnamon Infusion, Botanical Spa Oil, Wellness Ceylon, Premium Organic Tea, Highland Spices, Nutmeg, Wild Pepper, Royal Cloves">
+  <meta name="author" content="grá CEYLON">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The Collection | grá CEYLON">
+  <meta property="og:description"
+    content="Explore our curated flight of artisanal Ceylon treasures. Single-estate teas, wild spices, and botanical wellness oils sourced with absolute devotion.">
+  <meta property="og:image" content="assets/hero.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="The Collection | grá CEYLON">
+  <meta property="twitter:description"
+    content="Explore our curated flight of artisanal Ceylon treasures. Single-estate teas, wild spices, and botanical wellness oils sourced with absolute devotion.">
+  <meta property="twitter:image" content="assets/hero.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon 512x512.png">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="index.css">
+
+  <!-- Collections Page Styles -->
+  <style>
+    /* ─── COLLECTION HERO ─── */
+    .collections-hero {
+      position: relative;
+      padding: 12rem 0 5rem 0;
+      background: radial-gradient(circle at center, rgba(10, 10, 10, 0.35) 0%, rgba(5, 5, 5, 0.98) 90%),
+        url('assets/hero.png') no-repeat center center;
+      background-size: cover;
+      text-align: center;
+      border-bottom: 1px solid var(--border-glass);
+    }
+
+    .collections-hero-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .collections-hero .hero-description {
+      margin-bottom: 0;
+    }
+
+    .collections-product-count {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-top: 1.8rem;
+      padding: 0.6rem 1.6rem;
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-glass);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: hsl(var(--text-secondary));
+      font-weight: 500;
+    }
+
+    .collections-product-count span {
+      color: hsl(var(--accent-cyan));
+      font-weight: 700;
+    }
+
+    /* ─── BREADCRUMBS ─── */
+    .breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 2rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: hsl(var(--text-muted));
+      justify-content: center;
+    }
+
+    .breadcrumbs a {
+      color: hsl(var(--text-muted));
+      transition: var(--transition-fast);
+    }
+
+    .breadcrumbs a:hover {
+      color: hsl(var(--accent-cyan));
+    }
+
+    .breadcrumb-sep {
+      opacity: 0.4;
+      font-size: 0.6rem;
+    }
+
+    .breadcrumb-current {
+      color: hsl(var(--text-primary));
+      font-weight: 600;
+    }
+
+    /* ─── TRUST BAR ─── */
+    .trust-bar {
+      padding: 3rem 0;
+      background: hsl(var(--bg-secondary));
+      border-top: 1px solid var(--border-glass);
+      border-bottom: 1px solid var(--border-glass);
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .trust-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-glass);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: hsl(var(--accent-cyan));
+      transition: var(--transition-smooth);
+    }
+
+    .trust-item:hover .trust-icon {
+      background: rgba(0, 210, 196, 0.08);
+      border-color: rgba(0, 210, 196, 0.3);
+      transform: scale(1.08);
+    }
+
+    .trust-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: hsl(var(--text-primary));
+      line-height: 1.5;
+    }
+
+    .trust-sublabel {
+      font-size: 0.68rem;
+      color: hsl(var(--text-muted));
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      text-transform: none;
+      margin-top: 0.15rem;
+    }
+
+    /* ─── FILTER & SORT CONTROLS ─── */
+    .filter-sort-bar {
+      padding: 2.2rem 0 1.5rem 0;
+      background: hsl(var(--bg-primary));
+      position: sticky;
+      top: 110px;
+      z-index: 50;
+      transition: var(--transition-smooth);
+    }
+
+    .filter-sort-bar.stuck {
+      background: var(--bg-glass-heavy);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+      border-bottom: 1px solid var(--border-glass);
+      padding: 1rem 0;
+    }
+
+    .filter-sort-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: nowrap;
+    }
+
+    .filter-pills {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding-bottom: 2px;
+    }
+
+    .filter-pills::-webkit-scrollbar {
+      display: none;
+    }
+
+    .filter-pill {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-glass);
+      color: hsl(var(--text-secondary));
+      padding: 0.5rem 1.15rem;
+      border-radius: 50px;
+      cursor: pointer;
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: var(--transition-smooth);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .filter-pill:hover,
+    .filter-pill.active {
+      background: white;
+      color: black;
+      border-color: white;
+      box-shadow: 0 5px 15px rgba(255, 255, 255, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .sort-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-shrink: 0;
+      margin-left: auto;
+      white-space: nowrap;
+    }
+
+    .sort-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: hsl(var(--text-muted));
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .sort-select {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-glass);
+      color: hsl(var(--text-primary));
+      padding: 0.5rem 2.2rem 0.5rem 1rem;
+      border-radius: 50px;
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      transition: var(--transition-fast);
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23a6a6a6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.8rem center;
+    }
+
+    .sort-select:focus {
+      outline: none;
+      border-color: hsl(var(--accent-cyan));
+      box-shadow: 0 0 15px rgba(0, 210, 196, 0.15);
+    }
+
+    .sort-select option {
+      background: hsl(var(--bg-secondary));
+      color: hsl(var(--text-primary));
+    }
+
+    .results-count {
+      font-size: 0.72rem;
+      color: hsl(var(--text-muted));
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+
+    .results-count span {
+      color: hsl(var(--text-primary));
+      font-weight: 600;
+    }
+
+    /* ─── PRODUCT GRID (ENHANCED) ─── */
+    .collections-main {
+      padding: 3rem 0 8rem 0;
+      background: hsl(var(--bg-primary));
+      min-height: 60vh;
+    }
+
+    .collections-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+    }
+
+    /* Enhanced product card */
+    .coll-product-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      overflow: hidden;
+      background: var(--bg-glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border-glass);
+      border-radius: 16px;
+      transition: var(--transition-smooth);
+    }
+
+    .coll-product-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .coll-product-card.filter-hidden {
+      display: none;
+    }
+
+    .coll-product-image-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4 / 5;
+      background-color: #0f0f0f;
+    }
+
+    .coll-product-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition-smooth);
+    }
+
+    .coll-product-card:hover .coll-product-image-wrap img {
+      transform: scale(1.06);
+    }
+
+    .coll-product-badge {
+      position: absolute;
+      top: 1.2rem;
+      left: 1.2rem;
+      background: var(--bg-glass-heavy);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: hsl(var(--accent-gold));
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+
+    .coll-product-badge.badge-bestseller {
+      color: hsl(var(--accent-cyan));
+      border-color: rgba(0, 210, 196, 0.2);
+    }
+
+    .coll-wishlist-btn {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--bg-glass-heavy);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      z-index: 2;
+      color: hsl(var(--text-secondary));
+    }
+
+    .coll-wishlist-btn:hover {
+      background: rgba(229, 46, 46, 0.15);
+      border-color: rgba(229, 46, 46, 0.3);
+      color: hsl(var(--accent-red));
+      transform: scale(1.1);
+    }
+
+    .coll-wishlist-btn.wishlisted {
+      background: rgba(229, 46, 46, 0.15);
+      border-color: rgba(229, 46, 46, 0.3);
+      color: hsl(var(--accent-red));
+    }
+
+    .coll-quick-add-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 1.5rem;
+      background: linear-gradient(to top, rgba(10, 10, 10, 0.95) 0%, rgba(10, 10, 10, 0) 100%);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: var(--transition-smooth);
+      z-index: 2;
+    }
+
+    .coll-product-card:hover .coll-quick-add-overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .coll-quick-add-btn {
+      width: 100%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 0.8rem 1.5rem;
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      background: white;
+      color: black;
+      border: none;
+    }
+
+    .coll-quick-add-btn:hover {
+      background: hsl(var(--accent-cyan));
+      box-shadow: 0 5px 20px rgba(0, 210, 196, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .coll-product-body {
+      padding: 1.5rem 1.8rem 1.8rem 1.8rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .coll-product-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .coll-product-category {
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: hsl(var(--accent-cyan));
+      font-weight: 500;
+    }
+
+    .coll-product-rating {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .coll-product-stars {
+      display: flex;
+      gap: 0.1rem;
+      color: hsl(var(--accent-gold));
+      font-size: 0.75rem;
+    }
+
+    .coll-review-count {
+      font-size: 0.68rem;
+      color: hsl(var(--text-muted));
+      font-weight: 400;
+    }
+
+    .coll-product-title {
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: hsl(var(--text-primary));
+      margin-bottom: 0.5rem;
+      transition: var(--transition-fast);
+    }
+
+    .coll-product-card:hover .coll-product-title {
+      color: hsl(var(--accent-gold));
+    }
+
+    .coll-product-desc {
+      font-size: 0.82rem;
+      color: hsl(var(--text-secondary));
+      line-height: 1.6;
+      flex-grow: 1;
+      margin-bottom: 1.2rem;
+    }
+
+    .coll-product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-glass);
+      padding-top: 1.2rem;
+      margin-top: auto;
+    }
+
+    .coll-product-price {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: white;
+      font-family: var(--font-serif);
+    }
+
+    .coll-product-price .coll-price-currency {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: hsl(var(--text-secondary));
+    }
+
+    .coll-add-cart-btn {
+      background: transparent;
+      border: 1px solid var(--border-glass);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .coll-add-cart-btn:hover {
+      background: white;
+      color: black;
+      border-color: white;
+      box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+      transform: rotate(90deg);
+    }
+
+    /* No results */
+    .no-results-message {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 6rem 2rem;
+    }
+
+    .no-results-message h3 {
+      font-size: 1.8rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+
+    .no-results-message p {
+      font-size: 0.95rem;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    /* ─── CROSS-SELL STRIP ─── */
+    .crosssell-section {
+      padding: 6rem 0;
+      background: hsl(var(--bg-primary));
+    }
+
+    .crosssell-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .crosssell-card {
+      padding: 2.5rem;
+      background: var(--bg-glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border-glass);
+      border-radius: 16px;
+      text-align: center;
+      transition: var(--transition-smooth);
+    }
+
+    .crosssell-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .crosssell-icon {
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .crosssell-title {
+      font-size: 1.15rem;
+      font-weight: 400;
+      margin-bottom: 0.8rem;
+      color: hsl(var(--text-primary));
+    }
+
+    .crosssell-desc {
+      font-size: 0.82rem;
+      color: hsl(var(--text-secondary));
+      margin-bottom: 1.8rem;
+      line-height: 1.6;
+    }
+
+    .crosssell-link {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: hsl(var(--accent-gold));
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+
+    .crosssell-link:hover {
+      color: white;
+    }
+
+    .crosssell-link svg {
+      transition: var(--transition-fast);
+    }
+
+    .crosssell-link:hover svg {
+      transform: translateX(5px);
+    }
+
+    /* ─── STICKY MOBILE BAR ─── */
+    .mobile-sticky-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 90;
+      padding: 0.8rem 1.2rem;
+      background: var(--bg-glass-heavy);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border-top: 1px solid var(--border-glass);
+      box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .mobile-sticky-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .mobile-filter-btn,
+    .mobile-cart-btn {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      border-radius: 50px;
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+
+    .mobile-filter-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-glass);
+      color: hsl(var(--text-primary));
+    }
+
+    .mobile-filter-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-cart-btn {
+      background: linear-gradient(135deg, hsl(var(--accent-red)) 0%, #a81c1c 100%);
+      color: white;
+      border: none;
+      box-shadow: 0 5px 20px rgba(229, 46, 46, 0.25);
+    }
+
+    .mobile-cart-btn:hover {
+      box-shadow: 0 5px 20px rgba(229, 46, 46, 0.4);
+    }
+
+    .mobile-cart-badge {
+      background: white;
+      color: hsl(var(--accent-red));
+      font-size: 0.65rem;
+      font-weight: 700;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ─── MOBILE FILTER DRAWER ─── */
+    .mobile-filter-drawer-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
+      z-index: 200;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .mobile-filter-drawer-overlay.active {
+      opacity: 1;
+    }
+
+    .mobile-filter-drawer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: hsl(var(--bg-secondary));
+      border-radius: 20px 20px 0 0;
+      padding: 2rem;
+      transform: translateY(100%);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      max-height: 70vh;
+      overflow-y: auto;
+    }
+
+    .mobile-filter-drawer-overlay.active .mobile-filter-drawer {
+      transform: translateY(0);
+    }
+
+    .mobile-filter-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border-glass);
+    }
+
+    .mobile-filter-title {
+      font-size: 1.3rem;
+      font-weight: 400;
+    }
+
+    .mobile-filter-close {
+      background: transparent;
+      border: 1px solid var(--border-glass);
+      color: white;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: var(--transition-fast);
+    }
+
+    .mobile-filter-close:hover {
+      background: white;
+      color: black;
+    }
+
+    .mobile-filter-group {
+      margin-bottom: 2rem;
+    }
+
+    .mobile-filter-group-title {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: hsl(var(--text-muted));
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .mobile-filter-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .mobile-filter-pill {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-glass);
+      color: hsl(var(--text-secondary));
+      padding: 0.55rem 1.4rem;
+      border-radius: 50px;
+      cursor: pointer;
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: var(--transition-smooth);
+    }
+
+    .mobile-filter-pill:hover,
+    .mobile-filter-pill.active {
+      background: white;
+      color: black;
+      border-color: white;
+    }
+
+    .mobile-filter-apply {
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .collections-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+
+      .crosssell-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .collections-hero {
+        padding: 10rem 0 4rem 0;
+      }
+
+      .trust-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+      }
+
+      .trust-item {
+        padding: 0.8rem 0.5rem;
+        gap: 0.7rem;
+      }
+
+      .trust-icon {
+        width: 36px;
+        height: 36px;
+      }
+
+      .trust-label {
+        font-size: 0.65rem;
+      }
+
+      .trust-sublabel {
+        display: none;
+      }
+
+      .filter-sort-bar {
+        display: none;
+      }
+
+      .mobile-sticky-bar {
+        display: block;
+      }
+
+      .mobile-filter-drawer-overlay {
+        display: block;
+        pointer-events: none;
+      }
+
+      .mobile-filter-drawer-overlay.active {
+        pointer-events: all;
+      }
+
+      .collections-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .collections-main {
+        padding-bottom: 6rem;
+      }
+
+      .coll-product-body {
+        padding: 1.2rem 1.4rem 1.5rem;
+      }
+
+      .crosssell-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .crosssell-card {
+        padding: 2rem;
+      }
+
+      /* Add bottom padding for sticky bar */
+      .footer {
+        padding-bottom: 5rem;
+      }
+    }
+
+    /* Transition animation for filtered cards */
+    .coll-product-card {
+      animation: cardFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    @keyframes cardFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- --- HEADER / NAVIGATION --- -->
+  <header class="header" id="mainHeader">
+    <div class="container">
+      <div class="logo-wrapper">
+        <a href="index.html" aria-label="grá CEYLON Home">
+          <img src="assets/logo.png" alt="grá CEYLON Logo" class="brand-logo-svg" id="headerLogo">
+        </a>
+      </div>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html#story" class="nav-link" id="navLinkStory">Our Heritage</a></li>
+          <li><a href="collections.html" class="nav-link active" id="navLinkCollections">Collections</a></li>
+          <li><a href="index.html#selector" class="nav-link" id="navLinkQuiz">Sensory Matcher</a></li>
+          <li><a href="index.html#testimonials" class="nav-link" id="navLinkReviews">Experiences</a></li>
+          <li><a href="sanctuary-chronicles.html" class="nav-link" id="navLinkBlog">The Sanctuary Chronicles</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Interactive Cart Trigger Button -->
+        <button class="cart-icon-btn" id="cartOpenBtn" aria-label="Open Shopping Cart" aria-haspopup="dialog">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+            <path d="M3 6h18" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation menu"
+          aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="menuIconOpen">
+            <line x1="4" x2="20" y1="12" y2="12" />
+            <line x1="4" x2="20" y1="6" y2="6" />
+            <line x1="4" x2="20" y1="18" y2="18" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="menuIconClose"
+            style="display:none;">
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ═══ 1. COLLECTION HERO BANNER ═══ -->
+  <section class="collections-hero" id="collectionsHero">
+    <div class="container">
+      <div class="collections-hero-content">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep">›</span>
+          <span class="breadcrumb-current">Collections</span>
+        </nav>
+        <span class="hero-tagline" style="margin-bottom:1rem;">The Curated Flight</span>
+        <h1 class="story-title"
+          style="font-size: clamp(2.2rem, 5vw, 3.8rem); margin-bottom: 1.5rem; line-height: 1.15;">
+          Exquisite Artisanal <span class="gradient-text">Treasures</span>
+        </h1>
+        <p class="hero-description" style="margin-bottom:0;">
+          Each creation is single-origin, hand-harvested by multi-generational farming communities, and packaged in
+          light-protective Miron violet-glass vessels to preserve absolute potency.
+        </p>
+        <div class="collections-product-count" id="productCountBadge">
+          <span id="visibleCount">6</span> curated treasures
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ 3. CATALOG & PRODUCT GRID ═══ -->
+  <main class="collections-main" id="collectionsMain" style="position: relative; padding-top: 0;">
+    <!-- FILTER & SORT CONTROLS -->
+    <div class="filter-sort-bar" id="filterSortBar">
+      <div class="container">
+        <div class="filter-sort-inner">
+          <div class="filter-pills" id="filterPills" role="tablist" aria-label="Filter by category">
+            <button class="filter-pill active" data-category="all" role="tab" aria-selected="true">All Treasures</button>
+            <button class="filter-pill" data-category="white-tea" role="tab" aria-selected="false">White Tea</button>
+            <button class="filter-pill" data-category="botanical" role="tab" aria-selected="false">Botanical Infusion</button>
+            <button class="filter-pill" data-category="spice" role="tab" aria-selected="false">Highland Spice</button>
+            <button class="filter-pill" data-category="wellness" role="tab" aria-selected="false">Wellness</button>
+          </div>
+
+          <div class="sort-controls">
+            <span class="results-count"><span id="resultsCount">6</span> products</span>
+            <label for="sortSelect" class="sort-label">Sort:</label>
+            <select class="sort-select" id="sortSelect" aria-label="Sort products">
+              <option value="curated">Curated</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Highest Rated</option>
+              <option value="newest">Newest</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. PRODUCT GRID -->
+    <div class="container" style="padding-top: 2rem;">
+      <div class="collections-grid" id="collectionsGrid">
+
+        <!-- Product 1: Royal Silver Tips -->
+        <article class="coll-product-card" id="collProductSilverTips"
+          data-category="white-tea" data-price="48.00" data-rating="4.97" data-reviews="127" data-order="1" data-date="2024-01-15">
+          <div class="coll-product-image-wrap">
+            <span class="coll-product-badge badge-bestseller">Most Coveted</span>
+            <button class="coll-wishlist-btn" aria-label="Add Royal Silver Tips to Wishlist">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg>
+            </button>
+            <img src="assets/silver_tips.png" alt="Royal Silver Tips Ceylon White Tea Jar" loading="lazy">
+            <div class="coll-quick-add-overlay">
+              <button class="coll-quick-add-btn add-cart-trigger" data-id="gr-silvertips"
+                data-name="Royal Silver Tips" data-price="48.00" data-img="assets/silver_tips.png"
+                data-category="White Tea">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+                  <path d="M3 6h18" />
+                  <path d="M16 10a4 4 0 0 1-8 0" />
+                </svg>
+                Quick Add to Flight
+              </button>
+            </div>
+          </div>
+          <div class="coll-product-body">
+            <div class="coll-product-meta">
+              <span class="coll-product-category">Highland White Tea</span>
+              <div class="coll-product-rating">
+                <div class="coll-product-stars" aria-label="5 out of 5 stars">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <span class="coll-review-count">(127)</span>
+              </div>
+            </div>
+            <h2 class="coll-product-title">Royal Silver Tips</h2>
+            <p class="coll-product-desc">The ultimate tea connoisseur's prize. Entirely handmade, velvety white buds
+              dried solely in natural sunlight. Clean, floral, and packed with rare antioxidants.</p>
+            <div class="coll-product-footer">
+              <span class="coll-product-price"><span class="coll-price-currency">$</span>48.00</span>
+              <button class="coll-add-cart-btn add-cart-trigger" data-id="gr-silvertips"
+                data-name="Royal Silver Tips" data-price="48.00" data-img="assets/silver_tips.png"
+                data-category="White Tea" aria-label="Add Royal Silver Tips to Cart">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" x2="12" y1="5" y2="19" />
+                  <line x1="5" x2="19" y1="12" y2="12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 2: Wild Cinnamon Rose -->
+        <article class="coll-product-card" id="collProductCinnamon"
+          data-category="botanical" data-price="32.00" data-rating="4.90" data-reviews="89" data-order="2" data-date="2024-03-10">
+          <div class="coll-product-image-wrap">
+            <span class="coll-product-badge">Estate Blend</span>
+            <button class="coll-wishlist-btn" aria-label="Add Wild Cinnamon Rose to Wishlist">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg>
+            </button>
+            <img src="assets/cinnamon.png" alt="Wild Cinnamon & Rosebud Tea Tin" loading="lazy">
+            <div class="coll-quick-add-overlay">
+              <button class="coll-quick-add-btn add-cart-trigger" data-id="gr-cinnamon"
+                data-name="Wild Cinnamon Rose" data-price="32.00" data-img="assets/cinnamon.png"
+                data-category="Botanical Infusion">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+                  <path d="M3 6h18" />
+                  <path d="M16 10a4 4 0 0 1-8 0" />
+                </svg>
+                Quick Add to Flight
+              </button>
+            </div>
+          </div>
+          <div class="coll-product-body">
+            <div class="coll-product-meta">
+              <span class="coll-product-category">Botanical Infusion</span>
+              <div class="coll-product-rating">
+                <div class="coll-product-stars" aria-label="4.9 out of 5 stars">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <span class="coll-review-count">(89)</span>
+              </div>
+            </div>
+            <h2 class="coll-product-title">Wild Cinnamon Rose</h2>
+            <p class="coll-product-desc">Rare Ceylon "true" cinnamon bark, hand-ground and infused with organic pink
+              damask rosebuds. A sweet, warm, deeply comforting wood-and-floral sensory escape.</p>
+            <div class="coll-product-footer">
+              <span class="coll-product-price"><span class="coll-price-currency">$</span>32.00</span>
+              <button class="coll-add-cart-btn add-cart-trigger" data-id="gr-cinnamon"
+                data-name="Wild Cinnamon Rose" data-price="32.00" data-img="assets/cinnamon.png"
+                data-category="Botanical Infusion" aria-label="Add Wild Cinnamon Rose to Cart">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" x2="12" y1="5" y2="19" />
+                  <line x1="5" x2="19" y1="12" y2="12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 3: Royal Elixir Spa Oil -->
+        <article class="coll-product-card" id="collProductWellnessOil"
+          data-category="wellness" data-price="64.00" data-rating="5.00" data-reviews="214" data-order="3" data-date="2024-02-20">
+          <div class="coll-product-image-wrap">
+            <span class="coll-product-badge">Spa Grade</span>
+            <button class="coll-wishlist-btn" aria-label="Add Royal Elixir Spa Oil to Wishlist">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg>
+            </button>
+            <img src="assets/wellness_oil.png" alt="Royal Elixir Spa & Wellness Massage Oil Dropper" loading="lazy">
+            <div class="coll-quick-add-overlay">
+              <button class="coll-quick-add-btn add-cart-trigger" data-id="gr-wellnessoil"
+                data-name="Royal Elixir Spa Oil" data-price="64.00" data-img="assets/wellness_oil.png"
+                data-category="Wellness Elixir">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+                  <path d="M3 6h18" />
+                  <path d="M16 10a4 4 0 0 1-8 0" />
+                </svg>
+                Quick Add to Flight
+              </button>
+            </div>
+          </div>
+          <div class="coll-product-body">
+            <div class="coll-product-meta">
+              <span class="coll-product-category">Wellness Elixir</span>
+              <div class="coll-product-rating">
+                <div class="coll-product-stars" aria-label="5 out of 5 stars">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <span class="coll-review-count">(214)</span>
+              </div>
+            </div>
+            <h2 class="coll-product-title">Royal Elixir Spa Oil</h2>
+            <p class="coll-product-desc">Highly concentrated nourishing oil infused with active black tea polyphenols,
+              wild cinnamon essential extract, and cold-pressed organic jojoba. Restores skin and calms the mind.</p>
+            <div class="coll-product-footer">
+              <span class="coll-product-price"><span class="coll-price-currency">$</span>64.00</span>
+              <button class="coll-add-cart-btn add-cart-trigger" data-id="gr-wellnessoil"
+                data-name="Royal Elixir Spa Oil" data-price="64.00" data-img="assets/wellness_oil.png"
+                data-category="Wellness Elixir" aria-label="Add Royal Elixir Spa Oil to Cart">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" x2="12" y1="5" y2="19" />
+                  <line x1="5" x2="19" y1="12" y2="12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 4: Premium Ceylon Nutmeg -->
+        <article class="coll-product-card" id="collProductNutmeg"
+          data-category="spice" data-price="38.00" data-rating="4.95" data-reviews="76" data-order="4" data-date="2024-05-01">
+          <div class="coll-product-image-wrap">
+            <span class="coll-product-badge">Wild Harvest</span>
+            <button class="coll-wishlist-btn" aria-label="Add Premium Ceylon Nutmeg to Wishlist">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg>
+            </button>
+            <img src="assets/nutmeg.png" alt="Premium Ceylon Nutmeg Jar" loading="lazy">
+            <div class="coll-quick-add-overlay">
+              <button class="coll-quick-add-btn add-cart-trigger" data-id="gr-nutmeg"
+                data-name="Premium Ceylon Nutmeg" data-price="38.00" data-img="assets/nutmeg.png"
+                data-category="Highland Spice">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+                  <path d="M3 6h18" />
+                  <path d="M16 10a4 4 0 0 1-8 0" />
+                </svg>
+                Quick Add to Flight
+              </button>
+            </div>
+          </div>
+          <div class="coll-product-body">
+            <div class="coll-product-meta">
+              <span class="coll-product-category">Highland Spice</span>
+              <div class="coll-product-rating">
+                <div class="coll-product-stars" aria-label="5 out of 5 stars">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <span class="coll-review-count">(76)</span>
+              </div>
+            </div>
+            <h2 class="coll-product-title">Premium Ceylon Nutmeg</h2>
+            <p class="coll-product-desc">Sourced from the fertile mid-country heights of Matale. Hand-picked ripe
+              fruits, dark kernels wrapped in brilliant red mace, rich in myristicin and warming wellness compounds.</p>
+            <div class="coll-product-footer">
+              <span class="coll-product-price"><span class="coll-price-currency">$</span>38.00</span>
+              <button class="coll-add-cart-btn add-cart-trigger" data-id="gr-nutmeg"
+                data-name="Premium Ceylon Nutmeg" data-price="38.00" data-img="assets/nutmeg.png"
+                data-category="Highland Spice" aria-label="Add Premium Ceylon Nutmeg to Cart">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" x2="12" y1="5" y2="19" />
+                  <line x1="5" x2="19" y1="12" y2="12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 5: Royal Cloves -->
+        <article class="coll-product-card" id="collProductCloves"
+          data-category="spice" data-price="42.00" data-rating="4.88" data-reviews="53" data-order="5" data-date="2025-08-12">
+          <div class="coll-product-image-wrap">
+            <span class="coll-product-badge">Limited Release</span>
+            <button class="coll-wishlist-btn" aria-label="Add Royal Ceylon Cloves to Wishlist">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg>
+            </button>
+            <img src="assets/royal_cloves.png" alt="Royal Ceylon Cloves in Glass Jar" loading="lazy">
+            <div class="coll-quick-add-overlay">
+              <button class="coll-quick-add-btn add-cart-trigger" data-id="gr-cloves"
+                data-name="Royal Ceylon Cloves" data-price="42.00" data-img="assets/royal_cloves.png"
+                data-category="Highland Spice">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+                  <path d="M3 6h18" />
+                  <path d="M16 10a4 4 0 0 1-8 0" />
+                </svg>
+                Quick Add to Flight
+              </button>
+            </div>
+          </div>
+          <div class="coll-product-body">
+            <div class="coll-product-meta">
+              <span class="coll-product-category">Highland Spice</span>
+              <div class="coll-product-rating">
+                <div class="coll-product-stars" aria-label="4.9 out of 5 stars">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <span class="coll-review-count">(53)</span>
+              </div>
+            </div>
+            <h2 class="coll-product-title">Royal Ceylon Cloves</h2>
+            <p class="coll-product-desc">Hand-picked from ancient clove trees in the tropical lowlands. Intensely
+              aromatic, oil-rich whole flower buds prized for their potent eugenol content and warming, analgesic
+              properties.</p>
+            <div class="coll-product-footer">
+              <span class="coll-product-price"><span class="coll-price-currency">$</span>42.00</span>
+              <button class="coll-add-cart-btn add-cart-trigger" data-id="gr-cloves"
+                data-name="Royal Ceylon Cloves" data-price="42.00" data-img="assets/royal_cloves.png"
+                data-category="Highland Spice" aria-label="Add Royal Ceylon Cloves to Cart">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" x2="12" y1="5" y2="19" />
+                  <line x1="5" x2="19" y1="12" y2="12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 6: Wild Pepper -->
+        <article class="coll-product-card" id="collProductPepper"
+          data-category="spice" data-price="36.00" data-rating="4.92" data-reviews="68" data-order="6" data-date="2025-09-01">
+          <div class="coll-product-image-wrap">
+            <span class="coll-product-badge">New Arrival</span>
+            <button class="coll-wishlist-btn" aria-label="Add Wild Ceylon Pepper to Wishlist">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg>
+            </button>
+            <img src="assets/wild_pepper.png" alt="Wild Ceylon Pepper in Glass Jar" loading="lazy">
+            <div class="coll-quick-add-overlay">
+              <button class="coll-quick-add-btn add-cart-trigger" data-id="gr-pepper"
+                data-name="Wild Ceylon Pepper" data-price="36.00" data-img="assets/wild_pepper.png"
+                data-category="Highland Spice">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+                  <path d="M3 6h18" />
+                  <path d="M16 10a4 4 0 0 1-8 0" />
+                </svg>
+                Quick Add to Flight
+              </button>
+            </div>
+          </div>
+          <div class="coll-product-body">
+            <div class="coll-product-meta">
+              <span class="coll-product-category">Highland Spice</span>
+              <div class="coll-product-rating">
+                <div class="coll-product-stars" aria-label="4.9 out of 5 stars">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <span class="coll-review-count">(68)</span>
+              </div>
+            </div>
+            <h2 class="coll-product-title">Wild Ceylon Pepper</h2>
+            <p class="coll-product-desc">Harvested from ancient climbing vines in Matale's highland forests.
+              Exceptionally high piperine content delivers piercing, complex heat with woodsy citrus notes and potent
+              anti-inflammatory benefits.</p>
+            <div class="coll-product-footer">
+              <span class="coll-product-price"><span class="coll-price-currency">$</span>36.00</span>
+              <button class="coll-add-cart-btn add-cart-trigger" data-id="gr-pepper"
+                data-name="Wild Ceylon Pepper" data-price="36.00" data-img="assets/wild_pepper.png"
+                data-category="Highland Spice" aria-label="Add Wild Ceylon Pepper to Cart">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" x2="12" y1="5" y2="19" />
+                  <line x1="5" x2="19" y1="12" y2="12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </main>
+
+
+  <!-- ═══ TRUST BAR ═══ -->
+  <section class="trust-bar" aria-label="Trust and value propositions">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+              <path d="m9 12 2 2 4-4" />
+            </svg>
+          </div>
+          <div>
+            <div class="trust-label">100% Single-Origin</div>
+            <div class="trust-sublabel">Every product from Ceylon's highlands</div>
+          </div>
+        </div>
+
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4" />
+              <path d="M4 6v12c0 1.1.9 2 2 2h14v-4" />
+              <path d="M18 12a2 2 0 0 0 0 4h4v-4z" />
+            </svg>
+          </div>
+          <div>
+            <div class="trust-label">Complimentary Shipping</div>
+            <div class="trust-sublabel">Worldwide on orders above $75</div>
+          </div>
+        </div>
+
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              <path d="m9 12 2 2 4-4" />
+            </svg>
+          </div>
+          <div>
+            <div class="trust-label">Authenticity Guaranteed</div>
+            <div class="trust-sublabel">Hand-signed certificate of origin</div>
+          </div>
+        </div>
+
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 14 4 9 9 4" />
+              <path d="M20 20v-7a4 4 0 0 0-4-4H4" />
+            </svg>
+          </div>
+          <div>
+            <div class="trust-label">Graceful Returns</div>
+            <div class="trust-sublabel">30-day no-questions-asked policy</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ 7. CROSS-SELL / "YOU MAY ALSO LOVE" ═══ -->
+  <section class="crosssell-section">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label" style="display:inline-flex;">Continue Your Journey</span>
+        <h2 class="story-title" style="font-size:2.4rem; margin-top:1rem;">You May Also Love</h2>
+      </div>
+
+      <div class="crosssell-grid">
+        <div class="crosssell-card">
+          <span class="crosssell-icon">✨</span>
+          <h3 class="crosssell-title">Find Your Perfect Match</h3>
+          <p class="crosssell-desc">Unsure which treasure matches your frequency? Take our 30-second Sensory Matcher
+            quiz for a personalised recommendation.</p>
+          <a href="index.html#selector" class="crosssell-link">
+            Take the Quiz
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="crosssell-card">
+          <span class="crosssell-icon">📖</span>
+          <h3 class="crosssell-title">The Sanctuary Chronicles</h3>
+          <p class="crosssell-desc">Explore deep-dive stories on ancient harvesting rituals, botanical wellness
+            science, and mindful self-care guides from our mountain sanctuary.</p>
+          <a href="sanctuary-chronicles.html" class="crosssell-link">
+            Read Chronicles
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="crosssell-card">
+          <span class="crosssell-icon">🎁</span>
+          <h3 class="crosssell-title">Corporate Gifting</h3>
+          <p class="crosssell-desc">Elevate your next corporate event or client gift with a bespoke grá CEYLON tasting
+            flight. Custom branding and white-glove delivery available.</p>
+          <a href="mailto:curator@graceylon.com" class="crosssell-link">
+            Enquire Now
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- --- FOOTER --- -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <img src="assets/logo.png" alt="grá CEYLON Logo" class="footer-brand-logo" id="footerLogo">
+          <p class="footer-tagline">Artisanal, high-altitude single estate Ceylon treasures built on love and absolute
+            pure heritage.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="collections.html">Collections</a></li>
+            <li><a href="index.html#story">Our Heritage</a></li>
+            <li><a href="index.html#selector">Sensory Selector</a></li>
+            <li><a href="index.html#testimonials">Experiences</a></li>
+            <li><a href="sanctuary-chronicles.html">The Sanctuary Chronicles</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Our Treasures</h4>
+          <ul class="footer-links">
+            <li><a href="collections.html">Royal Silver Tips</a></li>
+            <li><a href="collections.html">Wild Cinnamon Rose</a></li>
+            <li><a href="collections.html">Royal Elixir Spa Oil</a></li>
+            <li><a href="collections.html">Premium Ceylon Nutmeg</a></li>
+            <li><a href="#">Corporate Gifting</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <ul class="footer-links">
+            <li><a href="#">curator@graceylon.com</a></li>
+            <li><a href="#">Spas &amp; Hospitality</a></li>
+            <li><a href="#">Estate Headquarters, Ella</a></li>
+            <li><a href="#">Support Center</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2026 grá CEYLON. Sourced globally, packaged with love. All rights reserved.</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/gra_ceylon/" target="_blank" rel="noopener noreferrer"
+            aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+            </svg></a>
+          <a href="https://www.facebook.com/graceylonproducts" target="_blank" rel="noopener noreferrer"
+            aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg></a>
+          <a href="#" aria-label="Pinterest"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path
+                d="M8 22a8.62 8.62 0 0 1-5.18-1.58c.24-1.39.63-3.13.91-4.44C3.12 14.88 2 12.83 2 10.15 2 5.56 5.86 2 10.75 2C15.64 2 19 5.39 19 9.8c0 4.96-2.58 7.84-5.75 7.84-1.05 0-2.03-.54-2.37-1.19l-.98 3.72c-.36 1.34-1.07 2.68-1.63 3.6A8.75 8.75 0 0 0 8 22z" />
+            </svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- --- SHOPPING CART DRAWER --- -->
+  <div class="cart-overlay" id="cartOverlay" role="dialog" aria-modal="true" aria-labelledby="cartDrawerTitle">
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <h3 class="cart-header-title" id="cartDrawerTitle">Your Tasting Flight</h3>
+        <button class="cart-close-btn" id="cartCloseBtn" aria-label="Close Shopping Cart">&times;</button>
+      </div>
+
+      <!-- Cart Items list -->
+      <div class="cart-items" id="cartItemsContainer">
+        <div class="cart-empty-message" id="cartEmptyMessage">
+          <img src="assets/logo.png" alt="grá CEYLON Logo" class="cart-empty-logo">
+          <p>Your flight is currently empty.</p>
+          <p style="font-size: 0.75rem; margin-top: 0.5rem; color: hsl(var(--text-muted));">Begin your love affair with
+            Ceylon by adding one of our signature treasures.</p>
+        </div>
+      </div>
+
+      <!-- Cart Footer summary -->
+      <div class="cart-footer">
+        <!-- Contact Email Field for Custom Quote Request -->
+        <div class="cart-quote-email-group">
+          <label for="cartQuoteEmail" class="quote-email-label">Your Contact Email</label>
+          <input type="email" id="cartQuoteEmail" class="quote-email-input"
+            placeholder="Enter your private email address" required>
+        </div>
+
+        <button class="btn btn-primary checkout-btn" id="checkoutBtn">Request Quote</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- --- TOAST NOTIFICATIONS --- -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- --- CHECKOUT MODAL (SUCCESS) --- -->
+  <div class="modal-overlay" id="checkoutModalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="checkout-modal glass-panel">
+      <img src="assets/logo.png" alt="grá CEYLON Logo" class="modal-brand-logo"
+        style="height: 50px; width: auto; margin: 0 auto 2.2rem auto; display: block; opacity: 0.95;">
+      <div class="success-icon-animation">✓</div>
+      <h3 class="modal-title" id="modalTitle">Order Succeeded</h3>
+      <p class="modal-desc">Thank you for embarking on this sensory journey. Your exclusive artisanal treasures are
+        being prepared. A private dispatch email will reach your inbox shortly.</p>
+      <button class="btn btn-primary" id="modalCloseBtn">Return to Sanctuary</button>
+    </div>
+  </div>
+
+
+  <!-- ═══ 8. STICKY MOBILE BAR ═══ -->
+  <div class="mobile-sticky-bar" id="mobileStickyBar">
+    <div class="mobile-sticky-inner">
+      <button class="mobile-filter-btn" id="mobileFilterOpenBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="4" x2="20" y1="21" y2="21" />
+          <line x1="4" x2="20" y1="14" y2="14" />
+          <line x1="4" x2="20" y1="7" y2="7" />
+          <line x1="10" x2="10" y1="4" y2="10" />
+          <line x1="16" x2="16" y1="11" y2="17" />
+          <line x1="8" x2="8" y1="18" y2="24" />
+        </svg>
+        Filter & Sort
+      </button>
+      <button class="mobile-cart-btn" id="mobileCartBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+          <path d="M3 6h18" />
+          <path d="M16 10a4 4 0 0 1-8 0" />
+        </svg>
+        Cart
+        <span class="mobile-cart-badge" id="mobileCartBadge">0</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Filter Drawer -->
+  <div class="mobile-filter-drawer-overlay" id="mobileFilterOverlay">
+    <div class="mobile-filter-drawer">
+      <div class="mobile-filter-header">
+        <h3 class="mobile-filter-title">Filter & Sort</h3>
+        <button class="mobile-filter-close" id="mobileFilterCloseBtn">&times;</button>
+      </div>
+
+      <div class="mobile-filter-group">
+        <h4 class="mobile-filter-group-title">Category</h4>
+        <div class="mobile-filter-options" id="mobileFilterOptions">
+          <button class="mobile-filter-pill active" data-category="all">All</button>
+          <button class="mobile-filter-pill" data-category="white-tea">White Tea</button>
+          <button class="mobile-filter-pill" data-category="botanical">Botanical</button>
+          <button class="mobile-filter-pill" data-category="spice">Spice</button>
+          <button class="mobile-filter-pill" data-category="wellness">Wellness</button>
+        </div>
+      </div>
+
+      <div class="mobile-filter-group">
+        <h4 class="mobile-filter-group-title">Sort By</h4>
+        <div class="mobile-filter-options" id="mobileSortOptions">
+          <button class="mobile-filter-pill active" data-sort="curated">Curated</button>
+          <button class="mobile-filter-pill" data-sort="price-low">Price ↑</button>
+          <button class="mobile-filter-pill" data-sort="price-high">Price ↓</button>
+          <button class="mobile-filter-pill" data-sort="rating">Top Rated</button>
+          <button class="mobile-filter-pill" data-sort="newest">Newest</button>
+        </div>
+      </div>
+
+      <button class="btn btn-primary mobile-filter-apply" id="mobileFilterApplyBtn">Apply Filters</button>
+    </div>
+  </div>
+
+
+  <!-- Shared Javascript Core Logic (cart, header, reveals, toast) -->
+  <script src="index.js"></script>
+
+  <!-- Collections Page Interactions -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      /* ==========================================================================
+         1. FILTER & SORT LOGIC
+         ========================================================================== */
+      const grid = document.getElementById('collectionsGrid');
+      const cards = Array.from(grid.querySelectorAll('.coll-product-card'));
+      const filterPills = document.querySelectorAll('#filterPills .filter-pill');
+      const sortSelect = document.getElementById('sortSelect');
+      const resultsCountEl = document.getElementById('resultsCount');
+      const visibleCountEl = document.getElementById('visibleCount');
+
+      let activeCategory = 'all';
+      let activeSort = 'curated';
+
+      function applyFiltersAndSort() {
+        // Filter
+        let visibleCards = cards.map(card => {
+          const cat = card.dataset.category;
+          const isVisible = activeCategory === 'all' || cat === activeCategory;
+          return { card, isVisible };
+        });
+
+        // Sort visible cards
+        const sortedVisible = visibleCards
+          .filter(c => c.isVisible)
+          .map(c => c.card);
+
+        sortedVisible.sort((a, b) => {
+          switch (activeSort) {
+            case 'price-low':
+              return parseFloat(a.dataset.price) - parseFloat(b.dataset.price);
+            case 'price-high':
+              return parseFloat(b.dataset.price) - parseFloat(a.dataset.price);
+            case 'rating':
+              return parseFloat(b.dataset.rating) - parseFloat(a.dataset.rating);
+            case 'newest':
+              return new Date(b.dataset.date) - new Date(a.dataset.date);
+            case 'curated':
+            default:
+              return parseInt(a.dataset.order) - parseInt(b.dataset.order);
+          }
+        });
+
+        // Hide all first
+        cards.forEach(card => {
+          card.classList.add('filter-hidden');
+          card.style.animation = 'none';
+        });
+
+        // Show and reorder visible cards
+        sortedVisible.forEach((card, i) => {
+          card.classList.remove('filter-hidden');
+          card.style.animation = 'none';
+          // Trigger reflow to restart animation
+          card.offsetHeight;
+          card.style.animationDelay = `${i * 0.08}s`;
+          card.style.animation = `cardFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) ${i * 0.08}s both`;
+          grid.appendChild(card);
+        });
+
+        // Update counts
+        const count = sortedVisible.length;
+        resultsCountEl.textContent = count;
+        visibleCountEl.textContent = count;
+      }
+
+      // Desktop filter pill clicks
+      filterPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          filterPills.forEach(p => {
+            p.classList.remove('active');
+            p.setAttribute('aria-selected', 'false');
+          });
+          pill.classList.add('active');
+          pill.setAttribute('aria-selected', 'true');
+          activeCategory = pill.dataset.category;
+          applyFiltersAndSort();
+
+          // Sync mobile pills
+          document.querySelectorAll('#mobileFilterOptions .mobile-filter-pill').forEach(mp => {
+            mp.classList.toggle('active', mp.dataset.category === activeCategory);
+          });
+        });
+      });
+
+      // Sort select change
+      sortSelect.addEventListener('change', () => {
+        activeSort = sortSelect.value;
+        applyFiltersAndSort();
+
+        // Sync mobile sort pills
+        document.querySelectorAll('#mobileSortOptions .mobile-filter-pill').forEach(mp => {
+          mp.classList.toggle('active', mp.dataset.sort === activeSort);
+        });
+      });
+
+
+      /* ==========================================================================
+         2. STICKY FILTER BAR DETECTION
+         ========================================================================== */
+      const filterSortBar = document.getElementById('filterSortBar');
+      if (filterSortBar) {
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            filterSortBar.classList.toggle('stuck', !entry.isIntersecting);
+          },
+          { threshold: 1, rootMargin: '-110px 0px 0px 0px' }
+        );
+
+        // Create a sentinel element just above the filter bar
+        const sentinel = document.createElement('div');
+        sentinel.style.height = '1px';
+        sentinel.style.position = 'absolute';
+        sentinel.style.top = '0';
+        sentinel.style.left = '0';
+        sentinel.style.width = '100%';
+        sentinel.style.pointerEvents = 'none';
+        filterSortBar.style.position = 'sticky';
+        filterSortBar.parentElement.insertBefore(sentinel, filterSortBar);
+        observer.observe(sentinel);
+      }
+
+
+      /* ==========================================================================
+         3. WISHLIST TOGGLE (visual only)
+         ========================================================================== */
+      document.querySelectorAll('.coll-wishlist-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          btn.classList.toggle('wishlisted');
+
+          const isWishlisted = btn.classList.contains('wishlisted');
+          const heartSvg = btn.querySelector('svg');
+          if (isWishlisted) {
+            heartSvg.setAttribute('fill', 'currentColor');
+            if (typeof showToast === 'function') showToast('Added to your Wishlist', 'success');
+          } else {
+            heartSvg.setAttribute('fill', 'none');
+            if (typeof showToast === 'function') showToast('Removed from Wishlist', 'info');
+          }
+        });
+      });
+
+
+      /* ==========================================================================
+         4. MOBILE FILTER DRAWER
+         ========================================================================== */
+      const mobileFilterOverlay = document.getElementById('mobileFilterOverlay');
+      const mobileFilterOpenBtn = document.getElementById('mobileFilterOpenBtn');
+      const mobileFilterCloseBtn = document.getElementById('mobileFilterCloseBtn');
+      const mobileFilterApplyBtn = document.getElementById('mobileFilterApplyBtn');
+      const mobileCartBtn = document.getElementById('mobileCartBtn');
+
+      let mobileCategory = 'all';
+      let mobileSort = 'curated';
+
+      function openMobileFilter() {
+        mobileFilterOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMobileFilter() {
+        mobileFilterOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      if (mobileFilterOpenBtn) mobileFilterOpenBtn.addEventListener('click', openMobileFilter);
+      if (mobileFilterCloseBtn) mobileFilterCloseBtn.addEventListener('click', closeMobileFilter);
+      if (mobileFilterOverlay) {
+        mobileFilterOverlay.addEventListener('click', (e) => {
+          if (e.target === mobileFilterOverlay) closeMobileFilter();
+        });
+      }
+
+      // Mobile filter pill clicks
+      document.querySelectorAll('#mobileFilterOptions .mobile-filter-pill').forEach(pill => {
+        pill.addEventListener('click', () => {
+          document.querySelectorAll('#mobileFilterOptions .mobile-filter-pill').forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+          mobileCategory = pill.dataset.category;
+        });
+      });
+
+      // Mobile sort pill clicks
+      document.querySelectorAll('#mobileSortOptions .mobile-filter-pill').forEach(pill => {
+        pill.addEventListener('click', () => {
+          document.querySelectorAll('#mobileSortOptions .mobile-filter-pill').forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+          mobileSort = pill.dataset.sort;
+        });
+      });
+
+      // Apply button
+      if (mobileFilterApplyBtn) {
+        mobileFilterApplyBtn.addEventListener('click', () => {
+          activeCategory = mobileCategory;
+          activeSort = mobileSort;
+
+          // Sync desktop controls
+          filterPills.forEach(p => {
+            p.classList.toggle('active', p.dataset.category === activeCategory);
+            p.setAttribute('aria-selected', p.dataset.category === activeCategory ? 'true' : 'false');
+          });
+          sortSelect.value = activeSort;
+
+          applyFiltersAndSort();
+          closeMobileFilter();
+        });
+      }
+
+      // Mobile cart button opens drawer
+      if (mobileCartBtn) {
+        mobileCartBtn.addEventListener('click', () => {
+          if (typeof openCartDrawer === 'function') openCartDrawer();
+          else {
+            const overlay = document.getElementById('cartOverlay');
+            if (overlay) {
+              overlay.classList.add('active');
+              document.body.style.overflow = 'hidden';
+            }
+          }
+        });
+      }
+
+
+      /* ==========================================================================
+         5. MOBILE CART BADGE SYNC
+         ========================================================================== */
+      function syncMobileCartBadge() {
+        const mobileCartBadge = document.getElementById('mobileCartBadge');
+        const cartCountEl = document.getElementById('cartCount');
+        if (mobileCartBadge && cartCountEl) {
+          mobileCartBadge.textContent = cartCountEl.textContent;
+        }
+      }
+
+      // Observe cart count changes
+      const cartCountNode = document.getElementById('cartCount');
+      if (cartCountNode) {
+        const cartObserver = new MutationObserver(syncMobileCartBadge);
+        cartObserver.observe(cartCountNode, { childList: true, characterData: true, subtree: true });
+        syncMobileCartBadge(); // Initial sync
+      }
+
+
+      /* ==========================================================================
+         6. COLLECTIONS-SPECIFIC ADD-TO-CART HOOKS
+         ========================================================================== */
+      // The Quick Add buttons and + buttons need to connect to the shared cart system
+      document.querySelectorAll('.coll-quick-add-btn.add-cart-trigger, .coll-add-cart-btn.add-cart-trigger').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const target = e.currentTarget;
+          const { id, name, price, img, category } = target.dataset;
+
+          // Use the shared addToCart function from index.js
+          if (typeof addToCart === 'function') {
+            addToCart(id, name, price, img, category);
+          } else {
+            // Fallback: manual localStorage manipulation
+            let cart = [];
+            const savedCart = localStorage.getItem('graceylon_cart');
+            if (savedCart) {
+              try { cart = JSON.parse(savedCart); } catch (e) { cart = []; }
+            }
+
+            const existingItem = cart.find(item => item.id === id);
+            if (existingItem) {
+              existingItem.quantity += 1;
+            } else {
+              cart.push({ id, name, price: parseFloat(price), img, category, quantity: 1 });
+            }
+
+            localStorage.setItem('graceylon_cart', JSON.stringify(cart));
+
+            // Update cart count display
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const countEl = document.getElementById('cartCount');
+            if (countEl) {
+              countEl.textContent = totalItems;
+              countEl.style.display = totalItems > 0 ? 'flex' : 'none';
+            }
+
+            if (typeof showToast === 'function') {
+              showToast(`Added ${name} to your tasting flight`, 'success');
+            }
+          }
+        });
+      });
+
+    });
+  </script>
+
+</body>
+
+</html>
