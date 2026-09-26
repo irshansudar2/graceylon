@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>True Ceylon Cinnamon Quills – Alba Grade | grá CEYLON</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Direct from local Sri Lankan estates: Alba-grade Ceylon cinnamon quills. Exceptionally thin, flaky layers, naturally sweet warm aroma, delicate citrus notes, and naturally low coumarin.">
+  <meta name="keywords"
+    content="Ceylon Cinnamon, Alba Grade, True Cinnamon, Cinnamomum verum, Ceylon Cinnamon Quills, Low Coumarin Cinnamon, Sri Lanka Spices">
+  <meta name="author" content="grá CEYLON">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="True Ceylon Cinnamon Quills – Alba Grade | grá CEYLON">
+  <meta property="og:description"
+    content="Authentic Alba-grade Ceylon cinnamon quills. Slender, layered, naturally sweet bark with subtle citrus notes and naturally low coumarin.">
+  <meta property="og:image" content="assets/cinnamon.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon 512x512.png">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="index.css">
+
+  <!-- Product Page Specific Styles -->
+  <style>
+    /* ─── TOP ANNOUNCEMENT BAR ─── */
+    .announcement-bar {
+      background: hsl(var(--bg-secondary));
+      border-bottom: 1px solid var(--border-glass);
+      color: hsl(var(--text-secondary));
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.65rem 1rem;
+      text-align: center;
+      position: relative;
+      z-index: 101;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    .announcement-bar strong {
+      color: hsl(var(--accent-gold, 43, 74%, 66%));
+      font-weight: 600;
+    }
+
+    /* ─── BREADCRUMBS ─── */
+    .product-breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 1.5rem 0 0.5rem 0;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: hsl(var(--text-muted));
+    }
+
+    .product-breadcrumbs a {
+      color: hsl(var(--text-muted));
+      transition: var(--transition-fast);
+    }
+
+    .product-breadcrumbs a:hover {
+      color: hsl(var(--accent-cyan));
+    }
+
+    .breadcrumb-sep {
+      opacity: 0.4;
+      font-size: 0.6rem;
+    }
+
+    .breadcrumb-current {
+      color: hsl(var(--text-primary));
+      font-weight: 600;
+    }
+
+    /* ─── PRODUCT HERO / BUY BOX SECTION ─── */
+    .product-main-section {
+      padding: 2rem 0 5rem 0;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+
+    /* ─── GALLERY ─── */
+    .gallery-container {
+      position: sticky;
+      top: 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .gallery-main-view {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: hsl(var(--bg-secondary));
+      border: 1px solid var(--border-glass);
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gallery-main-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-main-view:hover .gallery-main-img {
+      transform: scale(1.03);
+    }
+
+    .gallery-caption-tag {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      right: 1rem;
+      background: rgba(10, 10, 10, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-glass);
+      padding: 0.6rem 1rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.72rem;
+      color: hsl(var(--text-secondary));
+      line-height: 1.4;
+    }
+
+    .gallery-thumbs {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.75rem;
+    }
+
+    .gallery-thumb-btn {
+      background: hsl(var(--bg-secondary));
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-sm);
+      padding: 0;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      cursor: pointer;
+      opacity: 0.65;
+      transition: var(--transition-fast);
+      position: relative;
+    }
+
+    .gallery-thumb-btn:hover,
+    .gallery-thumb-btn.active {
+      opacity: 1;
+      border-color: hsl(var(--text-primary));
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
+    }
+
+    .gallery-thumb-btn img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .thumb-label {
+      position: absolute;
+      bottom: 2px;
+      left: 2px;
+      right: 2px;
+      font-size: 0.55rem;
+      background: rgba(0, 0, 0, 0.7);
+      text-align: center;
+      padding: 2px 0;
+      color: hsl(var(--text-primary));
+      letter-spacing: 0.04em;
+    }
+
+    /* ─── BUY BOX ─── */
+    .buy-box {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+    }
+
+    .product-grade-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      width: fit-content;
+      padding: 0.35rem 0.85rem;
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-glass);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: hsl(var(--accent-gold, 43, 74%, 66%));
+      font-weight: 600;
+    }
+
+    .product-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      line-height: 1.2;
+      color: hsl(var(--text-primary));
+      font-weight: 500;
+    }
+
+    .product-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+    }
+
+    .product-price {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: hsl(var(--text-primary));
+      letter-spacing: -0.02em;
+    }
+
+    .product-price-unit {
+      font-size: 0.8rem;
+      color: hsl(var(--text-muted));
+    }
+
+    .product-short-desc {
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: hsl(var(--text-secondary));
+    }
+
+    /* Trust Signal Badges */
+    .trust-signals-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      padding: 1.1rem 0;
+      border-top: 1px solid var(--border-glass);
+      border-bottom: 1px solid var(--border-glass);
+    }
+
+    .trust-signal-item {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 0.78rem;
+      color: hsl(var(--text-secondary));
+      font-weight: 500;
+      letter-spacing: 0.03em;
+    }
+
+    .trust-signal-icon {
+      color: hsl(var(--accent-cyan));
+      flex-shrink: 0;
+    }
+
+    /* Variant Selector */
+    .variant-section {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .variant-label-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: hsl(var(--text-secondary));
+    }
+
+    .variant-options-row {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .variant-btn {
+      flex: 1;
+      padding: 0.85rem 1.25rem;
+      background: hsl(var(--bg-secondary));
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-sm);
+      color: hsl(var(--text-primary));
+      font-family: var(--font-sans);
+      font-size: 0.88rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition-fast);
+      text-align: center;
+    }
+
+    .variant-btn:hover {
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .variant-btn.active {
+      border-color: hsl(var(--text-primary));
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.08);
+    }
+
+    .variant-note {
+      font-size: 0.72rem;
+      line-height: 1.45;
+      color: hsl(var(--text-muted));
+    }
+
+    /* Purchase Action & Microcopy */
+    .purchase-actions-row {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      margin-top: 0.5rem;
+    }
+
+    .qty-picker {
+      display: flex;
+      align-items: center;
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-sm);
+      background: hsl(var(--bg-secondary));
+      height: 48px;
+    }
+
+    .qty-btn {
+      width: 40px;
+      height: 100%;
+      background: none;
+      border: none;
+      color: hsl(var(--text-primary));
+      cursor: pointer;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition-fast);
+    }
+
+    .qty-btn:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .qty-value {
+      width: 36px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: hsl(var(--text-primary));
+      font-weight: 500;
+    }
+
+    .primary-add-btn {
+      flex: 1;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      background: white;
+      color: black;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .primary-add-btn:hover {
+      background: hsl(var(--text-secondary));
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+      transform: translateY(-1px);
+    }
+
+    .microcopy-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      font-size: 0.75rem;
+      line-height: 1.5;
+      color: hsl(var(--text-muted));
+    }
+
+    .microcopy-line {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .microcopy-icon {
+      color: hsl(var(--accent-cyan));
+      flex-shrink: 0;
+    }
+
+    /* Cross-sell Container */
+    .cross-sell-panel {
+      margin-top: 0.75rem;
+      padding: 1rem 1.2rem;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px dashed var(--border-glass);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .cross-sell-text {
+      font-size: 0.8rem;
+      color: hsl(var(--text-secondary));
+      line-height: 1.4;
+    }
+
+    .cross-sell-add-btn {
+      padding: 0.45rem 0.9rem;
+      background: transparent;
+      border: 1px solid var(--border-glass);
+      border-radius: 4px;
+      color: hsl(var(--text-primary));
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: var(--transition-fast);
+      white-space: nowrap;
+    }
+
+    .cross-sell-add-btn:hover {
+      border-color: white;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    /* ─── VALUE PROPOSITION: COMPARISON SECTION ─── */
+    .comparison-section {
+      padding: 6rem 0;
+      background: hsl(var(--bg-secondary));
+      border-top: 1px solid var(--border-glass);
+      border-bottom: 1px solid var(--border-glass);
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .comparison-image-card {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-glass);
+      aspect-ratio: 4 / 3;
+      background: hsl(var(--bg-primary));
+    }
+
+    .comparison-image-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .comparison-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: hsl(var(--accent-cyan));
+      border: 1px solid var(--border-glass);
+    }
+
+    .comparison-content h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 2.8vw, 2.3rem);
+      line-height: 1.25;
+      margin-bottom: 1.5rem;
+      color: hsl(var(--text-primary));
+    }
+
+    .comparison-bullets {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .comparison-bullet-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: hsl(var(--text-secondary));
+    }
+
+    .comparison-bullet-bullet {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: hsl(var(--accent-gold, 43, 74%, 66%));
+      margin-top: 0.55rem;
+      flex-shrink: 0;
+    }
+
+    .comparison-bullet-item strong {
+      color: hsl(var(--text-primary));
+    }
+
+    /* ─── SENSORY STORY ACCORDIONS ─── */
+    .sensory-story-section {
+      padding: 6rem 0;
+    }
+
+    .sensory-story-container {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .section-eyebrow {
+      text-align: center;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: hsl(var(--accent-gold, 43, 74%, 66%));
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      text-align: center;
+      margin-bottom: 3rem;
+      color: hsl(var(--text-primary));
+    }
+
+    .accordion-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .accordion-item {
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.015);
+      transition: var(--transition-smooth);
+      overflow: hidden;
+    }
+
+    .accordion-item.active {
+      border-color: rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.035);
+    }
+
+    .accordion-header {
+      width: 100%;
+      padding: 1.4rem 1.6rem;
+      background: transparent;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: hsl(var(--text-primary));
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      text-align: left;
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+
+    .accordion-header:hover {
+      color: hsl(var(--accent-cyan));
+    }
+
+    .accordion-chevron {
+      transition: transform 0.3s ease;
+      color: hsl(var(--text-muted));
+    }
+
+    .accordion-item.active .accordion-chevron {
+      transform: rotate(180deg);
+      color: hsl(var(--text-primary));
+    }
+
+    .accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .accordion-content {
+      padding: 0 1.6rem 1.6rem 1.6rem;
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: hsl(var(--text-secondary));
+    }
+
+    .accordion-content ul {
+      margin-top: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .accordion-content li {
+      position: relative;
+      padding-left: 1.25rem;
+    }
+
+    .accordion-content li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: hsl(var(--accent-cyan));
+    }
+
+    /* ─── FAQS SECTION ─── */
+    .faq-section {
+      padding: 5rem 0;
+      background: hsl(var(--bg-secondary));
+      border-top: 1px solid var(--border-glass);
+    }
+
+    .faq-container {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .faq-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .faq-card {
+      padding: 1.8rem;
+      border-radius: var(--radius-sm);
+      background: hsl(var(--bg-primary));
+      border: 1px solid var(--border-glass);
+    }
+
+    .faq-card h3 {
+      font-family: var(--font-sans);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: hsl(var(--text-primary));
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    .faq-card p {
+      font-size: 0.9rem;
+      line-height: 1.65;
+      color: hsl(var(--text-secondary));
+    }
+
+    /* ─── MOBILE STICKY PURCHASE BAR ─── */
+    .mobile-sticky-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(10, 10, 10, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-top: 1px solid var(--border-glass);
+      padding: 0.85rem 1.2rem;
+      box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .mobile-sticky-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .mobile-sticky-text {
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: hsl(var(--text-primary));
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .mobile-sticky-btn {
+      padding: 0.65rem 1.25rem;
+      background: white;
+      color: black;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .product-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .gallery-container {
+        position: static;
+      }
+
+      .comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .mobile-sticky-bar {
+        display: block;
+      }
+
+      body {
+        padding-bottom: 75px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- --- 1. TOP BAR — ANNOUNCEMENT --- -->
+  <div class="announcement-bar" id="announcementBar" role="region" aria-label="Announcement">
+    <span>Enjoy free standard shipping on orders over <strong>[FREE_SHIPPING_THRESHOLD]</strong></span>
+  </div>
+
+  <!-- --- HEADER / NAVIGATION --- -->
+  <header class="header" id="mainHeader">
+    <div class="container">
+      <div class="logo-wrapper">
+        <a href="index.html" aria-label="grá CEYLON Home">
+          <img src="assets/logo.png" alt="grá CEYLON Logo" class="brand-logo-svg" id="headerLogo">
+        </a>
+      </div>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html#story" class="nav-link" id="navLinkStory">Our Heritage</a></li>
+          <li><a href="collections.html" class="nav-link" id="navLinkCollections">Collections</a></li>
+          <li><a href="index.html#selector" class="nav-link" id="navLinkQuiz">Sensory Matcher</a></li>
+          <li><a href="index.html#testimonials" class="nav-link" id="navLinkReviews">Experiences</a></li>
+          <li><a href="sanctuary-chronicles.html" class="nav-link" id="navLinkBlog">The Sanctuary Chronicles</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="cart-icon-btn" id="cartOpenBtn" aria-label="Open Shopping Cart" aria-haspopup="dialog">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+            <path d="M3 6h18" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation menu"
+          aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="menuIconOpen">
+            <line x1="4" x2="20" y1="12" y2="12" />
+            <line x1="4" x2="20" y1="6" y2="6" />
+            <line x1="4" x2="20" y1="18" y2="18" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="menuIconClose"
+            style="display:none;">
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- --- MAIN PRODUCT SECTION --- -->
+  <main class="product-main-section">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <nav class="product-breadcrumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="collections.html">Collections</a>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">True Ceylon Cinnamon Quills – Alba Grade</span>
+      </nav>
+
+      <div class="product-grid">
+
+        <!-- --- 3. ABOVE THE FOLD — IMAGE GALLERY --- -->
+        <div class="gallery-container">
+          <div class="gallery-main-view">
+            <img src="assets/cinnamon.png" alt="True Ceylon Cinnamon Quills Alba Grade" class="gallery-main-img" id="galleryMainImg">
+            <div class="gallery-caption-tag" id="galleryCaptionTag">
+              <strong>1. Hero View:</strong> Verifiable slender quill diameter, consistent light tan color, and delicate cylindrical structure.
+            </div>
+          </div>
+
+          <div class="gallery-thumbs">
+            <!-- 1) Hero product image -->
+            <button class="gallery-thumb-btn active" data-img="assets/cinnamon.png"
+              data-caption="1. Hero View: Verifiable slender quill diameter, consistent light tan color, and delicate cylindrical structure.">
+              <img src="assets/cinnamon.png" alt="Hero product view">
+              <span class="thumb-label">Quills</span>
+            </button>
+            <!-- 2) Packaging beside an object that makes size clear -->
+            <button class="gallery-thumb-btn" data-img="assets/hero.png"
+              data-caption="2. Scale View: Packaging beside standard teaware to verify physical dimensions and scale.">
+              <img src="assets/hero.png" alt="Packaging size perspective">
+              <span class="thumb-label">Scale</span>
+            </button>
+            <!-- 3) Macro shot showing the thin, layered quill texture -->
+            <button class="gallery-thumb-btn" data-img="assets/cinnamon.png"
+              data-caption="3. Macro Structure: Verifiable multiple paper-thin, soft concentric layers packed tightly rather than a single thick bark roll.">
+              <img src="assets/cinnamon.png" alt="Macro layered texture">
+              <span class="thumb-label">Layers</span>
+            </button>
+            <!-- 4) Tea or baking lifestyle scene -->
+            <button class="gallery-thumb-btn" data-img="assets/silver_tips.png"
+              data-caption="4. Culinary Lifestyle: A whole quill infusing cleanly in hot tea and crumbled into baking without cloudy sludge.">
+              <img src="assets/silver_tips.png" alt="Culinary lifestyle infusion">
+              <span class="thumb-label">Brew</span>
+            </button>
+            <!-- 5) Simple Ceylon-versus-Cassia visual comparison -->
+            <button class="gallery-thumb-btn" data-img="assets/cinnamon.png"
+              data-caption="5. Visual Comparison: Ceylon's thin flaky golden-tan layers side-by-side with Cassia's dark, thick hollow bark.">
+              <img src="assets/cinnamon.png" alt="Ceylon vs Cassia comparison">
+              <span class="thumb-label">Compare</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- --- 2. ABOVE THE FOLD — BUY BOX --- -->
+        <div class="buy-box">
+
+          <span class="product-grade-badge">Alba Grade · Estate Origin</span>
+
+          <!-- Product title -->
+          <h1 class="product-title">True Ceylon Cinnamon Quills – Alba Grade</h1>
+
+          <!-- Price -->
+          <div class="product-price-row">
+            <span class="product-price">[PRICE]</span>
+            <span class="product-price-unit">Single-Estate Sri Lanka</span>
+          </div>
+
+          <!-- Short description -->
+          <p class="product-short-desc">
+            Hand-rolled into delicate, paper-thin layers that crumble easily between your fingers, these Alba-grade quills deliver a naturally warm, sweet aroma accented with subtle citrus notes. Crafted from authentic Ceylon cinnamon (<em>Cinnamomum verum</em>), they offer a mellow culinary profile suited for infusions, delicate pastries, and everyday brewing. Unlike common Cassia bark, true Ceylon cinnamon naturally contains substantially lower levels of coumarin.
+          </p>
+
+          <!-- Trust signals: 4 short labels based only on supplied facts -->
+          <div class="trust-signals-grid">
+            <div class="trust-signal-item">
+              <svg class="trust-signal-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>
+              </svg>
+              <span>Alba Grade Quills</span>
+            </div>
+            <div class="trust-signal-item">
+              <svg class="trust-signal-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>Sourced from Sri Lanka Estates</span>
+            </div>
+            <div class="trust-signal-item">
+              <svg class="trust-signal-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+              <span>True Ceylon (<em>Cinnamomum verum</em>)</span>
+            </div>
+            <div class="trust-signal-item">
+              <svg class="trust-signal-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
+              </svg>
+              <span>Naturally Low Coumarin Profile</span>
+            </div>
+          </div>
+
+          <!-- Variant selector -->
+          <div class="variant-section">
+            <div class="variant-label-row">
+              <span>Select Quantity (Net Weight)</span>
+              <span id="selectedVariantDisplay">[VARIANT_1_WEIGHT]</span>
+            </div>
+            <div class="variant-options-row">
+              <button class="variant-btn active" data-variant="[VARIANT_1_WEIGHT]">[VARIANT_1_WEIGHT]</button>
+              <button class="variant-btn" data-variant="[VARIANT_2_WEIGHT]">[VARIANT_2_WEIGHT]</button>
+            </div>
+            <p class="variant-note">Note: Quantities reflect net weight rather than individual quill count, as slender Alba quills naturally vary in thickness.</p>
+          </div>
+
+          <!-- Delivery microcopy & Risk-reversal microcopy -->
+          <div class="microcopy-group">
+            <div class="microcopy-line">
+              <svg class="microcopy-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect width="16" height="13" x="1" y="6" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+              </svg>
+              <span>Estimated delivery to your door: [DELIVERY_ESTIMATE].</span>
+            </div>
+            <div class="microcopy-line">
+              <svg class="microcopy-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
+              </svg>
+              <span>If covered by our guarantee, your purchase is backed by [FLAVOR_GUARANTEE_TERMS].</span>
+            </div>
+          </div>
+
+          <!-- Purchase buttons -->
+          <div class="purchase-actions-row">
+            <div class="qty-picker">
+              <button class="qty-btn" id="qtyMinus" aria-label="Decrease quantity">−</button>
+              <span class="qty-value" id="qtyVal">1</span>
+              <button class="qty-btn" id="qtyPlus" aria-label="Increase quantity">+</button>
+            </div>
+            <button class="primary-add-btn add-cart-trigger" id="buyBoxAddToCartBtn"
+              data-id="ceylon-alba-quills" data-name="True Ceylon Cinnamon Quills – Alba Grade"
+              data-price="[PRICE]" data-img="assets/cinnamon.png" data-category="True Spices">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" /><path d="M3 6h18" /><path d="M16 10a4 4 0 0 1-8 0" />
+              </svg>
+              <span>Add Quills to Cart</span>
+            </button>
+          </div>
+
+          <!-- Cross-sell -->
+          <div class="cross-sell-panel">
+            <p class="cross-sell-text">Frequently paired with <strong>[BUNDLE_PRODUCT]</strong> for <strong>[BUNDLE_PRICE_OR_SAVINGS]</strong>.</p>
+            <button class="cross-sell-add-btn" id="crossSellBtn">Add Pair</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- --- 4. VALUE PROPOSITION — IMAGE WITH TEXT --- -->
+  <section class="comparison-section">
+    <div class="container">
+      <div class="comparison-grid">
+        <div class="comparison-image-card">
+          <img src="assets/cinnamon.png" alt="Detailed structure of layered Ceylon cinnamon quills vs thick Cassia">
+          <div class="comparison-badge">Anatomy of Ceylon</div>
+        </div>
+
+        <div class="comparison-content">
+          <div class="section-eyebrow" style="text-align: left;">Direct Sensory Distinction</div>
+          <h2>Alba Ceylon Quills vs. Common Cassia</h2>
+          <div class="comparison-bullets">
+            <div class="comparison-bullet-item">
+              <span class="comparison-bullet-bullet"></span>
+              <div>
+                <strong>Quill Structure:</strong> True Alba Ceylon is composed of delicate, paper-thin inner bark rolled into dense, crumbly layers, unlike the hard, thick, hollow wooden curl of Cassia.
+              </div>
+            </div>
+            <div class="comparison-bullet-item">
+              <span class="comparison-bullet-bullet"></span>
+              <div>
+                <strong>Flavor Profile:</strong> Delivers a gentle, naturally sweet warmth with subtle citrus undertones, contrasting with the pungent, spicy, sharp bite typical of Cassia.
+              </div>
+            </div>
+            <div class="comparison-bullet-item">
+              <span class="comparison-bullet-bullet"></span>
+              <div>
+                <strong>Culinary Uses:</strong> Soft enough to break by hand for gentle tea infusions, delicate custards, and fine baking, whereas tough Cassia requires heavy processing and can overpower subtle recipes.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- 5. SENSORY STORY — ACCORDIONS --- -->
+  <section class="sensory-story-section">
+    <div class="container sensory-story-container">
+      <div class="section-eyebrow">Culinary Details &amp; Origin</div>
+      <h2 class="section-title">The Essence of Alba Grade</h2>
+
+      <div class="accordion-group">
+        <!-- Accordion 1: Tasting Notes -->
+        <div class="accordion-item active">
+          <button class="accordion-header" aria-expanded="true">
+            <span>Tasting Notes</span>
+            <svg class="accordion-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </button>
+          <div class="accordion-body" style="max-height: 500px;">
+            <div class="accordion-content">
+              <ul>
+                <li><strong>Aroma:</strong> Delicate, warm, and floral with faint citrus top notes.</li>
+                <li><strong>Flavor:</strong> Naturally sweet and mellow with gentle warming spice and none of the harsh, burning bite common in commercial cinnamon.</li>
+                <li><strong>Texture:</strong> Soft, flaky, and layered; quills break effortlessly between your fingers and grind down smoothly into fine powder.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion 2: How to Use -->
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span>How to Use</span>
+            <svg class="accordion-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-content">
+              <ul>
+                <li><strong>Tea Infusions:</strong> Stir a whole quill directly into hot black, green, or herbal tea while brewing to impart subtle sweetness and aromatic citrus undertones without cloudy sediment.</li>
+                <li><strong>Stovetop Simmering &amp; Poaching:</strong> Simmer a quill in warm milk, apple cider, or poached fruit syrups to allow the layered bark to release its gentle sweetness slowly.</li>
+                <li><strong>Home Baking:</strong> Easily crush the fragile layers between your fingers or in a spice grinder to fold fresh, aromatic cinnamon into pastry doughs, cake batters, and shortbreads.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion 3: Our Sourcing -->
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span>Our Sourcing</span>
+            <svg class="accordion-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-content">
+              <p>We source our Alba-grade quills directly from local agricultural estates in Sri Lanka, the native home of true Ceylon cinnamon (<em>Cinnamomum verum</em>). By working directly with these regional estates, we ensure each harvest preserves the traditional technique of peeling and layering the innermost bark by hand into slender, delicate quills.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- 6. LOWER PAGE — FAQs --- -->
+  <section class="faq-section">
+    <div class="container faq-container">
+      <div class="section-eyebrow">Customer Guidance</div>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+
+      <div class="faq-grid">
+        <div class="faq-card">
+          <h3>What does "Alba grade" mean?</h3>
+          <p>Alba is the highest recognized diameter grade for Ceylon cinnamon. It designates the thinnest, most slender quills, carefully crafted by hand using the tender innermost bark layers for a delicate, easily crumbly texture.</p>
+        </div>
+
+        <div class="faq-card">
+          <h3>How should I store Ceylon cinnamon quills, and how long do they keep?</h3>
+          <p>Keep your quills in an airtight container stored in a cool, dry pantry away from direct sunlight, moisture, and heat. Under proper storage conditions, their flavor and aroma remain fresh through [BEST_BEFORE_OR_SHELF_LIFE].</p>
+        </div>
+
+        <div class="faq-card">
+          <h3>How does Ceylon cinnamon’s coumarin content compare to common Cassia?</h3>
+          <p>True Ceylon cinnamon (<em>Cinnamomum verum</em>) naturally contains substantially lower concentrations of coumarin—often trace amounts—compared to common Cassia cinnamon varieties, which have noticeably higher natural coumarin levels.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- 7. MOBILE — STICKY PURCHASE BAR --- -->
+  <div class="mobile-sticky-bar" id="mobileStickyBar">
+    <div class="mobile-sticky-content">
+      <div class="mobile-sticky-text">
+        <span>[PRICE] · [SELECTED_VARIANT]</span>
+      </div>
+      <button class="mobile-sticky-btn add-cart-trigger" data-id="ceylon-alba-quills"
+        data-name="True Ceylon Cinnamon Quills – Alba Grade" data-price="[PRICE]" data-img="assets/cinnamon.png">
+        [CTA]
+      </button>
+    </div>
+  </div>
+
+  <!-- --- FOOTER --- -->
+  <footer class="footer" id="mainFooter">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="grá CEYLON Logo" class="footer-logo">
+          <p class="footer-bio">Single-estate teas, wild spices, and botanical therapy oils sourced directly from Sri Lanka’s lush highland estates.</p>
+        </div>
+        <div class="footer-links">
+          <h4 class="footer-heading">Collections</h4>
+          <ul>
+            <li><a href="collections.html">Curated Flights</a></li>
+            <li><a href="product-cinnamon.html">True Ceylon Cinnamon</a></li>
+            <li><a href="sanctuary-chronicles.html">The Sanctuary Chronicles</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4 class="footer-heading">Customer Care</h4>
+          <ul>
+            <li><a href="index.html#story">Our Sourcing</a></li>
+            <li><a href="index.html#selector">Sensory Matcher</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 grá CEYLON. True Ceylon Botanical Treasures.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shopping Cart Drawer (compatible with grá CEYLON index.js) -->
+  <div class="cart-overlay" id="cartOverlay" role="dialog" aria-modal="true" aria-labelledby="cartDrawerTitle">
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <h3 class="cart-header-title" id="cartDrawerTitle">Your Tasting Flight</h3>
+        <button class="cart-close-btn" id="cartCloseBtn" aria-label="Close Shopping Cart">&times;</button>
+      </div>
+      <div class="cart-items" id="cartItemsContainer">
+        <div class="cart-empty-message" id="cartEmptyMessage">
+          <img src="assets/logo.png" alt="grá CEYLON Logo" class="cart-empty-logo">
+          <p>Your flight is currently empty.</p>
+        </div>
+      </div>
+      <div class="cart-footer">
+        <button class="btn btn-primary checkout-btn" id="checkoutBtn">Request Quote</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- Page Interactivity Scripts -->
+  <script src="index.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Gallery thumbnail switching
+      const mainImg = document.getElementById('galleryMainImg');
+      const captionTag = document.getElementById('galleryCaptionTag');
+      const thumbBtns = document.querySelectorAll('.gallery-thumb-btn');
+
+      thumbBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          thumbBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const imgUrl = btn.dataset.img;
+          const caption = btn.dataset.caption;
+          if (mainImg && imgUrl) mainImg.src = imgUrl;
+          if (captionTag && caption) captionTag.innerHTML = `<strong>${caption.split(':')[0]}:</strong>${caption.split(':')[1] || ''}`;
+        });
+      });
+
+      // 2. Variant selection
+      const variantBtns = document.querySelectorAll('.variant-btn');
+      const variantDisplay = document.getElementById('selectedVariantDisplay');
+      variantBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          variantBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          if (variantDisplay) variantDisplay.textContent = btn.dataset.variant;
+        });
+      });
+
+      // 3. Quantity picker
+      let qty = 1;
+      const qtyVal = document.getElementById('qtyVal');
+      const minusBtn = document.getElementById('qtyMinus');
+      const plusBtn = document.getElementById('qtyPlus');
+      if (minusBtn && plusBtn && qtyVal) {
+        minusBtn.addEventListener('click', () => {
+          if (qty > 1) {
+            qty--;
+            qtyVal.textContent = qty;
+          }
+        });
+        plusBtn.addEventListener('click', () => {
+          qty++;
+          qtyVal.textContent = qty;
+        });
+      }
+
+      // 4. Accordion Toggle
+      const accordionHeaders = document.querySelectorAll('.accordion-header');
+      accordionHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+          const item = header.parentElement;
+          const body = item.querySelector('.accordion-body');
+          const isOpen = item.classList.contains('active');
+
+          document.querySelectorAll('.accordion-item').forEach(i => {
+            i.classList.remove('active');
+            const b = i.querySelector('.accordion-body');
+            if (b) b.style.maxHeight = null;
+            const h = i.querySelector('.accordion-header');
+            if (h) h.setAttribute('aria-expanded', 'false');
+          });
+
+          if (!isOpen) {
+            item.classList.add('active');
+            header.setAttribute('aria-expanded', 'true');
+            if (body) body.style.maxHeight = body.scrollHeight + 'px';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
