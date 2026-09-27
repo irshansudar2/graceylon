@@ -447,85 +447,398 @@
       background: rgba(255, 255, 255, 0.05);
     }
 
-    /* ─── VALUE PROPOSITION: COMPARISON SECTION ─── */
+    /* ─── VALUE PROPOSITION: CEYLON VS CASSIA COMPARISON SECTION ─── */
     .comparison-section {
-      padding: 6rem 0;
+      padding: 7rem 0;
       background: hsl(var(--bg-secondary));
       border-top: 1px solid var(--border-glass);
       border-bottom: 1px solid var(--border-glass);
+      position: relative;
+      overflow: hidden;
     }
 
-    .comparison-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
+    .comparison-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 850px;
+      height: 380px;
+      background: radial-gradient(ellipse at top, rgba(197, 168, 90, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .comparison-header {
+      text-align: center;
+      max-width: 820px;
+      margin: 0 auto 3.5rem auto;
+    }
+
+    .comparison-header .section-eyebrow {
+      display: inline-flex;
       align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.8rem;
     }
 
-    .comparison-image-card {
+    .comparison-header h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.2vw, 2.75rem);
+      line-height: 1.2;
+      color: hsl(var(--text-primary));
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .comparison-header h2 span.gold-text,
+    .comparison-header h2 em,
+    .comparison-header h2 i {
+      font-style: normal;
+      background: linear-gradient(135deg, hsl(var(--text-primary)) 20%, hsl(var(--accent-gold)) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .comparison-subtitle {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: hsl(var(--text-secondary));
+      font-weight: 300;
+    }
+
+    /* Dual Cards Showcase Layout */
+    .comparison-dual-container {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 1.5rem;
+      align-items: stretch;
+      margin-bottom: 3.5rem;
+    }
+
+    /* VS Badge & Central Divider */
+    .comparison-vs-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 0 0.5rem;
+    }
+
+    .comparison-vs-line {
+      width: 1px;
+      flex: 1;
+      background: linear-gradient(to bottom, transparent, var(--border-glass) 20%, var(--border-glass) 80%, transparent);
+    }
+
+    .comparison-vs-badge {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(14, 14, 14, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1.5px solid hsl(var(--accent-gold));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: hsl(var(--accent-gold));
+      box-shadow: 0 0 24px rgba(197, 168, 90, 0.25), inset 0 0 10px rgba(197, 168, 90, 0.1);
+      margin: 1.5rem 0;
+      flex-shrink: 0;
+      z-index: 2;
+    }
+
+    /* Individual Comparison Card */
+    .comparison-card {
+      background: rgba(16, 16, 16, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-lg, 14px);
+      padding: 2.2rem 2rem;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition-smooth);
+      position: relative;
+    }
+
+    .comparison-card:hover {
+      transform: translateY(-3px);
+    }
+
+    /* Cassia Card */
+    .comparison-card--cassia {
+      border-top: 2px solid rgba(229, 46, 46, 0.45);
+    }
+
+    .comparison-card--cassia:hover {
+      border-color: rgba(229, 46, 46, 0.3);
+      box-shadow: 0 12px 35px -10px rgba(229, 46, 46, 0.12);
+    }
+
+    /* Ceylon Card (The Hero) */
+    .comparison-card--ceylon {
+      background: linear-gradient(180deg, rgba(26, 23, 18, 0.95) 0%, rgba(16, 16, 16, 0.9) 100%);
+      border: 1px solid rgba(197, 168, 90, 0.35);
+      border-top: 2px solid hsl(var(--accent-gold));
+      box-shadow: 0 14px 45px -12px rgba(197, 168, 90, 0.18);
+    }
+
+    .comparison-card--ceylon:hover {
+      border-color: rgba(197, 168, 90, 0.55);
+      box-shadow: 0 18px 50px -10px rgba(197, 168, 90, 0.28);
+    }
+
+    /* Card Top Header */
+    .comparison-card-top {
+      margin-bottom: 1.5rem;
+    }
+
+    .comparison-card-tag-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .comparison-tag {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+      padding: 0.3rem 0.7rem;
+      border-radius: 4px;
+    }
+
+    .comparison-tag--muted {
+      background: rgba(255, 255, 255, 0.05);
+      color: hsl(var(--text-muted));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .comparison-tag--hazard {
+      background: rgba(229, 46, 46, 0.12);
+      color: #ff6b6b;
+      border: 1px solid rgba(229, 46, 46, 0.25);
+    }
+
+    .comparison-tag--gold {
+      background: rgba(197, 168, 90, 0.15);
+      color: hsl(var(--accent-gold));
+      border: 1px solid rgba(197, 168, 90, 0.3);
+    }
+
+    .comparison-tag--safe {
+      background: rgba(0, 210, 196, 0.12);
+      color: hsl(var(--accent-cyan));
+      border: 1px solid rgba(0, 210, 196, 0.25);
+    }
+
+    .comparison-card-title {
+      font-family: var(--font-serif);
+      font-size: 1.65rem;
+      line-height: 1.25;
+      color: hsl(var(--text-primary));
+      margin-bottom: 0.25rem;
+    }
+
+    .comparison-card-meta {
+      font-size: 0.8rem;
+      color: hsl(var(--text-muted));
+      font-style: italic;
+    }
+
+    /* Card Image */
+    .comparison-card-visual {
       position: relative;
       border-radius: var(--radius-md);
       overflow: hidden;
       border: 1px solid var(--border-glass);
-      aspect-ratio: 4 / 3;
-      background: hsl(var(--bg-primary));
+      aspect-ratio: 16 / 10;
+      margin-bottom: 1.75rem;
+      background: #000;
     }
 
-    .comparison-image-card img {
+    .comparison-card-visual img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: transform 0.6s ease;
     }
 
-    .comparison-badge {
+    .comparison-card:hover .comparison-card-visual img {
+      transform: scale(1.04);
+    }
+
+    .comparison-visual-badge {
       position: absolute;
-      top: 1rem;
-      left: 1rem;
-      background: rgba(0, 0, 0, 0.75);
+      bottom: 0.75rem;
+      left: 0.75rem;
+      background: rgba(0, 0, 0, 0.78);
       backdrop-filter: blur(8px);
-      padding: 0.4rem 0.8rem;
+      -webkit-backdrop-filter: blur(8px);
+      padding: 0.35rem 0.7rem;
       border-radius: 4px;
       font-size: 0.68rem;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: hsl(var(--accent-cyan));
       border: 1px solid var(--border-glass);
-    }
-
-    .comparison-content h2 {
-      font-family: var(--font-serif);
-      font-size: clamp(1.8rem, 2.8vw, 2.3rem);
-      line-height: 1.25;
-      margin-bottom: 1.5rem;
-      color: hsl(var(--text-primary));
-    }
-
-    .comparison-bullets {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-    }
-
-    .comparison-bullet-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.9rem;
-      font-size: 0.9rem;
-      line-height: 1.6;
       color: hsl(var(--text-secondary));
     }
 
-    .comparison-bullet-bullet {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: hsl(var(--accent-gold, 43, 74%, 66%));
-      margin-top: 0.55rem;
+    .comparison-card--ceylon .comparison-visual-badge {
+      color: hsl(var(--accent-gold));
+      border-color: rgba(197, 168, 90, 0.3);
+    }
+
+    /* Comparison Features List */
+    .comparison-features {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      flex: 1;
+    }
+
+    .comparison-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      padding: 0.7rem 0.85rem;
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      font-size: 0.88rem;
+      line-height: 1.5;
+      transition: var(--transition-fast);
+    }
+
+    .comparison-feature-item:hover {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .comparison-card--ceylon .comparison-feature-item {
+      background: rgba(197, 168, 90, 0.03);
+      border-color: rgba(197, 168, 90, 0.07);
+    }
+
+    .comparison-card--ceylon .comparison-feature-item:hover {
+      background: rgba(197, 168, 90, 0.07);
+      border-color: rgba(197, 168, 90, 0.18);
+    }
+
+    .comparison-icon {
+      width: 18px;
+      height: 18px;
+      margin-top: 0.2rem;
       flex-shrink: 0;
     }
 
-    .comparison-bullet-item strong {
+    .comparison-icon--warning {
+      color: #ff6b6b;
+    }
+
+    .comparison-icon--check {
+      color: hsl(var(--accent-gold));
+    }
+
+    .comparison-feature-text strong {
       color: hsl(var(--text-primary));
+      font-weight: 600;
+    }
+
+    .comparison-feature-text span {
+      color: hsl(var(--text-secondary));
+    }
+
+    .comparison-highlight-hazard {
+      color: #ff8787 !important;
+      font-weight: 600;
+    }
+
+    .comparison-highlight-safe {
+      color: hsl(var(--accent-cyan)) !important;
+      font-weight: 600;
+    }
+
+    /* Bottom Summary / Coumarin Fact Callout */
+    .comparison-summary-banner {
+      background: rgba(18, 18, 18, 0.8);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(197, 168, 90, 0.25);
+      border-radius: var(--radius-lg, 14px);
+      padding: 2rem 2.5rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr) auto;
+      gap: 2rem;
+      align-items: center;
+      position: relative;
+    }
+
+    .comparison-stat-box {
+      border-right: 1px solid var(--border-glass);
+      padding-right: 1.5rem;
+    }
+
+    .comparison-stat-number {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: hsl(var(--accent-gold));
+      line-height: 1.1;
+      margin-bottom: 0.35rem;
+    }
+
+    .comparison-stat-label {
+      font-size: 0.78rem;
+      color: hsl(var(--text-secondary));
+      line-height: 1.4;
+    }
+
+    .comparison-cta-box {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      align-items: flex-end;
+    }
+
+    .comparison-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.85rem 1.75rem;
+      border-radius: var(--radius-sm);
+      background: hsl(var(--accent-gold));
+      color: #0a0a0a;
+      font-weight: 600;
+      font-size: 0.88rem;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      transition: var(--transition-fast);
+      box-shadow: 0 4px 18px rgba(197, 168, 90, 0.35);
+      white-space: nowrap;
+    }
+
+    .comparison-cta-btn:hover {
+      background: #dfc270;
+      box-shadow: 0 6px 24px rgba(197, 168, 90, 0.5);
+      transform: translateY(-1px);
+    }
+
+    .comparison-brand-slogan {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: hsl(var(--text-muted));
     }
 
     /* ─── SENSORY STORY ACCORDIONS ─── */
@@ -734,9 +1047,46 @@
         position: static;
       }
 
-      .comparison-grid {
+      .comparison-dual-container {
         grid-template-columns: 1fr;
-        gap: 2.5rem;
+        gap: 2rem;
+      }
+
+      .comparison-vs-column {
+        flex-direction: row;
+        width: 100%;
+        margin: 0;
+      }
+
+      .comparison-vs-line {
+        height: 1px;
+        width: 100%;
+        background: linear-gradient(to right, transparent, var(--border-glass) 20%, var(--border-glass) 80%, transparent);
+      }
+
+      .comparison-vs-badge {
+        margin: 0 1rem;
+      }
+
+      .comparison-summary-banner {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.5rem;
+      }
+
+      .comparison-stat-box {
+        border-right: none;
+        border-bottom: 1px solid var(--border-glass);
+        padding-right: 0;
+        padding-bottom: 1rem;
+      }
+
+      .comparison-cta-box {
+        align-items: stretch;
+      }
+
+      .comparison-cta-btn {
+        justify-content: center;
       }
 
       .mobile-sticky-bar {
@@ -968,38 +1318,251 @@
     </div>
   </main>
 
-  <!-- --- 4. VALUE PROPOSITION — IMAGE WITH TEXT --- -->
-  <section class="comparison-section">
+  <!-- --- 4. VALUE PROPOSITION: CEYLON VS CASSIA COMPARISON --- -->
+  <section class="comparison-section" id="cinnamonComparisonSection">
     <div class="container">
-      <div class="comparison-grid">
-        <div class="comparison-image-card">
-          <img src="assets/cinnamon.png" alt="Detailed structure of layered Ceylon cinnamon quills vs thick Cassia">
-          <div class="comparison-badge">Anatomy of Ceylon</div>
+      <div class="comparison-header">
+        <div class="section-eyebrow">
+          <span class="eyebrow-dot"></span>
+          <span>Purity, Heritage &amp; Safety</span>
         </div>
+        <h2>Difference Between <span class="gold-text">Ceylon</span> &amp; Cassia Cinnamon</h2>
+        <p class="comparison-subtitle">
+          Over 90% of supermarket cinnamon is common Cassia—a cheap, hard bark laden with toxic coumarin. Discover how authentic Alba-grade Ceylon cinnamon from Sri Lanka stands apart in botanical purity, gentle sweetness, and daily wellness safety.
+        </p>
+      </div>
 
-        <div class="comparison-content">
-          <div class="section-eyebrow" style="text-align: left;">Direct Sensory Distinction</div>
-          <h2>Alba Ceylon Quills vs. Common Cassia</h2>
-          <div class="comparison-bullets">
-            <div class="comparison-bullet-item">
-              <span class="comparison-bullet-bullet"></span>
-              <div>
-                <strong>Quill Structure:</strong> True Alba Ceylon is composed of delicate, paper-thin inner bark rolled into dense, crumbly layers, unlike the hard, thick, hollow wooden curl of Cassia.
+      <div class="comparison-dual-container">
+        <!-- Cassia Cinnamon Card (Left) -->
+        <div class="comparison-card comparison-card--cassia">
+          <div class="comparison-card-top">
+            <div class="comparison-card-tag-row">
+              <span class="comparison-tag comparison-tag--muted">Commercial Bark</span>
+              <span class="comparison-tag comparison-tag--hazard">High Coumarin Risk (>5%)</span>
+            </div>
+            <h3 class="comparison-card-title">Cassia Cinnamon</h3>
+            <p class="comparison-card-meta">Cinnamomum cassia &middot; China, Indonesia &amp; Vietnam</p>
+          </div>
+
+          <div class="comparison-card-visual">
+            <img src="assets/cassia-cinnamon.jpg" alt="Cassia cinnamon sticks showing thick, dark single-layer hollow curls" loading="lazy">
+            <div class="comparison-visual-badge">Thick Hollow Single Curl</div>
+          </div>
+
+          <div class="comparison-features">
+            <div class="comparison-feature-item">
+              <svg class="comparison-icon comparison-icon--warning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+              <div class="comparison-feature-text">
+                <strong>Plant Origin:</strong> <span>Derived from the plant <em>Cinnamomum cassia</em></span>
               </div>
             </div>
-            <div class="comparison-bullet-item">
-              <span class="comparison-bullet-bullet"></span>
-              <div>
-                <strong>Flavor Profile:</strong> Delivers a gentle, naturally sweet warmth with subtle citrus undertones, contrasting with the pungent, spicy, sharp bite typical of Cassia.
+
+            <div class="comparison-feature-item">
+              <svg class="comparison-icon comparison-icon--warning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+              <div class="comparison-feature-text">
+                <strong>Geographical Origin:</strong> <span>Originates from China, Indonesia, and Vietnam</span>
               </div>
             </div>
-            <div class="comparison-bullet-item">
-              <span class="comparison-bullet-bullet"></span>
-              <div>
-                <strong>Culinary Uses:</strong> Soft enough to break by hand for gentle tea infusions, delicate custards, and fine baking, whereas tough Cassia requires heavy processing and can overpower subtle recipes.
+
+            <div class="comparison-feature-item">
+              <svg class="comparison-icon comparison-icon--warning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+              </svg>
+              <div class="comparison-feature-text">
+                <strong>Coumarin Content:</strong> <span class="comparison-highlight-hazard">High Levels of Coumarin (&gt; 5%)</span> &mdash; presents significant liver strain risk
+              </div>
+            </div>
+
+            <div class="comparison-feature-item">
+              <svg class="comparison-icon comparison-icon--warning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+              <div class="comparison-feature-text">
+                <strong>Market Cost:</strong> <span>Cheap, mass-produced commodity spice</span>
+              </div>
+            </div>
+
+            <div class="comparison-feature-item">
+              <svg class="comparison-icon comparison-icon--warning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+              <div class="comparison-feature-text">
+                <strong>Flavor &amp; Aroma:</strong> <span>Intense, pungent, spicy, with a sharp burning heat</span>
+              </div>
+            </div>
+
+            <div class="comparison-feature-item">
+              <svg class="comparison-icon comparison-icon--warning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+              <div class="comparison-feature-text">
+                <strong>Bark Structure:</strong> <span>Thick single layer of bark naturally curled into a stick</span>
+              </div>
+            </div>
+
+            <div class="comparison-feature-item">
+              <svg class="comparison-icon comparison-icon--warning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+              <div class="comparison-feature-text">
+                <strong>Texture &amp; Density:</strong> <span>Hard and harder to break; difficult to grind manually</span>
+              </div>
+            </div>
+
+            <div class="comparison-feature-item">
+              <svg class="comparison-icon comparison-icon--warning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+              <div class="comparison-feature-text">
+                <strong>Visual Color:</strong> <span>Dark reddish-brown color</span>
+              </div>
+            </div>
+
+            <div class="comparison-feature-item">
+              <svg class="comparison-icon comparison-icon--warning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+              <div class="comparison-feature-text">
+                <strong>Health Profile:</strong> <span class="comparison-highlight-hazard">Toxic in prolonged or daily regular use</span>
               </div>
             </div>
           </div>
+        </div>
+
+        <!-- Center VS Badge Column -->
+        <div class="comparison-vs-column">
+          <div class="comparison-vs-line"></div>
+          <div class="comparison-vs-badge" aria-label="Versus">VS</div>
+          <div class="comparison-vs-line"></div>
+        </div>
+
+        <!-- True Ceylon Cinnamon Card (Right - Featured Hero) -->
+        <div class="comparison-card comparison-card--ceylon">
+          <div class="comparison-card-top">
+            <div class="comparison-card-tag-row">
+              <span class="comparison-tag comparison-tag--gold">gr&aacute; CEYLON &middot; Alba Grade</span>
+              <span class="comparison-tag comparison-tag--safe">Daily Safe (&lt; 0.004%)</span>
+            </div>
+            <h3 class="comparison-card-title">True Ceylon Cinnamon</h3>
+            <p class="comparison-card-meta">Cinnamomum zeylanicum &middot; Indigenous to Sri Lanka</p>
+          </div>
+
+          <div class="comparison-card-visual">
+            <img src="assets/ceylon-cinnamon.jpg" alt="True Ceylon cinnamon quills showing delicate, multi-layered golden-tan rolls" loading="lazy">
+            <div class="comparison-visual-badge">Handcrafted Thin Multiple Layered Sticks</div>
+          </div>
+
+          <div class="comparison-features">
+            <div class="comparison-feature-item">
+              <svg class="comparison-icon comparison-icon--check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <div class="comparison-feature-text">
+                <strong>Plant Origin:</strong> <span>Derived from the plant <em>Cinnamomum zeylanicum</em></span>
+              </div>
+            </div>
+
+            <div class="comparison-feature-item">
+              <svg class="comparison-icon comparison-icon--check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <div class="comparison-feature-text">
+                <strong>Geographical Origin:</strong> <span>Indigenous exclusively to Sri Lanka</span>
+              </div>
+            </div>
+
+            <div class="comparison-feature-item">
+              <svg class="comparison-icon comparison-icon--check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <div class="comparison-feature-text">
+                <strong>Coumarin Content:</strong> <span class="comparison-highlight-safe">Negligible levels (&lt; 0.004%)</span> &mdash; over 1,250&times; safer for liver health
+              </div>
+            </div>
+
+            <div class="comparison-feature-item">
+              <svg class="comparison-icon comparison-icon--check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <div class="comparison-feature-text">
+                <strong>Market Cost:</strong> <span>Expensive, prized artisanal harvest</span>
+              </div>
+            </div>
+
+            <div class="comparison-feature-item">
+              <svg class="comparison-icon comparison-icon--check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <div class="comparison-feature-text">
+                <strong>Flavor &amp; Aroma:</strong> <span>Mild flavor and aroma with gentle warmth and subtle citrus</span>
+              </div>
+            </div>
+
+            <div class="comparison-feature-item">
+              <svg class="comparison-icon comparison-icon--check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <div class="comparison-feature-text">
+                <strong>Bark Structure:</strong> <span>Handcrafted into thin multiple layered sticks</span>
+              </div>
+            </div>
+
+            <div class="comparison-feature-item">
+              <svg class="comparison-icon comparison-icon--check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <div class="comparison-feature-text">
+                <strong>Texture &amp; Density:</strong> <span>Soft and easy to break; crumbles effortlessly between fingers</span>
+              </div>
+            </div>
+
+            <div class="comparison-feature-item">
+              <svg class="comparison-icon comparison-icon--check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <div class="comparison-feature-text">
+                <strong>Visual Color:</strong> <span>Light to golden brown color</span>
+              </div>
+            </div>
+
+            <div class="comparison-feature-item">
+              <svg class="comparison-icon comparison-icon--check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <div class="comparison-feature-text">
+                <strong>Health Profile:</strong> <span class="comparison-highlight-safe">Countless health benefits &amp; completely safe for daily use</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Summary Banner & CTA -->
+      <div class="comparison-summary-banner">
+        <div class="comparison-stat-box">
+          <div class="comparison-stat-number">&lt; 0.004%</div>
+          <div class="comparison-stat-label">Ultra-Low Coumarin in Ceylon vs. &gt; 5.0% in common Cassia</div>
+        </div>
+        <div class="comparison-stat-box">
+          <div class="comparison-stat-number">1,250&times;</div>
+          <div class="comparison-stat-label">Safer for daily wellness, infusions, baking, and morning coffee</div>
+        </div>
+        <div class="comparison-stat-box">
+          <div class="comparison-stat-number">Alba Grade</div>
+          <div class="comparison-stat-label">The rarest, thinnest, and sweetest quills grown on earth</div>
+        </div>
+        <div class="comparison-cta-box">
+          <a href="#buyBoxAddToCartBtn" class="comparison-cta-btn">
+            <span>Get Authentic Ceylon Quills</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+            </svg>
+          </a>
+          <span class="comparison-brand-slogan">gr&aacute; CEYLON &middot; High Life with Cinnamon</span>
         </div>
       </div>
     </div>
