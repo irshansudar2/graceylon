@@ -1,0 +1,556 @@
+/* ==========================================================================
+   grá CEYLON — CONTACT & CONCIERGE PAGE STYLESHEET
+   Full-Bleed Viewport-Locked Split Cartography Theme
+   ========================================================================== */
+
+/* ─── 0. VIEWPORT LOCK & RESET FOR CONTACT PAGE ─── */
+html, body {
+  overflow-x: hidden;
+}
+
+@media (min-width: 1025px) {
+  body:has(.contact-page-wrapper) {
+    overflow: hidden;
+    height: 100vh;
+    height: 100dvh;
+  }
+}
+
+/* Hide multi-column global footer on the viewport-locked contact page */
+.contact-page-wrapper ~ footer.footer {
+  display: none !important;
+}
+
+/* ─── 1. FULL-BLEED PAGE LAYOUT WRAPPER ─── */
+.contact-page-wrapper {
+  position: relative;
+  width: 100vw;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  margin-top: var(--header-height);
+  height: calc(100vh - var(--header-height));
+  height: calc(100dvh - var(--header-height));
+  overflow: hidden;
+  background-color: #0d0c0b;
+}
+
+/* The Full-Bleed Split Stage Frame */
+.split-stage-frame {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr clamp(430px, 36vw, 530px);
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-top: 1px solid var(--border-glass);
+  border-radius: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ─── 2. LEFT COLUMN: MAP VIEWPORT PANEL (ALL THE WAY TO LEFT EDGE) ─── */
+.map-viewport-panel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #0d0c0b;
+}
+
+.map-full-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center; /* Guarantees map cartography is visible all the way to the far left screen edge */
+  filter: brightness(0.92) contrast(1.06);
+}
+
+/* Subtle Vignette & Depth Filter */
+.map-lighting-vignette {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at 52% 62%, rgba(10, 10, 10, 0.02) 0%, rgba(10, 10, 10, 0.3) 55%, rgba(8, 8, 8, 0.8) 90%, rgba(5, 5, 5, 0.95) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Top-Left Framed Header Box */
+.hero-title-box {
+  position: absolute;
+  top: clamp(1rem, 2.5vh, 2rem);
+  left: clamp(1.2rem, 2.5vw, 2.4rem);
+  z-index: 5;
+  border: 1.5px solid rgba(197, 168, 90, 0.5);
+  background: rgba(10, 10, 10, 0.68);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 8px;
+  padding: clamp(0.5rem, 1vh, 0.75rem) clamp(1rem, 1.6vw, 1.6rem);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.65), 0 0 20px rgba(197, 168, 90, 0.12);
+}
+
+.hero-split-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 2.4vw, 2.3rem);
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  margin: 0;
+  line-height: 1.15;
+}
+
+/* Bottom-Left Origin Tag */
+.map-provenance-tag {
+  position: absolute;
+  bottom: clamp(1rem, 2.5vh, 2rem);
+  left: clamp(1.2rem, 2.5vw, 2.4rem);
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  background: rgba(10, 10, 10, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 30px;
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: hsl(var(--text-primary));
+  font-weight: 500;
+}
+
+.map-live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: hsl(var(--accent-cyan));
+  box-shadow: 0 0 10px hsl(var(--accent-cyan));
+  animation: radarBlink 2s infinite ease-in-out;
+}
+
+@keyframes radarBlink {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+/* Ambient Ceylon Glow */
+.map-ceylon-glow {
+  position: absolute;
+  left: 51.5%;
+  top: 65%;
+  transform: translate(-50%, -50%);
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(197, 168, 90, 0.25) 0%, rgba(0, 210, 196, 0.08) 40%, transparent 70%);
+  pointer-events: none;
+  z-index: 3;
+  filter: blur(12px);
+  animation: ceylonBreathe 4s infinite ease-in-out;
+}
+
+@keyframes ceylonBreathe {
+  0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.95; transform: translate(-50%, -50%) scale(1.12); }
+}
+
+/* ─── 3. WHITE GRÁ CEYLON LOGO POSITIONED DIRECTLY ABOVE CEYLON OVERLAPPING CEYLON ─── */
+.map-logo-overlay {
+  position: absolute;
+  left: 51.5%;
+  top: 65%;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.42rem 1.25rem;
+  background: rgba(10, 10, 10, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(197, 168, 90, 0.45);
+  border-radius: 999px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.85),
+              0 0 25px rgba(197, 168, 90, 0.3),
+              inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  z-index: 6;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-logo-overlay:hover {
+  transform: translate(-50%, -55%) scale(1.05);
+  background: rgba(14, 14, 14, 0.94);
+  border-color: rgba(197, 168, 90, 0.85);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.95),
+              0 0 35px rgba(197, 168, 90, 0.55),
+              inset 0 1px 2px rgba(255, 255, 255, 0.4);
+}
+
+.map-logo-pulse-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 105%;
+  height: 120%;
+  border-radius: 999px;
+  border: 1px solid rgba(197, 168, 90, 0.5);
+  pointer-events: none;
+  animation: logoPulseExpand 3s infinite ease-out;
+}
+
+@keyframes logoPulseExpand {
+  0% { transform: translate(-50%, -50%) scale(0.95); opacity: 0.8; }
+  60% { transform: translate(-50%, -50%) scale(1.22); opacity: 0; }
+  100% { transform: translate(-50%, -50%) scale(1.22); opacity: 0; }
+}
+
+.map-overlay-logo-img {
+  height: clamp(20px, 2.5vh, 25px);
+  width: auto;
+  max-width: 170px;
+  display: block;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.7));
+  transition: transform 0.3s ease;
+}
+
+.map-logo-overlay:hover .map-overlay-logo-img {
+  transform: scale(1.02);
+}
+
+.map-overlay-tooltip {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: rgba(15, 15, 15, 0.95);
+  border: 1px solid rgba(197, 168, 90, 0.4);
+  color: hsl(var(--accent-gold));
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: 20px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
+}
+
+.map-logo-overlay:hover .map-overlay-tooltip,
+.map-logo-overlay:focus-visible .map-overlay-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ─── 4. RIGHT COLUMN: DOCKED INQUIRY FORM (VIEWPORT-FITTED & GRADIENT TRANSPARENCY) ─── */
+.form-viewport-panel {
+  position: relative;
+  /* Slight gradient transparency reducing from right to left (more opaque on right, softer translucency on left towards map) */
+  background: linear-gradient(
+    to left,
+    rgba(8, 8, 8, 0.96) 0%,
+    rgba(12, 12, 12, 0.90) 45%,
+    rgba(14, 14, 14, 0.72) 100%
+  );
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  padding: clamp(0.75rem, 1.8vh, 1.6rem) clamp(1.2rem, 2vw, 2.2rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 5;
+  height: 100%;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(197, 168, 90, 0.3) transparent;
+}
+
+.form-viewport-panel::-webkit-scrollbar {
+  width: 4px;
+}
+.form-viewport-panel::-webkit-scrollbar-thumb {
+  background: rgba(197, 168, 90, 0.3);
+  border-radius: 4px;
+}
+
+.form-header {
+  margin-bottom: clamp(0.35rem, 1vh, 0.9rem);
+}
+
+.form-header-badge {
+  font-size: clamp(0.6rem, 0.85vh, 0.66rem);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: hsl(var(--accent-gold));
+  font-weight: 600;
+  display: block;
+  margin-bottom: clamp(0.15rem, 0.4vh, 0.3rem);
+}
+
+.form-header-title {
+  font-size: clamp(1.35rem, 2.1vh, 1.75rem);
+  font-family: var(--font-serif);
+  color: hsl(var(--text-primary));
+  margin-bottom: clamp(0.15rem, 0.4vh, 0.35rem);
+  line-height: 1.15;
+}
+
+.form-header-desc {
+  font-size: clamp(0.74rem, 0.95vh, 0.82rem);
+  color: hsl(var(--text-secondary));
+  line-height: 1.45;
+}
+
+/* Form Groups & Inputs */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(0.6rem, 1vw, 1rem);
+  margin-bottom: clamp(0.3rem, 0.8vh, 0.65rem);
+}
+
+.form-group {
+  margin-bottom: clamp(0.3rem, 0.8vh, 0.65rem);
+  position: relative;
+}
+
+.form-label {
+  display: block;
+  font-size: clamp(0.64rem, 0.85vh, 0.7rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: hsl(var(--text-secondary));
+  margin-bottom: clamp(0.15rem, 0.4vh, 0.3rem);
+  font-weight: 500;
+}
+
+.form-label .required {
+  color: hsl(var(--accent-red));
+  margin-left: 2px;
+}
+
+.form-control {
+  width: 100%;
+  padding: clamp(0.42rem, 0.85vh, 0.62rem) 0.85rem;
+  background: rgba(18, 18, 18, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 7px;
+  color: hsl(var(--text-primary));
+  font-family: var(--font-sans);
+  font-size: clamp(0.78rem, 1vh, 0.85rem);
+  transition: var(--transition-fast);
+  outline: none;
+}
+
+.form-control:focus {
+  border-color: hsl(var(--accent-gold));
+  box-shadow: 0 0 12px rgba(197, 168, 90, 0.2);
+  background: rgba(22, 22, 22, 0.92);
+}
+
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+  font-weight: 300;
+}
+
+textarea.form-control {
+  height: clamp(52px, 8vh, 78px);
+  min-height: unset;
+  resize: none;
+  line-height: 1.45;
+}
+
+/* Category Pill Selector */
+.category-pills-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(0.3rem, 0.6vh, 0.45rem);
+  margin-top: clamp(0.15rem, 0.4vh, 0.25rem);
+}
+
+.category-pill-radio {
+  display: none;
+}
+
+.category-pill-label {
+  display: inline-block;
+  padding: clamp(0.22rem, 0.55vh, 0.35rem) clamp(0.55rem, 0.8vw, 0.75rem);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: hsl(var(--text-secondary));
+  font-size: clamp(0.66rem, 0.85vh, 0.72rem);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  user-select: none;
+}
+
+.category-pill-label:hover {
+  border-color: rgba(197, 168, 90, 0.4);
+  color: hsl(var(--text-primary));
+}
+
+.category-pill-radio:checked + .category-pill-label {
+  background: rgba(197, 168, 90, 0.18);
+  border-color: hsl(var(--accent-gold));
+  color: hsl(var(--accent-gold));
+  font-weight: 500;
+}
+
+/* Radio Group: Preferred Method */
+.radio-options-group {
+  display: flex;
+  gap: clamp(0.7rem, 1.2vw, 1.1rem);
+  margin-top: clamp(0.15rem, 0.4vh, 0.25rem);
+}
+
+.radio-inline-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: clamp(0.72rem, 0.9vh, 0.78rem);
+  color: hsl(var(--text-secondary));
+  cursor: pointer;
+}
+
+.radio-inline-label input[type="radio"] {
+  accent-color: hsl(var(--accent-gold));
+}
+
+/* Privacy Consent */
+.consent-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  margin: clamp(0.35rem, 0.8vh, 0.65rem) 0 clamp(0.5rem, 1vh, 0.85rem) 0;
+}
+
+.consent-group input[type="checkbox"] {
+  accent-color: hsl(var(--accent-gold));
+  margin-top: 0.15rem;
+  cursor: pointer;
+}
+
+.consent-label {
+  font-size: clamp(0.66rem, 0.8vh, 0.72rem);
+  color: hsl(var(--text-muted));
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+/* Form Action Button */
+.btn-concierge-submit {
+  width: 100%;
+  padding: clamp(0.55rem, 1.2vh, 0.82rem) 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  background: linear-gradient(135deg, hsl(var(--accent-gold)) 0%, #9e843c 100%);
+  color: #0a0a0a;
+  border: none;
+  border-radius: 7px;
+  font-size: clamp(0.78rem, 1vh, 0.84rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  box-shadow: 0 8px 20px rgba(197, 168, 90, 0.25);
+}
+
+.btn-concierge-submit:hover:not(:disabled) {
+  background: linear-gradient(135deg, #d8bc6b 0%, #b29544 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(197, 168, 90, 0.4);
+}
+
+.btn-concierge-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.spinner-icon {
+  display: none;
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* ─── 5. RESPONSIVE BREAKPOINTS (MOBILE & TABLET STACKING) ─── */
+@media (max-width: 1024px) {
+  body:has(.contact-page-wrapper) {
+    overflow-y: auto !important;
+    height: auto !important;
+  }
+  .contact-page-wrapper {
+    height: auto;
+    overflow: visible;
+  }
+  .split-stage-frame {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  .map-viewport-panel {
+    aspect-ratio: 16 / 9;
+    min-height: 440px;
+    height: auto;
+  }
+  .form-viewport-panel {
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 2.2rem 1.6rem;
+    height: auto;
+    background: rgba(14, 14, 14, 0.95);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title-box {
+    top: 1rem;
+    left: 1rem;
+    padding: 0.45rem 1rem;
+  }
+  .hero-split-title {
+    font-size: 1.35rem;
+  }
+  .map-provenance-tag {
+    bottom: 1rem;
+    left: 1rem;
+  }
+  .map-logo-overlay {
+    top: 65%;
+    left: 51.5%;
+    padding: 0.35rem 0.95rem;
+  }
+  .map-overlay-logo-img {
+    height: 18px;
+    max-width: 130px;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}

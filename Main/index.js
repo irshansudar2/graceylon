@@ -421,9 +421,11 @@ Please review their selection and reach out with a curated premium quote within 
     checkoutModalOverlay.classList.add('active');
   });
 
-  modalCloseBtn.addEventListener('click', () => {
-    checkoutModalOverlay.classList.remove('active');
-  });
+  if (modalCloseBtn && checkoutModalOverlay) {
+    modalCloseBtn.addEventListener('click', () => {
+      checkoutModalOverlay.classList.remove('active');
+    });
+  }
 
 
   /* ==========================================================================
