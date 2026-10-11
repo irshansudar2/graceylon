@@ -1,0 +1,1985 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Sanctuary Chronicles II | grá CEYLON | Artisanal Tea &amp; Wellness</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Delve into The Sanctuary Chronicles by grá CEYLON. Explore tea rituals, single-origin botanical wellness heritage, sustainable wild harvests, and deep holistic guides.">
+  <meta name="keywords"
+    content="Ceylon Tea Editorial, Silver Tips Ritual, Wellness Tea Guide, True Cinnamon benefits, Botanical Wellness, Ella Sri Lanka, Slow Living">
+  <meta name="author" content="grá CEYLON">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="The Sanctuary Chronicles II | grá CEYLON">
+  <meta property="og:description"
+    content="Step into our sanctuary. An intimate editorial journey exploring ancestral harvesting heritages, sunlight tea curation, and botanical rituals.">
+  <meta property="og:image" content="assets/hero.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon 512x512.png">
+
+  <!-- Core Global Stylesheet -->
+  <link rel="stylesheet" href="index.css">
+
+  <!-- Dedicated Sanctuary Chronicles 2 Editorial Styles -->
+  <style>
+    /* ==========================================================================
+       EDITORIAL DESIGN SYSTEM & RESETS (ORBEA-INSPIRED LUXURY ADAPTATION)
+       ========================================================================== */
+    :root {
+      --bar-height: 52px;
+      --top-header-height: 120px;
+    }
+
+    /* Primary Fixed Header (Index.html Theme - Never Hides on Scroll) */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--header-height, 120px);
+      z-index: 1000 !important;
+      background: rgba(10, 10, 10, 0.4);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      transition: var(--transition-smooth);
+    }
+
+    .header.scrolled {
+      background: var(--bg-glass-heavy);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      height: 110px;
+    }
+
+    /* Cart Drawer & Modal Overlays (ensuring high layering above sticky bars) */
+    .cart-overlay {
+      z-index: 1200 !important;
+    }
+
+    .cart-drawer {
+      z-index: 1201 !important;
+    }
+
+    .modal-overlay {
+      z-index: 1300 !important;
+    }
+
+    .toast-container {
+      z-index: 1400 !important;
+    }
+
+    body {
+      background-color: hsl(var(--bg-primary));
+      color: hsl(var(--text-primary));
+      font-family: var(--font-inter), sans-serif;
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+
+    /* ==========================================================================
+       STICKY SUB-NAV WITH DYNAMIC SCROLL READING PROGRESS BAR (IMAGE 1 & 2)
+       Docks directly beneath the fixed main header
+       ========================================================================== */
+    .editorial-sticky-bar {
+      position: sticky;
+      top: 110px;
+      z-index: 950;
+      background: rgba(14, 14, 14, 0.95);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      height: var(--bar-height);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transition: background 0.3s ease, border-color 0.3s ease, top 0.3s ease;
+    }
+
+    @media (max-width: 900px) {
+      .editorial-sticky-bar {
+        top: 80px;
+      }
+    }
+
+    .editorial-sticky-bar.stuck {
+      background: rgba(10, 10, 10, 0.98);
+      border-bottom-color: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .editorial-bar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .editorial-bar-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .bar-return-link {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: hsl(var(--text-secondary));
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      text-transform: capitalize;
+      transition: var(--transition-fast);
+    }
+
+    .bar-return-link:hover {
+      color: white;
+    }
+
+    .bar-separator {
+      color: hsl(var(--text-muted));
+      font-weight: 300;
+      opacity: 0.5;
+    }
+
+    .bar-article-title {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: white;
+      letter-spacing: 0.03em;
+      max-width: 320px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .editorial-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .share-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: hsl(var(--text-muted));
+      font-weight: 500;
+    }
+
+    .share-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .share-btn {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: hsl(var(--text-secondary));
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+
+    .share-btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: hsl(var(--accent-gold));
+      border-color: rgba(197, 168, 90, 0.4);
+      transform: translateY(-2px);
+    }
+
+    /* READING PROGRESS BAR LINE (UNDER STICKY BAR) */
+    .reading-progress-track {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2.5px;
+      background: rgba(255, 255, 255, 0.04);
+      overflow: hidden;
+    }
+
+    .reading-progress-bar {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, hsl(var(--accent-gold)) 0%, hsl(var(--accent-cyan)) 100%);
+      box-shadow: 0 0 10px rgba(197, 168, 90, 0.6);
+      transition: width 0.08s linear;
+    }
+
+    /* ==========================================================================
+       HERO SECTION (IMAGE 1)
+       ========================================================================== */
+    .editorial-hero {
+      position: relative;
+      width: 100%;
+      min-height: 82vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border-glass);
+    }
+
+    .editorial-hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .editorial-hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.02);
+      transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .editorial-hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, rgba(10, 10, 10, 0.35) 0%, rgba(5, 5, 5, 0.85) 90%),
+                  linear-gradient(180deg, rgba(5, 5, 5, 0.4) 0%, rgba(10, 10, 10, 0.95) 100%);
+    }
+
+    .editorial-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 960px;
+      padding: 4rem 1.5rem;
+    }
+
+    .editorial-hero-meta {
+      font-family: var(--font-inter), sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+
+    .editorial-hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 500;
+      color: #ffffff;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.8rem;
+      text-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+    }
+
+    .editorial-hero-subtitle {
+      font-family: var(--font-inter), sans-serif;
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      font-weight: 300;
+      color: hsl(var(--text-secondary));
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Scroll Prompt */
+    .hero-scroll-cue {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+      color: hsl(var(--text-muted));
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .hero-scroll-cue svg {
+      animation: bounceDown 2s infinite ease-in-out;
+    }
+
+    @keyframes bounceDown {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
+    /* ==========================================================================
+       EDITORIAL STORY NARRATIVE FLOW (IMAGE 1 & 2)
+       ========================================================================== */
+    .editorial-article-wrapper {
+      padding: 6rem 0 4rem 0;
+      position: relative;
+    }
+
+    .editorial-container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .story-lead-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 400;
+      color: #ffffff;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      margin-bottom: 2.2rem;
+    }
+
+    .story-paragraph {
+      font-family: var(--font-inter), sans-serif;
+      font-size: 1.1rem;
+      color: hsl(var(--text-secondary));
+      font-weight: 300;
+      line-height: 1.85;
+      margin-bottom: 2rem;
+    }
+
+    .story-paragraph strong {
+      color: #ffffff;
+      font-weight: 500;
+    }
+
+    .story-paragraph em {
+      color: hsl(var(--accent-gold));
+      font-style: italic;
+    }
+
+    .story-subheading {
+      font-family: var(--font-serif);
+      font-size: clamp(1.4rem, 2.8vw, 1.9rem);
+      font-weight: 400;
+      color: #ffffff;
+      margin: 3.5rem 0 1.5rem 0;
+      line-height: 1.3;
+    }
+
+    /* Full-width / Wide Photographic Break (Image 2) */
+    .editorial-photo-break {
+      margin: 4.5rem -4vw 4.5rem -4vw;
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-glass);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+    }
+
+    @media (min-width: 1200px) {
+      .editorial-photo-break {
+        margin: 5rem -120px 5rem -120px;
+      }
+    }
+
+    .editorial-photo-break img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.8s ease;
+    }
+
+    .photo-caption {
+      display: block;
+      padding: 0.8rem 1.2rem;
+      background: rgba(14, 14, 14, 0.85);
+      backdrop-filter: blur(12px);
+      font-size: 0.78rem;
+      color: hsl(var(--text-muted));
+      font-style: italic;
+      border-top: 1px solid var(--border-glass);
+      text-align: center;
+    }
+
+    /* Pullquote block */
+    .story-quote {
+      border-left: 2px solid hsl(var(--accent-gold));
+      padding: 1.2rem 0 1.2rem 2rem;
+      margin: 3rem 0;
+      font-family: var(--font-serif);
+      font-size: clamp(1.15rem, 2vw, 1.35rem);
+      font-style: italic;
+      color: #f0f0f0;
+      line-height: 1.6;
+      background: linear-gradient(90deg, rgba(197, 168, 90, 0.05) 0%, transparent 100%);
+    }
+
+    /* Ritual Steps list */
+    .ritual-steps {
+      list-style: none;
+      counter-reset: ritual-counter;
+      margin: 2.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .ritual-step-item {
+      counter-increment: ritual-counter;
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-glass);
+      padding: 1.2rem 1.5rem;
+      border-radius: 12px;
+    }
+
+    .ritual-step-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(197, 168, 90, 0.15);
+      border: 1px solid rgba(197, 168, 90, 0.4);
+      color: hsl(var(--accent-gold));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    .ritual-step-text {
+      font-size: 1rem;
+      color: hsl(var(--text-secondary));
+      line-height: 1.6;
+    }
+
+    .ritual-step-text strong {
+      color: white;
+    }
+
+    /* ==========================================================================
+       RELATED PRODUCT SPOTLIGHT AT END OF ARTICLE (IMAGE 3)
+       ========================================================================== */
+    .related-product-spotlight {
+      padding: 6rem 0;
+      position: relative;
+      border-top: 1px solid var(--border-glass);
+      background: radial-gradient(circle at 70% 50%, rgba(197, 168, 90, 0.04) 0%, transparent 60%),
+                  linear-gradient(180deg, rgba(10, 10, 10, 0.5) 0%, rgba(14, 14, 14, 0.95) 100%);
+    }
+
+    .product-spotlight-card {
+      border: 1px solid rgba(197, 168, 90, 0.28);
+      background: linear-gradient(135deg, rgba(22, 22, 22, 0.85) 0%, rgba(12, 12, 12, 0.95) 100%);
+      border-radius: 24px;
+      padding: 4rem;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-spotlight-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(197, 168, 90, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .product-spotlight-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .spotlight-kicker {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: hsl(var(--accent-gold));
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 0.8rem;
+    }
+
+    .spotlight-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 500;
+      color: #ffffff;
+      margin-bottom: 1.2rem;
+      line-height: 1.15;
+    }
+
+    .spotlight-description {
+      font-size: 1.02rem;
+      line-height: 1.75;
+      color: hsl(var(--text-secondary));
+      margin-bottom: 1.8rem;
+      font-weight: 300;
+    }
+
+    .spotlight-price {
+      font-family: var(--font-serif);
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: hsl(var(--accent-gold));
+      margin-bottom: 2.2rem;
+      display: block;
+    }
+
+    /* 2 Pill Action Buttons (Matching Image 3) */
+    .spotlight-actions {
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.85rem 2.2rem;
+      border-radius: 50px;
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      text-decoration: none;
+    }
+
+    .btn-pill-outline {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+    }
+
+    .btn-pill-outline:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .btn-pill-gold {
+      background: hsl(var(--accent-gold));
+      border: 1px solid hsl(var(--accent-gold));
+      color: #0a0a0a;
+      box-shadow: 0 8px 25px rgba(197, 168, 90, 0.25);
+    }
+
+    .btn-pill-gold:hover {
+      background: #dfc276;
+      border-color: #dfc276;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(197, 168, 90, 0.4);
+    }
+
+    .product-spotlight-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .spotlight-img-frame {
+      width: 100%;
+      max-width: 380px;
+      aspect-ratio: 1 / 1;
+      border-radius: 20px;
+      background: radial-gradient(circle at center, rgba(35, 35, 35, 0.8) 0%, rgba(15, 15, 15, 0.95) 80%);
+      border: 1px solid var(--border-glass);
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.8), 0 20px 45px rgba(0, 0, 0, 0.6);
+      transition: transform 0.5s ease;
+    }
+
+    .spotlight-img-frame:hover {
+      transform: scale(1.02);
+    }
+
+    .spotlight-img-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.7));
+    }
+
+    /* ==========================================================================
+       FLOATING STICKY PRODUCT POPUP (BOTTOM RIGHT CORNER)
+       ========================================================================== */
+    .sticky-product-popup {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 850;
+      width: 360px;
+      max-width: calc(100vw - 2rem);
+      background: rgba(18, 18, 18, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(197, 168, 90, 0.35);
+      border-radius: 16px;
+      padding: 1rem 1.2rem;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75), 0 0 20px rgba(197, 168, 90, 0.15);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      opacity: 0;
+      transform: translateY(30px) scale(0.96);
+      pointer-events: none;
+      transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-color 0.2s ease;
+    }
+
+    .sticky-product-popup.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+
+    .sticky-product-popup:hover {
+      border-color: rgba(197, 168, 90, 0.7);
+    }
+
+    .popup-thumbnail-wrap {
+      width: 58px;
+      height: 58px;
+      border-radius: 10px;
+      background: #101010;
+      border: 1px solid var(--border-glass);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .popup-thumbnail-wrap img {
+      width: 90%;
+      height: 90%;
+      object-fit: contain;
+    }
+
+    .popup-info {
+      flex-grow: 1;
+      min-width: 0;
+      cursor: pointer;
+    }
+
+    .popup-category {
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: hsl(var(--accent-gold));
+      display: block;
+      margin-bottom: 0.15rem;
+      font-weight: 600;
+    }
+
+    .popup-title {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: #ffffff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 0.2rem;
+    }
+
+    .popup-price {
+      font-size: 0.82rem;
+      color: hsl(var(--text-secondary));
+      font-family: var(--font-serif);
+      font-weight: 600;
+    }
+
+    .popup-add-btn {
+      background: hsl(var(--accent-gold));
+      color: #0c0c0c;
+      border: none;
+      padding: 0.55rem 0.9rem;
+      border-radius: 50px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: var(--transition-fast);
+    }
+
+    .popup-add-btn:hover {
+      background: #dfc276;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(197, 168, 90, 0.4);
+    }
+
+    /* ==========================================================================
+       MORE CHRONICLES SINGLE-ROW CAROUSEL
+       ========================================================================== */
+    .more-chronicles-section {
+      padding: 5rem 0 6rem 0;
+      background: hsl(var(--bg-secondary));
+      border-top: 1px solid var(--border-glass);
+      position: relative;
+    }
+
+    .section-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .chronicles-carousel-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin: 0 -0.5rem;
+    }
+
+    .chronicles-carousel-track {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 2rem;
+      scroll-behavior: smooth;
+      padding: 1.5rem 0.5rem 2.5rem 0.5rem;
+      width: 100%;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .chronicles-carousel-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(16, 16, 16, 0.92);
+      border: 1px solid rgba(197, 168, 90, 0.4);
+      color: #ffffff;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+      transition: var(--transition-fast);
+    }
+
+    .carousel-arrow:hover:not(:disabled) {
+      background: hsl(var(--accent-gold));
+      color: #0a0a0a;
+      border-color: hsl(var(--accent-gold));
+      transform: translateY(-50%) scale(1.08);
+      box-shadow: 0 10px 30px rgba(197, 168, 90, 0.4);
+    }
+
+    .carousel-arrow:disabled {
+      opacity: 0.25;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    .carousel-arrow-prev {
+      left: -20px;
+    }
+
+    .carousel-arrow-next {
+      right: -20px;
+    }
+
+    .editorial-mini-card {
+      flex: 0 0 360px;
+      max-width: 360px;
+      scroll-snap-align: start;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-glass);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .editorial-mini-card:hover {
+      border-color: rgba(197, 168, 90, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    }
+
+    .mini-card-thumb {
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      overflow: hidden;
+      background: #0f0f0f;
+    }
+
+    .mini-card-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .editorial-mini-card:hover .mini-card-thumb img {
+      transform: scale(1.05);
+    }
+
+    .mini-card-body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .mini-card-meta {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: hsl(var(--accent-gold));
+      margin-bottom: 0.6rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .mini-card-title {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      color: white;
+      margin-bottom: 0.8rem;
+      line-height: 1.3;
+    }
+
+    .mini-card-excerpt {
+      font-size: 0.85rem;
+      color: hsl(var(--text-secondary));
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+      flex-grow: 1;
+    }
+
+    .mini-card-footer {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: hsl(var(--text-muted));
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-weight: 600;
+    }
+
+    .mini-card-footer svg {
+      transition: transform 0.2s ease;
+    }
+
+    .editorial-mini-card:hover .mini-card-footer {
+      color: white;
+    }
+
+    .editorial-mini-card:hover .mini-card-footer svg {
+      transform: translateX(4px);
+    }
+
+    /* ==========================================================================
+       RESPONSIVE BREAKPOINTS
+       ========================================================================== */
+    @media (max-width: 900px) {
+      .product-spotlight-card {
+        padding: 2.5rem 1.8rem;
+      }
+
+      .product-spotlight-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .product-spotlight-visual {
+        order: -1;
+      }
+
+      .spotlight-img-frame {
+        max-width: 260px;
+      }
+
+      .editorial-photo-break img {
+        height: 340px;
+      }
+
+      .editorial-mini-card {
+        flex: 0 0 300px;
+        max-width: 300px;
+      }
+
+      .carousel-arrow {
+        width: 42px;
+        height: 42px;
+      }
+
+      .carousel-arrow-prev {
+        left: -10px;
+      }
+
+      .carousel-arrow-next {
+        right: -10px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      :root {
+        --top-header-height: 80px;
+      }
+
+      .bar-article-title {
+        display: none;
+      }
+
+      .share-label {
+        display: none;
+      }
+
+      .sticky-product-popup {
+        bottom: 1rem;
+        right: 1rem;
+        left: 1rem;
+        width: auto;
+        padding: 0.8rem 1rem;
+      }
+
+      .popup-category {
+        display: none;
+      }
+
+      .spotlight-actions {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .btn-pill {
+        width: 100%;
+        text-align: center;
+      }
+
+      .carousel-arrow-prev {
+        left: -4px;
+      }
+
+      .carousel-arrow-next {
+        right: -4px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- --- 1. GRÁ CEYLON PRIMARY NAVIGATION HEADER (INDEX.HTML THEME - FIXED & VISIBLE) --- -->
+  <header class="header" id="mainHeader">
+    <div class="container">
+      <div class="logo-wrapper">
+        <a href="index.html" aria-label="grá CEYLON Home">
+          <img src="assets/logo.png" alt="grá CEYLON Logo" class="brand-logo-svg" id="headerLogo">
+        </a>
+      </div>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="about.html" class="nav-link" id="navLinkStory">Our Story</a></li>
+          <li><a href="collections.html" class="nav-link" id="navLinkCollections">Collections</a></li>
+          <li><a href="index.html#selector" class="nav-link" id="navLinkQuiz">Sensory Matcher</a></li>
+          <li><a href="index.html#testimonials" class="nav-link" id="navLinkReviews">Experiences</a></li>
+          <li><a href="sanctuary-chronicles.html" class="nav-link active" id="navLinkBlog">The Sanctuary Chronicles</a></li>
+          <li><a href="verify.html" class="nav-link" id="navLinkVerify">Authenticity</a></li>
+          <li><a href="contact.html" class="nav-link" id="navLinkContact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Interactive Cart Trigger Button -->
+        <button class="cart-icon-btn" id="cartOpenBtn" aria-label="Open Shopping Cart" aria-haspopup="dialog">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+            <path d="M3 6h18" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation menu"
+          aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="menuIconOpen">
+            <line x1="4" x2="20" y1="12" y2="12" />
+            <line x1="4" x2="20" y1="6" y2="6" />
+            <line x1="4" x2="20" y1="18" y2="18" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="menuIconClose"
+            style="display:none;">
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- --- 2. STICKY SUB-NAV WITH DYNAMIC READING PROGRESS BAR (IMAGE 1 & 2) --- -->
+  <nav class="editorial-sticky-bar" id="editorialStickyBar" aria-label="Article Navigation &amp; Progress">
+    <div class="container editorial-bar-inner">
+      <div class="editorial-bar-left">
+        <a href="sanctuary-chronicles.html" class="bar-return-link" title="Return to Chronicles">
+          Return
+        </a>
+        <span class="bar-separator">/</span>
+        <span class="bar-article-title" id="barArticleTitle">The Dawn Harvest</span>
+      </div>
+
+      <div class="editorial-bar-right">
+        <span class="share-label">Share</span>
+        <div class="share-actions">
+          <button class="share-btn" onclick="shareArticle('facebook')" aria-label="Share on Facebook" title="Share on Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </button>
+          <button class="share-btn" onclick="shareArticle('twitter')" aria-label="Share on X" title="Share on X">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </button>
+          <button class="share-btn" onclick="shareArticle('whatsapp')" aria-label="Share on WhatsApp" title="Share on WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+            </svg>
+          </button>
+          <button class="share-btn" onclick="shareArticle('copy')" aria-label="Copy Article Link" title="Copy Article Link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Active Scroll Progress Indicator -->
+    <div class="reading-progress-track">
+      <div class="reading-progress-bar" id="readingProgressBar"></div>
+    </div>
+  </nav>
+
+  <!-- --- 3. CINEMATIC HERO SECTION (IMAGE 1) --- -->
+  <section class="editorial-hero" id="editorialHero">
+    <div class="editorial-hero-bg">
+      <img src="assets/hero.png" id="heroBannerImg" alt="Dawn mist rising over high-elevation Ceylon tea estates">
+      <div class="editorial-hero-overlay"></div>
+    </div>
+
+    <div class="container editorial-hero-content">
+      <div class="editorial-hero-meta" id="heroDate">May 24, 2026 • Tasting Rituals</div>
+      <h1 class="editorial-hero-title" id="heroTitle">The Dawn Harvest</h1>
+      <p class="editorial-hero-subtitle" id="heroSubtitle">
+        Why Ceylon’s rarest white tea buds are cured solely by the soft rays of the morning highland sun.
+      </p>
+    </div>
+
+    <div class="hero-scroll-cue">
+      <span>Scroll to Read</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m6 9 6 6 6-6"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- --- 4. EDITORIAL STORY NARRATIVE BODY (IMAGE 1 & 2) --- -->
+  <main class="editorial-article-wrapper" id="articleMainContent">
+    <article class="editorial-container">
+      
+      <!-- Section 1 Headline & Paragraphs (Matching Image 1) -->
+      <h2 class="story-lead-heading" id="storyLeadHeading">
+        An ancient dawn ritual high above Ella's mist.
+      </h2>
+
+      <div id="dynamicArticleStory">
+        <p class="story-paragraph">
+          High up in the mist-veiled peaks of Ella, Sri Lanka, at exactly 5:30 AM, a silent, sacred multi-generational ritual begins. Before the tropical sun climbs high enough to warm the dew-kissed leaves, master pluckers step into the emerald tea rows to harvest Ceylon’s rarest treasure: <strong>Royal Silver Tips</strong>.
+        </p>
+
+        <p class="story-paragraph">
+          Unlike standard black teas where entire branches of leaves are chopped or machine-plucked, Silver Tips consist entirely of individual, young, unopened white buds. These buds are covered in a beautiful, velvety silver down, containing the highest concentration of <em>L-theanine</em> and delicate polyphenols found in the tea plant.
+        </p>
+
+        <!-- Section 2 Sub-headline (Matching Image 2) -->
+        <h3 class="story-subheading">The Chemistry of Natural Sunlight Curing</h3>
+
+        <p class="story-paragraph">
+          Once gathered with extreme care in hand-woven baskets, the buds are brought directly to the high-elevation drying racks. Here lies the true secret of our white tea. While commercial white teas are often forced-dried with high-temperature hot air, our Silver Tips are cured solely by the soft rays of the highland sun over three consecutive mornings.
+        </p>
+
+        <!-- Full-bleed Landscape Photographic Break (Matching Image 2) -->
+        <div class="editorial-photo-break">
+          <img src="assets/graceylon-tea-ritual.jpg" alt="Artisanal Ceylon tea harvest drying racks in the morning mist">
+          <span class="photo-caption">Highland curing racks in Ella, where Ceylon white tea buds gently evaporate moisture under morning dew.</span>
+        </div>
+
+        <!-- Pullquote with Gold Accent Line -->
+        <blockquote class="story-quote">
+          “To apply machine heat is to burn the soul of the leaf. Sunlight acts as a slow, natural alchemist, preserving the enzymes while encouraging a subtle, sweet oxidation.”
+        </blockquote>
+
+        <p class="story-paragraph">
+          This slow sunlight evaporation technique prevents the chlorophyll from darkening, preserving the shimmering silver sheen. The resulting liquor is a bright, pale-champagne gold, releasing an incredibly complex floral bouquet of honey, wild orchid, and sweet highland grasses with absolutely zero bitterness.
+        </p>
+
+        <!-- Section 3: Ritual Preparation Guide -->
+        <h3 class="story-subheading">How to Conduct the Silver Tips Ritual at Home</h3>
+
+        <p class="story-paragraph">
+          To experience the absolute pure flavor compounds of this sunlight-cured treasure, prepare your evening or morning sanctuary:
+        </p>
+
+        <ul class="ritual-steps">
+          <li class="ritual-step-item">
+            <span class="ritual-step-num">1</span>
+            <div class="ritual-step-text">
+              <strong>Water Purity &amp; Temperature:</strong> Always use filtered spring water. Heat to 80°C (176°F)—never pour boiling water on delicate white buds, as extreme heat scorches their sweet floral nectar notes.
+            </div>
+          </li>
+          <li class="ritual-step-item">
+            <span class="ritual-step-num">2</span>
+            <div class="ritual-step-text">
+              <strong>The Glass Vessel:</strong> Use a transparent glass teapot or porcelain gaiwan to observe the buds gracefully stand vertically in the water as they slowly expand.
+            </div>
+          </li>
+          <li class="ritual-step-item">
+            <span class="ritual-step-num">3</span>
+            <div class="ritual-step-text">
+              <strong>Gentle Infusion:</strong> Allow 5 to 7 full minutes. Because the buds are unopened, they require a patient, gentle infusion time to fully unpack their rich antioxidant matrix.
+            </div>
+          </li>
+        </ul>
+
+        <p class="story-paragraph">
+          Close your eyes, breathe in the rising steam, and savor the love story of Ceylon's high peaks.
+        </p>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- --- 5. RELATED PRODUCT SPOTLIGHT AT END OF ARTICLE (IMAGE 3) --- -->
+  <section class="related-product-spotlight" id="relatedProductSection" aria-label="Related Product Spotlight">
+    <div class="container">
+      <div class="product-spotlight-card">
+        <div class="product-spotlight-grid">
+          
+          <!-- Left: Information & 2 Pill Buttons (Matching Image 3) -->
+          <div class="product-spotlight-content">
+            <span class="spotlight-kicker" id="spotlightKicker">Direct Sourced • Single-Origin</span>
+            <h3 class="spotlight-title" id="spotlightTitle">Royal Silver Tips</h3>
+            <p class="spotlight-description" id="spotlightDescription">
+              Hand-harvested at 5:30 AM in the mist-veiled peaks of Ella. Cured solely by the gentle morning sun to preserve high concentrations of L-theanine and delicate polyphenols. Packaged in authentic Miron violet-glass jars.
+            </p>
+            <span class="spotlight-price" id="spotlightPrice">$48.00</span>
+            
+            <div class="spotlight-actions">
+              <a href="product-tea.html" class="btn-pill btn-pill-outline" id="spotlightDiscoverBtn">
+                Discover Silver Tips
+              </a>
+              <button class="btn-pill btn-pill-gold add-cart-instant-btn" id="spotlightAddBtn"
+                data-id="gr-silvertips" data-name="Royal Silver Tips" data-price="48.00" 
+                data-img="assets/silver_tips.png" data-category="White Tea">
+                Add to Flight — $48.00
+              </button>
+            </div>
+          </div>
+
+          <!-- Right: Full High-Res Product Shot (Matching Image 3) -->
+          <div class="product-spotlight-visual">
+            <div class="spotlight-img-frame">
+              <img src="assets/silver_tips.png" alt="Royal Silver Tips Miron Jar" id="spotlightImg">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- 6. MORE SANCTUARY CHRONICLES CAROUSEL --- -->
+  <section class="more-chronicles-section" id="moreChroniclesSection">
+    <div class="container">
+      <div class="section-header-row">
+        <div>
+          <span class="section-label">Ancestral Knowledge</span>
+          <h2 class="story-title" style="margin-top:0.4rem; font-size:clamp(1.8rem, 3.5vw, 2.5rem);">More Sanctuary Chronicles</h2>
+        </div>
+        <a href="sanctuary-chronicles.html" class="btn btn-secondary" style="font-size:0.75rem; padding:0.6rem 1.4rem;">
+          View All Chronicles
+        </a>
+      </div>
+
+      <!-- Single-Row Carousel with Side Arrows -->
+      <div class="chronicles-carousel-wrapper">
+        <button class="carousel-arrow carousel-arrow-prev" id="chroniclesPrevBtn" aria-label="Previous chronicles" title="Previous">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <div class="chronicles-carousel-track" id="moreChroniclesGrid">
+          <!-- Rendered dynamically via JavaScript -->
+        </div>
+
+        <button class="carousel-arrow carousel-arrow-next" id="chroniclesNextBtn" aria-label="Next chronicles" title="Next">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- 7. FOOTER (GRÁ CEYLON THEME) --- -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <img src="assets/logo.png" alt="grá CEYLON Logo" class="footer-brand-logo">
+          <p class="footer-tagline">
+            Artisanal, high-altitude single estate Ceylon treasures built on love, quiet luxury, and absolute pure heritage.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="collections.html">Collections</a></li>
+            <li><a href="index.html#selector">Sensory Selector</a></li>
+            <li><a href="sanctuary-chronicles.html">The Sanctuary Chronicles</a></li>
+            <li><a href="verify.html">Authenticity</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Our Treasures</h4>
+          <ul class="footer-links">
+            <li><a href="product-tea.html">Royal Silver Tips</a></li>
+            <li><a href="product-cinnamon.html">Wild Cinnamon Rose</a></li>
+            <li><a href="product-craft.html">Coconut Shell Cup</a></li>
+            <li><a href="index.html#collection">Royal Elixir Spa Oil</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">curator@graceylon.com</a></li>
+            <li><a href="contact.html">Spas &amp; Hospitality</a></li>
+            <li><a href="contact.html">Headquarters, Ella</a></li>
+            <li><a href="contact.html">Private Bespoke Quotes</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2026 grá CEYLON. Sourced globally, packaged with love. All rights reserved.</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/gra_ceylon/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/graceylonproducts" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- --- 8. FLOATING STICKY PRODUCT POPUP (BOTTOM RIGHT CORNER - NO CLOSE BUTTON) --- -->
+  <div class="sticky-product-popup" id="stickyProductPopup" aria-hidden="true">
+    <div class="popup-thumbnail-wrap" id="popupThumbWrap" title="View Related Product">
+      <img src="assets/silver_tips.png" alt="Royal Silver Tips" id="popupThumbnail">
+    </div>
+    
+    <div class="popup-info" id="popupInfoWrap" title="View Related Product">
+      <span class="popup-category" id="popupCategory">White Tea</span>
+      <h4 class="popup-title" id="popupTitle">Royal Silver Tips</h4>
+      <span class="popup-price" id="popupPrice">$48.00</span>
+    </div>
+    
+    <button class="popup-add-btn add-cart-instant-btn" id="popupAddBtn"
+      data-id="gr-silvertips" data-name="Royal Silver Tips" data-price="48.00"
+      data-img="assets/silver_tips.png" data-category="White Tea">
+      Add
+    </button>
+  </div>
+
+  <!-- --- 9. SHOPPING CART OVERLAY & DRAWER --- -->
+  <div class="cart-overlay" id="cartOverlay" role="dialog" aria-modal="true" aria-labelledby="cartDrawerTitle">
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <h3 class="cart-header-title" id="cartDrawerTitle">Your Tasting Flight</h3>
+        <button class="cart-close-btn" id="cartCloseBtn" aria-label="Close Shopping Cart">&times;</button>
+      </div>
+
+      <!-- Shipping Progress Indicator Bar -->
+      <div class="shipping-progress">
+        <p class="shipping-progress-text" id="shippingProgressText">
+          Add <span>$50.00</span> more for complimentary global courier shipping.
+        </p>
+        <div class="shipping-progress-bar">
+          <div class="shipping-progress-fill" id="shippingProgressFill"></div>
+        </div>
+      </div>
+
+      <!-- Cart Items list -->
+      <div class="cart-items" id="cartItemsContainer">
+        <div class="cart-empty-message" id="cartEmptyMessage">
+          <img src="assets/logo.png" alt="grá CEYLON Logo" class="cart-empty-logo">
+          <p>Your flight is currently empty.</p>
+          <p style="font-size: 0.75rem; margin-top: 0.5rem; color: hsl(var(--text-muted));">
+            Begin your love affair with Ceylon by adding one of our signature treasures.
+          </p>
+        </div>
+      </div>
+
+      <!-- Cart Footer summary -->
+      <div class="cart-footer">
+        <div class="cart-summary">
+          <div class="cart-row">
+            <span>Subtotal</span>
+            <span id="cartSubtotal">$0.00</span>
+          </div>
+          <div class="cart-row">
+            <span>Global Express Shipping</span>
+            <span id="cartShipping">$0.00</span>
+          </div>
+          <div class="cart-row cart-total-row">
+            <span>Estimated Total</span>
+            <span id="cartTotal">$0.00</span>
+          </div>
+        </div>
+
+        <!-- Contact Email Field for Custom Quote Request -->
+        <div class="cart-quote-email-group">
+          <label for="cartQuoteEmail" class="quote-email-label">Your Contact Email</label>
+          <input type="email" id="cartQuoteEmail" class="quote-email-input" placeholder="Enter your private email address" required>
+        </div>
+
+        <button class="btn btn-primary checkout-btn" id="checkoutBtn">Request Private Quote</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- --- 10. TOAST NOTIFICATIONS & SUCCESS MODAL --- -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <div class="modal-overlay" id="checkoutModalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="checkout-modal glass-panel">
+      <img src="assets/logo.png" alt="grá CEYLON Logo" class="modal-brand-logo"
+        style="height: 50px; width: auto; margin: 0 auto 2.2rem auto; display: block; opacity: 0.95;">
+      <div class="success-icon-animation">✓</div>
+      <h3 class="modal-title" id="modalTitle">Order Succeeded</h3>
+      <p class="modal-desc">Thank you for embarking on this sensory journey. Your exclusive artisanal treasures are
+        being prepared. A private dispatch email will reach your inbox shortly.</p>
+      <button class="btn btn-primary" id="modalCloseBtn">Return to Sanctuary</button>
+    </div>
+  </div>
+
+  <!-- Global JavaScript Core Cart & Systems -->
+  <script src="index.js"></script>
+
+  <!-- Dedicated Editorial Script: Progress Bar, Sticky Popup, and Dynamic Chronicles -->
+  <script>
+    // ==========================================================================
+    // SANCTUARY CHRONICLES DATABASE (ALL 7 ARTICLES)
+    // ==========================================================================
+    const ARTICLES_DB = {
+      1: {
+        id: 1,
+        title: "The Art of the Dawn Harvest: Why Silver Tips Need Sunlight",
+        shortTitle: "The Dawn Harvest",
+        subtitle: "Why Ceylon’s rarest white tea buds are cured solely by the soft rays of the morning highland sun.",
+        leadHeading: "An ancient dawn ritual high above Ella's mist.",
+        category: "Tasting Rituals",
+        date: "May 24, 2026",
+        banner: "assets/hero.png",
+        photoBreak: "assets/graceylon-tea-ritual.jpg",
+        caption: "Highland curing racks in Ella, where Ceylon white tea buds gently evaporate moisture under morning dew.",
+        product: {
+          id: "gr-silvertips",
+          name: "Royal Silver Tips",
+          category: "Single-Estate White Tea",
+          price: "$48.00",
+          rawPrice: "48.00",
+          img: "assets/silver_tips.png",
+          desc: "Hand-harvested at 5:30 AM in the mist-veiled peaks of Ella. Cured solely by the gentle morning sun to preserve high concentrations of L-theanine and delicate polyphenols. Packaged in authentic Miron violet-glass jars.",
+          url: "product-tea.html"
+        },
+        content: `
+          <p class="story-paragraph">High up in the mist-veiled peaks of Ella, Sri Lanka, at exactly 5:30 AM, a silent, sacred multi-generational ritual begins. Before the tropical sun climbs high enough to warm the dew-kissed leaves, master pluckers step into the emerald tea rows to harvest Ceylon’s rarest treasure: <strong>Royal Silver Tips</strong>.</p>
+          <p class="story-paragraph">Unlike standard black teas where entire branches of leaves are chopped or machine-plucked, Silver Tips consist entirely of individual, young, unopened white buds. These buds are covered in a beautiful, velvety silver down, containing the highest concentration of <em>L-theanine</em> and delicate polyphenols found in the tea plant.</p>
+          <h3 class="story-subheading">The Chemistry of Natural Sunlight Curing</h3>
+          <p class="story-paragraph">Once gathered with extreme care in hand-woven baskets, the buds are brought directly to the high-elevation drying racks. Here lies the true secret of our white tea. While commercial white teas are often forced-dried with high-temperature hot air, our Silver Tips are cured solely by the soft rays of the highland sun over three consecutive mornings.</p>
+          <div class="editorial-photo-break">
+            <img src="assets/graceylon-tea-ritual.jpg" alt="Artisanal Ceylon tea harvest drying racks in the morning mist">
+            <span class="photo-caption">Highland curing racks in Ella, where Ceylon white tea buds gently evaporate moisture under morning dew.</span>
+          </div>
+          <blockquote class="story-quote">“To apply machine heat is to burn the soul of the leaf. Sunlight acts as a slow, natural alchemist, preserving the enzymes while encouraging a subtle, sweet oxidation.”</blockquote>
+          <p class="story-paragraph">This slow sunlight evaporation technique prevents the chlorophyll from darkening, preserving the shimmering silver sheen. The resulting liquor is a bright, pale-champagne gold, releasing an incredibly complex floral bouquet of honey, wild orchid, and sweet highland grasses with absolutely zero bitterness.</p>
+          <h3 class="story-subheading">How to Conduct the Silver Tips Ritual at Home</h3>
+          <p class="story-paragraph">To experience the absolute pure flavor compounds of this sunlight-cured treasure, prepare your evening or morning sanctuary:</p>
+          <ul class="ritual-steps">
+            <li class="ritual-step-item">
+              <span class="ritual-step-num">1</span>
+              <div class="ritual-step-text"><strong>Water Purity &amp; Temperature:</strong> Always use filtered spring water. Heat to 80°C (176°F)—never pour boiling water on delicate white buds, as extreme heat scorches their sweet floral nectar notes.</div>
+            </li>
+            <li class="ritual-step-item">
+              <span class="ritual-step-num">2</span>
+              <div class="ritual-step-text"><strong>The Glass Vessel:</strong> Use a transparent glass teapot or porcelain gaiwan to observe the buds gracefully stand vertically in the water as they slowly expand.</div>
+            </li>
+            <li class="ritual-step-item">
+              <span class="ritual-step-num">3</span>
+              <div class="ritual-step-text"><strong>Gentle Infusion:</strong> Allow 5 to 7 full minutes. Because the buds are unopened, they require a patient, gentle infusion time to fully unpack their rich antioxidant matrix.</div>
+            </li>
+          </ul>
+          <p class="story-paragraph">Close your eyes, breathe in the rising steam, and savor the love story of Ceylon's high peaks.</p>
+        `
+      },
+      2: {
+        id: 2,
+        title: "True Cinnamon vs. Cassia: Sourcing the World’s Finest Bark",
+        shortTitle: "True Cinnamon vs. Cassia",
+        subtitle: "Unveiling the delicate organic chemistry of wild-harvested true cinnamon and its deep calming compounds.",
+        leadHeading: "The botanical truth behind the world’s most imitated spice.",
+        category: "Botanical Heritage",
+        date: "May 18, 2026",
+        banner: "assets/cinnamon.png",
+        photoBreak: "assets/ceylon-cinnamon.jpg",
+        caption: "Delicate inner bark quills of true Cinnamomum verum drying under natural ambient heat in southern Sri Lanka.",
+        product: {
+          id: "gr-cinnamon",
+          name: "Wild Cinnamon Rose",
+          category: "Botanical Infusion",
+          price: "$32.00",
+          rawPrice: "32.00",
+          img: "assets/cinnamon.png",
+          desc: "Our single-origin warm botanical blend. Soft pink damask rosebuds and therapeutic true Ceylon cinnamon bark bring earthy, comforting warmth to your twilight self-care rituals.",
+          url: "product-cinnamon.html"
+        },
+        content: `
+          <p class="story-paragraph">For centuries, explorers, emperors, and traders risked their lives crossing uncharted oceans to discover a mysterious bark grown exclusively on the island of Ceylon. Today, cinnamon is found in every pantry, yet the vast majority of consumers have never tasted real cinnamon.</p>
+          <p class="story-paragraph">What you buy in regular supermarkets is almost always <strong>Cassia</strong> (typically sourced from Indonesia or Vietnam). True cinnamon (<em>Cinnamomum verum</em>), native solely to the southern coastline and central forests of Sri Lanka, is an entirely different botanical species—and a true medical and sensory sanctuary.</p>
+          <h3 class="story-subheading">The Molecular Difference: Coumarin Risks</h3>
+          <p class="story-paragraph">Beyond taste, the primary reason to choose true Ceylon cinnamon lies in organic chemistry. Cassia cinnamon contains extremely high levels of <strong>coumarin</strong>, a naturally occurring toxin that can cause liver damage when consumed regularly. True Ceylon cinnamon contains only trace amounts (less than 0.004%), making it entirely safe for daily wellness infusions.</p>
+          <div class="editorial-photo-break">
+            <img src="assets/ceylon-cinnamon.jpg" alt="True Ceylon cinnamon bark harvesting and peeling">
+            <span class="photo-caption">Delicate hand-rolled quills of Cinnamomum verum drying under gentle tropical shelter.</span>
+          </div>
+          <blockquote class="story-quote">“True Ceylon cinnamon is a delicate, multi-layered quill that can be crushed easily by hand. Cassia is a thick, rock-hard single curve of wood that lacks complexity.”</blockquote>
+          <p class="story-paragraph">Sourced from the wild borders of Ceylon's rainforests, our true cinnamon offers a sweet, warm, deeply comforting wood-and-floral sensory escape. Hand-infused with organic pink damask rosebuds, our Wild Cinnamon Rose infusion gently resets cortisol levels while promoting cellular serenity.</p>
+        `
+      },
+      3: {
+        id: 3,
+        title: "Creating a Home Sanctuary: A 3-Step Botanical Tea Bath Ritual",
+        shortTitle: "Home Sanctuary Bath Ritual",
+        subtitle: "How high-altitude tea polyphenols, wild lavender, and organic botanicals transform evening self-care.",
+        leadHeading: "Returning to stillness through ancient bathhouse science.",
+        category: "Wellness Philosophy",
+        date: "May 10, 2026",
+        banner: "assets/wellness_oil.png",
+        photoBreak: "assets/graceylon-evening-invitation.jpg",
+        caption: "Twilight bath ritual prepared with fresh tea leaves and pure botanical essential oils.",
+        product: {
+          id: "gr-wellnessoil",
+          name: "Royal Elixir Spa Oil",
+          category: "Wellness Elixir",
+          price: "$64.00",
+          rawPrice: "64.00",
+          img: "assets/wellness_oil.png",
+          desc: "A pure botanical powerhouse. Sourced from high-altitude estates, infused with active black tea polyphenols and organic wild oils to nourish skin and soul during your evening moments of sanctuary.",
+          url: "index.html#collection"
+        },
+        content: `
+          <p class="story-paragraph">In our high-frequency lives, finding moments of true stillness is a rare privilege. At grá CEYLON, we believe self-care is not a luxury, but a vital returning to sanctuary. One of the most powerful wellness rituals you can practice tonight is the <strong>Botanical Tea Bath</strong>.</p>
+          <p class="story-paragraph">For centuries, ancient Sri Lankan royalty used warm mineral waters infused with freshly plucked highland tea leaves and active forest oils to restore the body’s moisture, heal skin irritation, and completely quiet the nervous system.</p>
+          <h3 class="story-subheading">The Healing Science of Tea Bathing</h3>
+          <p class="story-paragraph">When high-altitude black tea leaves steep in warm bathwater, they release highly concentrated polyphenols (specifically EGCG) and tannins. These antioxidants are absorbed directly through the skin, instantly neutralizing free radicals and tightening pores for a natural glow.</p>
+          <div class="editorial-photo-break">
+            <img src="assets/graceylon-evening-invitation.jpg" alt="Botanical bath retreat with tea and warm oils">
+            <span class="photo-caption">Evening tea bath ritual prepared with organic floral botanicals and therapeutic essential oils.</span>
+          </div>
+          <blockquote class="story-quote">“A warm bath is a physical reset; a botanical tea bath is a sensory transformation that grounds both the skin and the soul.”</blockquote>
+          <p class="story-paragraph">After twenty minutes of immersive warmth, applying 3-5 drops of our concentrated Royal Elixir Spa Oil locks in botanical moisture, carrying the faint, soothing aroma of rainforest tranquility into the night.</p>
+        `
+      },
+      4: {
+        id: 4,
+        title: "The Gradations of Purity: Sourcing Ceylon’s Rare Alba Cinnamon",
+        shortTitle: "Alba Cinnamon Purity",
+        subtitle: "The exacting hand-rolled precision behind Alba quills and identifying pure, chemical-free spice.",
+        leadHeading: "Master peeler craft at the pinnacle of spice grading.",
+        category: "Botanical Heritage",
+        date: "May 25, 2026",
+        banner: "assets/cinnamon.png",
+        photoBreak: "assets/ceylon-cinnamon.jpg",
+        caption: "Pencil-thin Alba cinnamon quills rolled from the tenderest inner bark layers.",
+        product: {
+          id: "gr-cinnamon",
+          name: "Wild Cinnamon Rose",
+          category: "Botanical Infusion",
+          price: "$32.00",
+          rawPrice: "32.00",
+          img: "assets/cinnamon.png",
+          desc: "Crafted exclusively from top-tier Alba and Continental Ceylon cinnamon quills blended with tender damask rose petals.",
+          url: "product-cinnamon.html"
+        },
+        content: `
+          <p class="story-paragraph">Ceylon cinnamon stands apart as the fourth most expensive spice on Earth. Yet beyond the distinction of true Ceylon cinnamon lies a deeply guarded craft: the art of quill grading.</p>
+          <p class="story-paragraph">At the absolute pinnacle sits <strong>Alba</strong>. Measuring a mere 6 millimeters in diameter, Alba quills are harvested strictly from the youngest shoots of the tree. Preparing Alba sticks requires micro-precision that only master peelers possess over decades of dedication.</p>
+          <blockquote class="story-quote">“While commercial spice suppliers grind thick, low-quality bark into dust, we source Alba and high-continental grades to preserve pure essential oils in their raw form.”</blockquote>
+        `
+      },
+      5: {
+        id: 5,
+        title: "King of Spices: The Unrivaled Pungency of Ceylon's Wild Pepper",
+        shortTitle: "Ceylon Wild Pepper",
+        subtitle: "High-piperine concentration and ancient rituals of sun-drying black and white berries.",
+        leadHeading: "The piercing heat and therapeutic strength of native climbing vines.",
+        category: "Tasting Rituals",
+        date: "May 26, 2026",
+        banner: "assets/wild_pepper.png",
+        photoBreak: "assets/graceylon-ceylon-spices.jpg",
+        caption: "Sun-drying Ceylon black peppercorns on highland mats under the midday sun.",
+        product: {
+          id: "gr-wellnessoil",
+          name: "Royal Elixir Spa Oil",
+          category: "Wellness Elixir",
+          price: "$64.00",
+          rawPrice: "64.00",
+          img: "assets/wellness_oil.png",
+          desc: "Thermodynamic spa oil formulated with warming wild botanicals and organic tea antioxidants to stimulate micro-circulation.",
+          url: "index.html#collection"
+        },
+        content: `
+          <p class="story-paragraph">Renowned for centuries as the 'King of Spices', Ceylon pepper contains up to 15% piperine—more than double that of commercial varieties. This yields a piercing heat accompanied by deep notes of damp earth and wild citrus.</p>
+          <p class="story-paragraph">In holistic wellness, piperine is revered as a bio-enhancer that accelerates the cellular absorption of companion botanicals, multiplying restorative benefits across skin and muscle tissue.</p>
+        `
+      },
+      6: {
+        id: 6,
+        title: "Bothal Karabu: The Mystic Healing of Ceylon's Royal Cloves",
+        shortTitle: "Bothal Karabu Royal Cloves",
+        subtitle: "The evergreen buds of Kandy and Matale prized for deep anesthetic warmth and antiseptic purity.",
+        leadHeading: "Plump flower buds harvested at the exact moment of yellow-pink blush.",
+        category: "Wellness Philosophy",
+        date: "May 26, 2026",
+        banner: "assets/royal_cloves.png",
+        photoBreak: "assets/graceylon-ceylon-spices.jpg",
+        caption: "Bothal Karabu clove groves in the wet mid-country valleys of Matale.",
+        product: {
+          id: "gr-wellnessoil",
+          name: "Royal Elixir Spa Oil",
+          category: "Wellness Elixir",
+          price: "$64.00",
+          rawPrice: "64.00",
+          img: "assets/wellness_oil.png",
+          desc: "Enriched with cold-pressed clove and wild tea polyphenols for profound muscle relief and respiratory calmness.",
+          url: "index.html#collection"
+        },
+        content: `
+          <p class="story-paragraph">In the wet mid-country valleys of Matale and Kandy grow evergreen trees yielding unusually large, plump clove buds known as <strong>Bothal Karabu</strong>.</p>
+          <p class="story-paragraph">Rich in natural eugenol, these buds provide instant local soothing, antimicrobial defense, and deep respiratory clarity when introduced into evening steam and massage rituals.</p>
+        `
+      },
+      7: {
+        id: 7,
+        title: "Double Treasure: The Sacred Harvest of Ceylon Nutmeg and Mace",
+        shortTitle: "Sacred Nutmeg & Mace",
+        subtitle: "The rare botanical duality of golden fruit, crimson mace arils, and obsidian nutmeg cores.",
+        leadHeading: "Nature’s dual masterpiece cultivated in Matale’s red-earth valleys.",
+        category: "Botanical Heritage",
+        date: "May 27, 2026",
+        banner: "assets/nutmeg_mace.png",
+        photoBreak: "assets/graceylon-ceylon-heritage-landscape.jpg",
+        caption: "A split nutmeg fruit revealing the crimson lattice of fresh mace arils.",
+        product: {
+          id: "gr-wellnessoil",
+          name: "Royal Elixir Spa Oil",
+          category: "Wellness Elixir",
+          price: "$64.00",
+          rawPrice: "64.00",
+          img: "assets/wellness_oil.png",
+          desc: "Infused with therapeutic nutmeg and mace myristicin compounds to soothe joints and quiet an active nervous system.",
+          url: "index.html#collection"
+        },
+        content: `
+          <p class="story-paragraph">The <em>Myristica fragrans</em> tree is nature’s singular marvel, producing both warming nutmeg and delicate, lacy crimson mace from the exact same golden fruit.</p>
+          <p class="story-paragraph">Rich in myristicin and elemicin, these warming highland spices relax joint tension and ground restless thoughts before restorative slumber.</p>
+        `
+      }
+    };
+
+    // ==========================================================================
+    // INITIALIZATION & ACTIVE ARTICLE LOADER
+    // ==========================================================================
+    let currentArticleId = 1;
+
+    // Check URL parameters for ?article=ID
+    const urlParams = new URLSearchParams(window.location.search);
+    const paramId = parseInt(urlParams.get('article'));
+    if (paramId && ARTICLES_DB[paramId]) {
+      currentArticleId = paramId;
+    }
+
+    function loadArticle(id) {
+      const art = ARTICLES_DB[id];
+      if (!art) return;
+      currentArticleId = id;
+
+      // Update Top and Sticky Bar
+      document.getElementById('barArticleTitle').textContent = art.shortTitle;
+      document.title = `${art.title} | grá CEYLON Sanctuary Chronicles II`;
+
+      // Update Hero Section
+      document.getElementById('heroDate').textContent = `${art.date} • ${art.category}`;
+      document.getElementById('heroTitle').textContent = art.shortTitle;
+      document.getElementById('heroSubtitle').textContent = art.subtitle;
+      document.getElementById('heroBannerImg').src = art.banner;
+      document.getElementById('heroBannerImg').alt = art.title;
+
+      // Update Story Main Content
+      document.getElementById('storyLeadHeading').textContent = art.leadHeading;
+      document.getElementById('dynamicArticleStory').innerHTML = art.content;
+
+      // Update Related Product Section (End of Article)
+      const p = art.product;
+      document.getElementById('spotlightKicker').textContent = `Direct Sourced • ${p.category}`;
+      document.getElementById('spotlightTitle').textContent = p.name;
+      document.getElementById('spotlightDescription').textContent = p.desc;
+      document.getElementById('spotlightPrice').textContent = p.price;
+      document.getElementById('spotlightImg').src = p.img;
+      document.getElementById('spotlightImg').alt = p.name;
+      
+      const discoverBtn = document.getElementById('spotlightDiscoverBtn');
+      discoverBtn.textContent = `Discover ${p.name.replace('Royal ', '')}`;
+      discoverBtn.href = p.url;
+
+      const addBtn = document.getElementById('spotlightAddBtn');
+      addBtn.textContent = `Add to Flight — ${p.price}`;
+      addBtn.dataset.id = p.id;
+      addBtn.dataset.name = p.name;
+      addBtn.dataset.price = p.rawPrice;
+      addBtn.dataset.img = p.img;
+      addBtn.dataset.category = p.category;
+
+      // Update Floating Sticky Popup (Bottom-Right)
+      document.getElementById('popupCategory').textContent = p.category;
+      document.getElementById('popupTitle').textContent = p.name;
+      document.getElementById('popupPrice').textContent = p.price;
+      document.getElementById('popupThumbnail').src = p.img;
+      document.getElementById('popupThumbnail').alt = p.name;
+
+      const popAddBtn = document.getElementById('popupAddBtn');
+      popAddBtn.dataset.id = p.id;
+      popAddBtn.dataset.name = p.name;
+      popAddBtn.dataset.price = p.rawPrice;
+      popAddBtn.dataset.img = p.img;
+      popAddBtn.dataset.category = p.category;
+
+      // Render the "More Chronicles" cards excluding active one
+      renderMoreChroniclesGrid(id);
+
+      // Re-bind instant cart buttons
+      bindInstantCartTriggers();
+
+      // Reset scroll position to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Render other chronicles at the bottom
+    function renderMoreChroniclesGrid(activeId) {
+      const grid = document.getElementById('moreChroniclesGrid');
+      grid.innerHTML = '';
+
+      Object.values(ARTICLES_DB).forEach(art => {
+        if (art.id === activeId) return;
+
+        const card = document.createElement('article');
+        card.className = 'editorial-mini-card';
+        card.innerHTML = `
+          <div class="mini-card-thumb">
+            <img src="${art.banner}" alt="${art.title}" loading="lazy">
+          </div>
+          <div class="mini-card-body">
+            <div class="mini-card-meta">
+              <span>${art.category}</span>
+              <span>${art.date}</span>
+            </div>
+            <h3 class="mini-card-title">${art.title}</h3>
+            <p class="mini-card-excerpt">${art.subtitle}</p>
+            <div class="mini-card-footer">
+              <span>Read Chronicle</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        `;
+        card.onclick = () => {
+          // Update URL without reload and load article
+          history.pushState({}, '', `?article=${art.id}`);
+          loadArticle(art.id);
+        };
+        grid.appendChild(card);
+      });
+    }
+
+    // ==========================================================================
+    // DYNAMIC READING PROGRESS BAR
+    // ==========================================================================
+    const progressBar = document.getElementById('readingProgressBar');
+    const stickyBar = document.getElementById('editorialStickyBar');
+    const relatedSection = document.getElementById('relatedProductSection');
+    const floatingPopup = document.getElementById('stickyProductPopup');
+
+    let relatedSectionInView = false;
+
+    function handleScrollTracking() {
+      const scrollY = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight;
+      const winHeight = window.innerHeight;
+
+      // Calculate progress percentage through the article main content
+      const articleEl = document.getElementById('articleMainContent');
+      const articleTop = articleEl.offsetTop;
+      const articleHeight = articleEl.offsetHeight + (relatedSection ? relatedSection.offsetHeight : 0);
+
+      let progress = 0;
+      if (scrollY >= articleTop) {
+        progress = ((scrollY - articleTop) / (articleHeight - winHeight * 0.5)) * 100;
+        progress = Math.min(Math.max(progress, 0), 100);
+      } else {
+        progress = 0;
+      }
+      progressBar.style.width = `${progress}%`;
+
+      // Visual styling for sticky bar on scroll
+      if (scrollY > 80) {
+        stickyBar.classList.add('stuck');
+      } else {
+        stickyBar.classList.remove('stuck');
+      }
+
+      // ========================================================================
+      // STICKY PRODUCT POPUP VISIBILITY LIFECYCLE
+      // Requirements:
+      // 1. Starts displaying after first scroll down (> 320px)
+      // 2. Automatically hides if related product section at the bottom becomes visible
+      // 3. Re-appears when scrolling back up above the related product section
+      // ========================================================================
+      const hasScrolledDown = scrollY > 320;
+      if (hasScrolledDown && !relatedSectionInView) {
+        floatingPopup.classList.add('visible');
+        floatingPopup.setAttribute('aria-hidden', 'false');
+      } else {
+        floatingPopup.classList.remove('visible');
+        floatingPopup.setAttribute('aria-hidden', 'true');
+      }
+    }
+
+    window.addEventListener('scroll', handleScrollTracking, { passive: true });
+
+    // ==========================================================================
+    // INTERSECTION OBSERVER FOR RELATED PRODUCT SECTION (BOTTOM VISIBILITY)
+    // ==========================================================================
+    if (relatedSection) {
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15 // Triggers as soon as 15% of the bottom product card enters viewport
+      };
+
+      const productObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          relatedSectionInView = entry.isIntersecting;
+          // Trigger immediate scroll check to update popup smoothly
+          handleScrollTracking();
+        });
+      }, observerOptions);
+
+      productObserver.observe(relatedSection);
+    }
+
+    // Clicking thumbnail or info on popup smoothly scrolls to full product showcase
+    function scrollToProductSpotlight() {
+      relatedSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    document.getElementById('popupThumbWrap').addEventListener('click', scrollToProductSpotlight);
+    document.getElementById('popupInfoWrap').addEventListener('click', scrollToProductSpotlight);
+
+    // ==========================================================================
+    // CAROUSEL ARROWS NAVIGATION HANDLER
+    // ==========================================================================
+    const chroniclesPrevBtn = document.getElementById('chroniclesPrevBtn');
+    const chroniclesNextBtn = document.getElementById('chroniclesNextBtn');
+    const chroniclesTrack = document.getElementById('moreChroniclesGrid');
+
+    if (chroniclesPrevBtn && chroniclesNextBtn && chroniclesTrack) {
+      chroniclesPrevBtn.addEventListener('click', () => {
+        chroniclesTrack.scrollBy({ left: -390, behavior: 'smooth' });
+      });
+
+      chroniclesNextBtn.addEventListener('click', () => {
+        chroniclesTrack.scrollBy({ left: 390, behavior: 'smooth' });
+      });
+
+      function updateCarouselArrows() {
+        const maxScroll = chroniclesTrack.scrollWidth - chroniclesTrack.clientWidth;
+        chroniclesPrevBtn.disabled = chroniclesTrack.scrollLeft <= 10;
+        chroniclesNextBtn.disabled = chroniclesTrack.scrollLeft >= maxScroll - 10;
+      }
+
+      chroniclesTrack.addEventListener('scroll', updateCarouselArrows, { passive: true });
+      setTimeout(updateCarouselArrows, 300);
+    }
+
+    // ==========================================================================
+    // CART TRIGGER HELPER & FALLBACK PERSISTENCE
+    // ==========================================================================
+    function bindInstantCartTriggers() {
+      document.querySelectorAll('.add-cart-instant-btn').forEach(btn => {
+        // Remove prior event to prevent double binding
+        btn.onclick = (e) => {
+          e.stopPropagation();
+          const pId = btn.dataset.id;
+          const pName = btn.dataset.name;
+          const pPrice = parseFloat(btn.dataset.price);
+          const pImg = btn.dataset.img;
+          const pCategory = btn.dataset.category;
+
+          // Add to localStorage cart directly for guaranteed persistence
+          let cart = JSON.parse(localStorage.getItem('graceylon_cart') || '[]');
+          const existing = cart.find(item => item.id === pId);
+          if (existing) {
+            existing.quantity += 1;
+          } else {
+            cart.push({
+              id: pId,
+              name: pName,
+              price: pPrice,
+              img: pImg,
+              category: pCategory,
+              quantity: 1
+            });
+          }
+          localStorage.setItem('graceylon_cart', JSON.stringify(cart));
+
+          // Open drawer via standard openCartDrawer if available or click cartOpenBtn
+          const cartBtn = document.getElementById('cartOpenBtn');
+          if (cartBtn) cartBtn.click();
+
+          // Dispatch toast notification
+          if (typeof showToast === 'function') {
+            showToast(`Added ${pName} to your tasting flight`, 'success');
+          }
+        };
+      });
+    }
+
+    // ==========================================================================
+    // SOCIAL SHARE HANDLER
+    // ==========================================================================
+    function shareArticle(network) {
+      const url = encodeURIComponent(window.location.href);
+      const title = encodeURIComponent(document.title);
+
+      switch (network) {
+        case 'facebook':
+          window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank', 'width=600,height=400');
+          break;
+        case 'twitter':
+          window.open(`https://twitter.com/intent/tweet?url=${url}&text=${title}`, '_blank', 'width=600,height=400');
+          break;
+        case 'whatsapp':
+          window.open(`https://api.whatsapp.com/send?text=${title}%20${url}`, '_blank');
+          break;
+        case 'copy':
+          navigator.clipboard.writeText(window.location.href).then(() => {
+            alert('Article link copied to clipboard!');
+          }).catch(() => {
+            prompt('Copy article URL:', window.location.href);
+          });
+          break;
+      }
+    }
+
+    // Initial Load execution
+    document.addEventListener('DOMContentLoaded', () => {
+      loadArticle(currentArticleId);
+      handleScrollTracking();
+    });
+  </script>
+
+</body>
+
+</html>
