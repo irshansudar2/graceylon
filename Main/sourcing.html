@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sourcing &amp; Quality | Provenance, Purity &amp; Standards</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="How Graceylon sources: unblended mountain teas, Alba-grade true cinnamon, and handcrafted coconut vessels. Transparent standards from island soil to your home.">
+  <meta name="keywords"
+    content="Graceylon sourcing, Ceylon tea quality, true cinnamon testing, Alba cinnamon purity, coconut teaware standards, transparent provenance Sri Lanka">
+  <meta name="author" content="Graceylon">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sourcing & Quality | Provenance, Purity & Standards">
+  <meta property="og:description"
+    content="How Graceylon sources: unblended mountain teas, Alba-grade true cinnamon, and handcrafted coconut vessels. Transparent standards from island soil to your home.">
+  <meta property="og:image" content="assets/graceylon-tea-ritual.jpg">
+  <meta property="og:url" content="https://www.graceylon.com/sourcing.html">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sourcing & Quality | Provenance, Purity & Standards">
+  <meta name="twitter:description"
+    content="How Graceylon sources: unblended mountain teas, Alba-grade true cinnamon, and handcrafted coconut vessels. Transparent standards from island soil to your home.">
+  <meta name="twitter:image" content="assets/graceylon-tea-ritual.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon 512x512.png">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="index.css">
+
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.graceylon.com/#organization",
+        "name": "Graceylon",
+        "url": "https://www.graceylon.com",
+        "logo": "https://www.graceylon.com/assets/logo.png",
+        "description": "Where Ceylon's heritage meets the quiet art of luxury."
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.graceylon.com/sourcing.html#webpage",
+        "url": "https://www.graceylon.com/sourcing.html",
+        "name": "Sourcing & Quality | Provenance, Purity & Standards",
+        "description": "How Graceylon sources unblended teas, true cinnamon, and handcrafted vessels.",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.graceylon.com/index.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Sourcing & Quality",
+              "item": "https://www.graceylon.com/sourcing.html"
+            }
+          ]
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ─── SOURCING PAGE STYLES ─── */
+    .sourcing-hero {
+      position: relative;
+      min-height: 86vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: calc(var(--header-height) + 3rem) 0 6rem 0;
+      background: radial-gradient(circle at 60% 40%, rgba(10, 10, 10, 0.45) 0%, rgba(5, 5, 5, 0.95) 90%),
+        url('assets/graceylon-ceylon-spices.jpg') no-repeat center center;
+      background-size: cover;
+      border-bottom: 1px solid var(--border-glass);
+      overflow: hidden;
+    }
+
+    .sourcing-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 140px;
+      background: linear-gradient(to top, hsl(var(--bg-primary)) 0%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .sourcing-hero-content {
+      max-width: 840px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 2rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: hsl(var(--text-muted));
+    }
+
+    .breadcrumbs a {
+      color: hsl(var(--text-muted));
+      transition: var(--transition-fast);
+    }
+
+    .breadcrumbs a:hover {
+      color: hsl(var(--accent-gold));
+    }
+
+    .breadcrumbs .breadcrumb-sep {
+      opacity: 0.4;
+      font-size: 0.65rem;
+    }
+
+    .breadcrumbs .current {
+      color: hsl(var(--accent-gold));
+      font-weight: 500;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: hsl(var(--accent-gold));
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 1px;
+      background: hsl(var(--accent-gold));
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      font-weight: 600;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+      color: hsl(var(--text-primary));
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-serif);
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+      font-style: italic;
+      color: hsl(var(--accent-gold));
+      margin-bottom: 1.8rem;
+      display: block;
+      line-height: 1.45;
+    }
+
+    .hero-lead {
+      font-size: clamp(1rem, 1.3vw, 1.15rem);
+      color: hsl(var(--text-secondary));
+      line-height: 1.85;
+      max-width: 700px;
+      margin-bottom: 2.8rem;
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-actions .btn-link {
+      color: hsl(var(--text-primary));
+      font-size: 0.82rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: var(--transition-fast);
+      padding: 0.8rem 1rem;
+    }
+
+    .hero-actions .btn-link:hover {
+      color: hsl(var(--accent-gold));
+      transform: translateX(4px);
+    }
+
+    /* ─── SOURCING EDITORIAL SECTIONS ─── */
+    .sourcing-section {
+      padding: 7.5rem 0;
+      position: relative;
+    }
+
+    .sourcing-section.alt-bg {
+      background: hsl(var(--bg-secondary));
+      border-top: 1px solid var(--border-glass);
+      border-bottom: 1px solid var(--border-glass);
+    }
+
+    .section-eyebrow {
+      font-size: 0.74rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: hsl(var(--accent-gold));
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.4vw, 2.8rem);
+      line-height: 1.2;
+      color: hsl(var(--text-primary));
+      margin-bottom: 1.2rem;
+    }
+
+    .sourcing-prose {
+      font-size: 1.02rem;
+      line-height: 1.85;
+      color: hsl(var(--text-secondary));
+      font-weight: 300;
+    }
+
+    .sourcing-prose strong {
+      color: hsl(var(--text-primary));
+      font-weight: 500;
+    }
+
+    .aphorism {
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: hsl(var(--accent-gold));
+      font-size: 1.15rem;
+      border-left: 2px solid hsl(var(--accent-gold));
+      padding-left: 1.4rem;
+      margin: 1.2rem 0;
+      line-height: 1.6;
+    }
+
+    /* 4 Provenance Pillars Grid */
+    .provenance-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.8rem;
+      margin-top: 3.5rem;
+    }
+
+    .provenance-card {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      border-radius: 14px;
+      padding: 2.2rem 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: var(--transition-smooth);
+    }
+
+    .provenance-card:hover {
+      border-color: rgba(197, 168, 90, 0.35);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .provenance-num {
+      font-family: var(--font-serif-decorative);
+      font-size: 1.3rem;
+      color: hsl(var(--accent-gold));
+    }
+
+    .provenance-card-title {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      color: hsl(var(--text-primary));
+    }
+
+    .provenance-card-desc {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: hsl(var(--text-secondary));
+      font-weight: 300;
+    }
+
+    /* 5 Quality Gateways Timeline / Stack */
+    .gateways-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+      margin-top: 3.5rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .gateway-item {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      border-radius: 14px;
+      padding: 2rem 2.5rem;
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 2rem;
+      align-items: center;
+      transition: var(--transition-fast);
+    }
+
+    .gateway-item:hover {
+      border-color: rgba(197, 168, 90, 0.4);
+      background: rgba(26, 26, 26, 0.85);
+    }
+
+    .gateway-badge {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      border: 1px solid hsl(var(--accent-gold));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif-decorative);
+      font-size: 1.25rem;
+      color: hsl(var(--accent-gold));
+      background: rgba(197, 168, 90, 0.05);
+    }
+
+    .gateway-body h4 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: hsl(var(--text-primary));
+      margin-bottom: 0.5rem;
+    }
+
+    .gateway-body p {
+      font-size: 0.92rem;
+      line-height: 1.75;
+      color: hsl(var(--text-secondary));
+      font-weight: 300;
+    }
+
+    /* Packaging Standards Grid */
+    .packaging-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4.5rem;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .packaging-visual {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border-glass);
+      background: hsl(var(--bg-card));
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+
+    .packaging-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .packaging-bullets {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+    }
+
+    .packaging-bullet-item {
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+    }
+
+    .packaging-bullet-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      background: rgba(197, 168, 90, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: hsl(var(--accent-gold));
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+    }
+
+    .packaging-bullet-text h4 {
+      font-size: 1.05rem;
+      color: hsl(var(--text-primary));
+      margin-bottom: 0.3rem;
+    }
+
+    .packaging-bullet-text p {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: hsl(var(--text-secondary));
+    }
+
+    /* The Transparency Pledge Comparison Table */
+    .pledge-table-card {
+      background: var(--bg-glass-heavy);
+      border: 1px solid var(--border-glass);
+      border-radius: 18px;
+      overflow: hidden;
+      margin-top: 3.5rem;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+
+    .pledge-header-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: rgba(255, 255, 255, 0.03);
+      border-bottom: 1px solid var(--border-glass);
+      padding: 1.8rem 2.5rem;
+    }
+
+    .pledge-col-head {
+      font-size: 0.82rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .pledge-col-head.claim {
+      color: hsl(var(--accent-gold));
+    }
+
+    .pledge-col-head.refuse {
+      color: hsl(var(--text-muted));
+    }
+
+    .pledge-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 1.6rem 2.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      gap: 2rem;
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    .pledge-row:last-child {
+      border-bottom: none;
+    }
+
+    .pledge-claim-item {
+      color: hsl(var(--text-primary));
+      display: flex;
+      gap: 0.8rem;
+    }
+
+    .pledge-claim-item::before {
+      content: '✓';
+      color: hsl(var(--accent-gold));
+      font-weight: bold;
+    }
+
+    .pledge-refuse-item {
+      color: hsl(var(--text-secondary));
+      display: flex;
+      gap: 0.8rem;
+    }
+
+    .pledge-refuse-item::before {
+      content: '✕';
+      color: hsl(var(--accent-red));
+      opacity: 0.8;
+      font-weight: bold;
+    }
+
+    /* Closing */
+    .sourcing-closing {
+      position: relative;
+      padding: 10rem 0;
+      background: radial-gradient(circle at center, rgba(10, 10, 10, 0.45) 0%, rgba(5, 5, 5, 0.95) 85%),
+        url('assets/graceylon-evening-invitation.jpg') no-repeat center center;
+      background-size: cover;
+      text-align: center;
+      border-top: 1px solid var(--border-glass);
+      overflow: hidden;
+    }
+
+    .sourcing-closing-content {
+      max-width: 740px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .sourcing-closing-tagline {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-style: italic;
+      color: hsl(var(--text-primary));
+      margin: 1.8rem 0 2.8rem 0;
+      display: block;
+      letter-spacing: 0.04em;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .provenance-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .packaging-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .pledge-header-row,
+      .pledge-row {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+      }
+      .gateway-item {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+        padding: 1.8rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .provenance-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ─── TEA CUPPING ROOM PROTOCOL SECTION ─── */
+    .cupping-protocol-section {
+      padding: 6rem 0;
+      position: relative;
+      background: radial-gradient(circle at 20% 50%, rgba(20, 20, 20, 0.6) 0%, rgba(8, 8, 8, 0.98) 100%);
+      border-top: 1px solid var(--border-glass);
+      border-bottom: 1px solid var(--border-glass);
+    }
+
+    .cupping-layout-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 3.5rem;
+      align-items: center;
+      margin-top: 3rem;
+    }
+
+    .cupping-media-showcase {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-glass);
+      background: hsl(var(--bg-secondary));
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+    }
+
+    .cupping-video-frame {
+      position: relative;
+      aspect-ratio: 16 / 11;
+      width: 100%;
+      overflow: hidden;
+      background: #050505;
+    }
+
+    .cupping-video-frame video,
+    .cupping-video-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .cupping-media-overlay-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(10, 10, 10, 0.8);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid var(--border-glass);
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      color: hsl(var(--text-primary));
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 500;
+      z-index: 2;
+    }
+
+    .cupping-media-overlay-badge .pulse-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: hsl(var(--accent-gold));
+      box-shadow: 0 0 8px hsl(var(--accent-gold));
+    }
+
+    .cupping-media-caption {
+      padding: 1.25rem 1.5rem;
+      background: rgba(15, 15, 15, 0.95);
+      border-top: 1px solid var(--border-glass);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+      color: hsl(var(--text-secondary));
+    }
+
+    .cupping-media-caption strong {
+      color: hsl(var(--accent-gold));
+    }
+
+    .cupping-eval-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+    }
+
+    .cupping-eval-card {
+      padding: 1.4rem 1.6rem;
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-sm);
+      transition: var(--transition-normal);
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+    }
+
+    .cupping-eval-card:hover {
+      border-color: rgba(212, 175, 55, 0.35);
+      background: rgba(255, 255, 255, 0.03);
+      transform: translateX(4px);
+    }
+
+    .cupping-eval-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      color: hsl(var(--accent-gold));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .cupping-eval-text h4 {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      color: hsl(var(--text-primary));
+      margin-bottom: 0.4rem;
+      font-weight: 500;
+    }
+
+    .cupping-eval-text p {
+      font-size: 0.86rem;
+      color: hsl(var(--text-secondary));
+      line-height: 1.65;
+      margin: 0;
+      font-weight: 300;
+    }
+
+    .cupping-standard-callout {
+      margin-top: 2rem;
+      padding: 1.2rem 1.5rem;
+      background: rgba(212, 175, 55, 0.05);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.84rem;
+      color: hsl(var(--text-secondary));
+      line-height: 1.5;
+    }
+
+    .cupping-standard-callout strong {
+      color: hsl(var(--accent-gold));
+    }
+
+    @media (max-width: 992px) {
+      .cupping-layout-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+    }
+
+    /* ─── ARTISANAL CINNAMON PEELING PROCESS SECTION ─── */
+    .peeling-process-section {
+      padding: 6rem 0;
+      background: hsl(var(--bg-primary));
+      border-top: 1px solid var(--border-glass);
+      border-bottom: 1px solid var(--border-glass);
+      position: relative;
+    }
+
+    .process-header {
+      max-width: 800px;
+      margin: 0 auto 3.5rem auto;
+      text-align: center;
+    }
+
+    .process-header .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.76rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: hsl(var(--accent-gold));
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+
+    .process-header h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.8vw, 3rem);
+      font-weight: 600;
+      line-height: 1.2;
+      color: hsl(var(--text-primary));
+      margin-bottom: 1.2rem;
+    }
+
+    .process-header p {
+      font-size: 1rem;
+      color: hsl(var(--text-secondary));
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    .process-layout-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .process-media-showcase {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-glass);
+      background: hsl(var(--bg-secondary));
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+    }
+
+    .process-video-frame {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      width: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .process-video-frame video,
+    .process-video-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .process-media-overlay-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(10, 10, 10, 0.75);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid var(--border-glass);
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      color: hsl(var(--text-primary));
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 500;
+      z-index: 2;
+    }
+
+    .process-media-overlay-badge .pulse-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: hsl(var(--accent-gold));
+      box-shadow: 0 0 8px hsl(var(--accent-gold));
+    }
+
+    .process-media-caption {
+      padding: 1.25rem 1.5rem;
+      background: rgba(18, 18, 18, 0.95);
+      border-top: 1px solid var(--border-glass);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+      color: hsl(var(--text-secondary));
+    }
+
+    .process-media-caption strong {
+      color: hsl(var(--accent-gold));
+    }
+
+    .process-steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+    }
+
+    .process-step-card {
+      display: flex;
+      gap: 1.4rem;
+      padding: 1.4rem 1.5rem;
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-sm);
+      transition: var(--transition-normal);
+      position: relative;
+    }
+
+    .process-step-card:hover {
+      border-color: rgba(212, 175, 55, 0.35);
+      transform: translateX(4px);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .process-step-number {
+      font-family: var(--font-serif-decorative, var(--font-serif));
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: hsl(var(--accent-gold));
+      min-width: 32px;
+      line-height: 1;
+      padding-top: 2px;
+    }
+
+    .process-step-content h4 {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      color: hsl(var(--text-primary));
+      margin-bottom: 0.4rem;
+      font-weight: 500;
+    }
+
+    .process-step-content p {
+      font-size: 0.86rem;
+      color: hsl(var(--text-secondary));
+      line-height: 1.6;
+      margin: 0;
+      font-weight: 300;
+    }
+
+    @media (max-width: 992px) {
+      .process-layout-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- --- HEADER / NAVIGATION --- -->
+  <header class="header" id="mainHeader">
+    <div class="container">
+      <div class="logo-wrapper">
+        <a href="index.html" aria-label="Graceylon Home">
+          <img src="assets/logo.png" alt="Graceylon Logo" class="brand-logo-svg" id="headerLogo">
+        </a>
+      </div>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="about.html" class="nav-link" id="navLinkAbout">About Us</a></li>
+          <li><a href="story.html" class="nav-link" id="navLinkStory">Our Story</a></li>
+          <li><a href="heritage.html" class="nav-link" id="navLinkHeritage">Our Heritage</a></li>
+          <li><a href="sourcing.html" class="nav-link active" id="navLinkSourcing">Sourcing &amp; Quality</a></li>
+          <li><a href="collections.html" class="nav-link" id="navLinkCollections">Collections</a></li>
+          <li><a href="sanctuary-chronicles.html" class="nav-link" id="navLinkBlog">The Sanctuary Chronicles</a></li>
+          <li><a href="verify.html" class="nav-link" id="navLinkVerify">Authenticity</a></li>
+          <li><a href="contact.html" class="nav-link" id="navLinkContact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Interactive Cart Trigger Button -->
+        <button class="cart-icon-btn" id="cartOpenBtn" aria-label="Open Shopping Cart" aria-haspopup="dialog">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+            <path d="M3 6h18" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation menu"
+          aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="menuIconOpen">
+            <line x1="4" x2="20" y1="12" y2="12" />
+            <line x1="4" x2="20" y1="6" y2="6" />
+            <line x1="4" x2="20" y1="18" y2="18" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="menuIconClose"
+            style="display:none;">
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- --- HERO SECTION --- -->
+  <section class="sourcing-hero" id="sourcingHero">
+    <div class="container">
+      <div class="sourcing-hero-content">
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep">/</span>
+          <span class="current">Sourcing &amp; Quality</span>
+        </nav>
+
+        <span class="hero-eyebrow reveal">PROVENANCE &middot; INTEGRITY &middot; THE HONEST STANDARD</span>
+        <h1 class="hero-title reveal delay-1">Quality Begins Long Before the Cup Is Filled</h1>
+        <span class="hero-subtitle reveal delay-2">In the soil, the rain, the harvest hands, and the care that follows.</span>
+
+        <p class="hero-lead reveal delay-2">
+          At Graceylon, we believe quality is not an inspection stamp applied at the end of an assembly line. It is a series of quiet, respectful choices made at every step of a product’s life.
+        </p>
+
+        <div class="hero-actions reveal delay-3">
+          <a href="collections.html" class="btn btn-primary" id="sourcingCtaDiscover">Discover Our Harvests</a>
+          <a href="verify.html" class="btn-link" id="sourcingCtaVerify">
+            <span>How We Verify Authenticity</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- SECTION 1: THE ORIGIN OF TASTE & WHAT AUTHENTIC CEYLON MEANS --- -->
+  <section class="sourcing-section" id="originOfTaste">
+    <div class="container">
+      <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <span class="section-eyebrow reveal">The Philosophy of Sourcing</span>
+        <h2 class="section-title reveal delay-1">The Origin of Taste</h2>
+        <p class="sourcing-prose reveal delay-2">
+          Quality begins in the red, mineral-dense soil of Sri Lanka’s southern plains and highland ridges. It lives in unpolluted mountain rainfall, gentle morning mist, and the patient judgment of cultivators who know exactly when a leaf is ready to be plucked and when a bark quill is ready to be shaved.
+        </p>
+        <p class="sourcing-prose reveal delay-2" style="margin-top: 1rem;">
+          The name Ceylon has often been diluted by commercial brokers who blend a fraction of island harvest with cheaper teas and spices from other regions. For Graceylon, authentic Ceylon means an uncompromised standard.
+        </p>
+        <div class="aphorism reveal delay-3" style="max-width: 580px; margin: 2rem auto; text-align: center; border-left: none; border-top: 1px solid hsl(var(--accent-gold)); border-bottom: 1px solid hsl(var(--accent-gold)); padding: 1.2rem 0;">
+          Specific details create lasting trust; exaggeration destroys it.
+        </div>
+      </div>
+
+      <!-- 4 Pillars of Authentic Ceylon -->
+      <div class="provenance-grid">
+        <article class="provenance-card reveal">
+          <span class="provenance-num">01</span>
+          <h3 class="provenance-card-title">100% Sri Lankan Provenance</h3>
+          <p class="provenance-card-desc">
+            Every single ingredient and material is grown, harvested, and crafted within Sri Lanka. We never blend across borders.
+          </p>
+        </article>
+
+        <article class="provenance-card reveal delay-1">
+          <span class="provenance-num">02</span>
+          <h3 class="provenance-card-title">Whole-Leaf Orthodox Integrity</h3>
+          <p class="provenance-card-desc">
+            Our teas contain whole and broken-leaf orthodox grades, free from industrial fillers, flavor sprays, or artificial essences.
+          </p>
+        </article>
+
+        <article class="provenance-card reveal delay-2">
+          <span class="provenance-num">03</span>
+          <h3 class="provenance-card-title">True Alba Cinnamon</h3>
+          <p class="provenance-card-desc">
+            We source exclusively <em>Cinnamomum verum</em>. We do not sell cassia, nor do we dilute our quills with secondary bark layers.
+          </p>
+        </article>
+
+        <article class="provenance-card reveal delay-3">
+          <span class="provenance-num">04</span>
+          <h3 class="provenance-card-title">Sustainable Artisan Materials</h3>
+          <p class="provenance-card-desc">
+            Our coconut vessels are shaped from mature fallen coconut shells, utilizing reclaimed resources without felling live trees.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- SECTION 2: THE 5 QUALITY GATEWAYS --- -->
+  <section class="sourcing-section alt-bg" id="qualityGateways">
+    <div class="container">
+      <div style="max-width: 760px; margin: 0 auto; text-align: center;">
+        <span class="section-eyebrow reveal">Rigorous Evaluation Protocol</span>
+        <h2 class="section-title reveal delay-1">Our Multi-Stage Quality Gateways</h2>
+        <p class="sourcing-prose reveal delay-2">
+          Before any harvest batch is accepted into the Graceylon collection, it passes five rigorous sensory and physical evaluations.
+        </p>
+      </div>
+
+      <div class="gateways-stack">
+        <!-- Gateway 1 -->
+        <div class="gateway-item reveal">
+          <div class="gateway-badge">01</div>
+          <div class="gateway-body">
+            <h4>Botanical Purity &amp; Visual Inspection</h4>
+            <p>Leaves and bark are inspected for color, size uniformity, and structural integrity. For cinnamon, we verify the presence of multi-layered, delicate inner bark quills. For tea, we verify the presence of unbroken leaf structures and golden tips.</p>
+          </div>
+        </div>
+
+        <!-- Gateway 2 -->
+        <div class="gateway-item reveal delay-1">
+          <div class="gateway-badge">02</div>
+          <div class="gateway-body">
+            <h4>Aroma &amp; Volatile Oil Density</h4>
+            <p>True Ceylon spices and teas are defined by their natural essential oils. We evaluate batches for fresh, floral, and warm aroma profiles, rejecting any stock that displays dullness or storage age.</p>
+          </div>
+        </div>
+
+        <!-- Gateway 3 -->
+        <div class="gateway-item reveal delay-2">
+          <div class="gateway-badge">03</div>
+          <div class="gateway-body">
+            <h4>Cup Liquor &amp; Flavor Clarity</h4>
+            <p>Every tea harvest undergoes cupping across controlled temperatures. We evaluate infusion color, liquor brightness, mouthfeel, and lingering finish. We accept only teas that steep clean, sweet, and balanced without astringency.</p>
+          </div>
+        </div>
+
+        <!-- Gateway 4 -->
+        <div class="gateway-item reveal delay-3">
+          <div class="gateway-badge">04</div>
+          <div class="gateway-body">
+            <h4>Craftsmanship &amp; Food-Safe Ergonomics</h4>
+            <p>Each handcrafted coconut vessel is individually inspected for smooth finishing, structural strength, balance in the hand, and proper curing with natural, food-grade coconut oils.</p>
+          </div>
+        </div>
+
+        <!-- Gateway 5 -->
+        <div class="gateway-item reveal delay-3">
+          <div class="gateway-badge">05</div>
+          <div class="gateway-body">
+            <h4>Moisture Control &amp; Freshness Sealing</h4>
+            <p>Because Ceylon’s climate is humid, storage is paramount. We dry and seal our harvests within tightly monitored humidity thresholds, locking in freshness before the journey across the oceans begins.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- SECTION 2.5: THE TEA CUPPING ROOM (SENSORY SCIENCE) --- -->
+  <section class="sourcing-section cupping-protocol-section" id="cuppingProtocol">
+    <div class="container">
+      <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <span class="section-eyebrow reveal">THE SENSORY BENCHMARK &middot; TASTING ARCHITECTURE</span>
+        <h2 class="section-title reveal delay-1">Inside the Cupping Room: The Sensory Science of Ceylon Tea</h2>
+        <p class="sourcing-prose reveal delay-2">
+          Before any orthodox tea leaves are approved for Graceylon, they undergo strict sommelier cupping. 
+          Through standardized porcelain bowls, precision water temperatures, and sensory timing, we evaluate 
+          the living character of each single-estate harvest.
+        </p>
+      </div>
+
+      <div class="cupping-layout-grid">
+        <!-- Visual Media Showcase (Supports Video or Photography) -->
+        <div class="cupping-media-showcase reveal">
+          <div class="cupping-video-frame">
+            <div class="cupping-media-overlay-badge">
+              <span class="pulse-dot"></span>
+              <span>Cupping Protocol &middot; Colombo Master Tasters</span>
+            </div>
+            <!-- Video element with poster image fallback -->
+            <video class="cupping-video-element" controls playsinline preload="metadata" poster="assets/graceylon-tea-ritual.jpg" aria-label="Professional Ceylon tea cupping and sensory evaluation">
+              <source src="assets/tea-cupping-protocol.mp4" type="video/mp4">
+              <!-- Fallback photo if video is not yet present -->
+              <img src="assets/graceylon-tea-ritual.jpg" alt="Professional tea cupping evaluation with porcelain tasting bowls" loading="lazy">
+            </video>
+          </div>
+          <div class="cupping-media-caption">
+            <span><strong>Testing Method:</strong> ISO 3103 Standard Cupping</span>
+            <span><strong>Harvest Sample:</strong> Highland Orthodox Leaf</span>
+          </div>
+        </div>
+
+        <!-- The 3 Sensory Benchmarks -->
+        <div class="cupping-eval-list reveal delay-1">
+          <div class="cupping-eval-card">
+            <div class="cupping-eval-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><path d="m12 6 4 6-4 6-4-6Z"/>
+              </svg>
+            </div>
+            <div class="cupping-eval-text">
+              <h4>1. Dry Leaf &amp; Bud Structural Assay</h4>
+              <p>Leaves are spread across white cupping trays to inspect tip-to-leaf ratio, velvet down coverage, unbroken bud twist, and moisture equilibrium. Pulverized dust or machine bruising results in instant rejection.</p>
+            </div>
+          </div>
+
+          <div class="cupping-eval-card">
+            <div class="cupping-eval-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a5 5 0 0 0-5 5c0 3 5 9 5 9s5-6 5-9a5 5 0 0 0-5-5Z"/><circle cx="12" cy="7" r="1.5"/>
+              </svg>
+            </div>
+            <div class="cupping-eval-text">
+              <h4>2. Wet Infusion &amp; Volatile Aromatics</h4>
+              <p>Inverted cupping lids capture the first release of steam. We examine the olfactory bouquet for natural elevation markers: mountain wildflower, crushed mint, toasted honeycomb, and clean stone fruit.</p>
+            </div>
+          </div>
+
+          <div class="cupping-eval-card">
+            <div class="cupping-eval-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/>
+              </svg>
+            </div>
+            <div class="cupping-eval-text">
+              <h4>3. Liquor Luminescence &amp; Palate Finish</h4>
+              <p>Evaluating cup clarity across white porcelain: liquor brightness, mouthfeel texture, briskness, and clean lingering finish. A true orthodox Ceylon leaf never leaves harsh or bitter astringency.</p>
+            </div>
+          </div>
+
+          <div class="cupping-standard-callout">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: hsl(var(--accent-gold)); flex-shrink: 0;">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            <span><strong>The Single-Estate Guarantee:</strong> Less than 4% of inspected micro-lot auctions meet our threshold for antioxidant concentration and cup sweetness.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- SECTION 2.6: CINNAMON PEELING PROCESS (CRAFT SHOWCASE) --- -->
+  <section class="peeling-process-section" id="cinnamonPeelingProcess">
+    <div class="container">
+      <div class="process-header">
+        <span class="section-eyebrow reveal">FIELD TO VESSEL &middot; ANCESTRAL PEELING CRAFT</span>
+        <h2 class="section-title reveal delay-1">The Art That Machines Cannot Replicate</h2>
+        <p class="sourcing-prose reveal delay-2">
+          Unlike coarse Cassia bark stripped by industrial machinery, authentic Alba-grade Ceylon cinnamon is created
+          through surgical hand precision passed down across three centuries. Observe how the tender inner bark is
+          transformed into layered golden quills.
+        </p>
+      </div>
+
+      <div class="process-layout-grid">
+        <!-- Visual Showcase (Supports Video loop or Photography) -->
+        <div class="process-media-showcase reveal">
+          <div class="process-video-frame">
+            <div class="process-media-overlay-badge">
+              <span class="pulse-dot"></span>
+              <span>Craft Documentary &middot; Galle Groves</span>
+            </div>
+            <!-- Video player with poster image fallback -->
+            <video class="process-video-element" controls playsinline preload="metadata" poster="assets/ceylon-cinnamon.jpg" aria-label="Traditional Ceylon cinnamon peeling process in Sri Lanka">
+              <source src="assets/cinnamon-peeling-process.mp4" type="video/mp4">
+              <!-- Fallback Image if video is not yet loaded -->
+              <img src="assets/ceylon-cinnamon.jpg" alt="Artisanal hand-rolling of delicate Alba Ceylon cinnamon quills" loading="lazy">
+            </video>
+          </div>
+          <div class="process-media-caption">
+            <span><strong>Harvest Location:</strong> Southern Sri Lanka Estate</span>
+            <span><strong>Grade:</strong> Alba (&Oslash; &lt; 6mm)</span>
+          </div>
+        </div>
+
+        <!-- 4 Step-by-Step Craft Stages -->
+        <div class="process-steps-list reveal delay-1">
+          <div class="process-step-card">
+            <span class="process-step-number">01</span>
+            <div class="process-step-content">
+              <h4>Dawn Branch Selection</h4>
+              <p>Stems of <em>Cinnamomum verum</em> are harvested at early sunrise when morning dew keeps sap and moisture high, allowing the bark to separate cleanly without tearing.</p>
+            </div>
+          </div>
+
+          <div class="process-step-card">
+            <span class="process-step-number">02</span>
+            <div class="process-step-content">
+              <h4>Brass Knife Outer Scraping</h4>
+              <p>A master peeler tenderly scrapes away the coarse, bitter outer bark with a traditional brass scraper, revealing the fragrant, parchment-thin inner cambium layer.</p>
+            </div>
+          </div>
+
+          <div class="process-step-card">
+            <span class="process-step-number">03</span>
+            <div class="process-step-content">
+              <h4>The Micro-Peeling Ribbon</h4>
+              <p>Using a specialized curved blade, the inner bark is hand-sliced in unbroken, translucent ribbons just fractions of a millimeter thick—a skill demanding years of muscle memory.</p>
+            </div>
+          </div>
+
+          <div class="process-step-card">
+            <span class="process-step-number">04</span>
+            <div class="process-step-content">
+              <h4>Telescopic Layering &amp; Shade Cure</h4>
+              <p>Multiple gossamer ribbons are carefully inserted inside one another like a cigar, curled naturally by the tropical air, and shade-dried to lock in essential cinnamaldehyde oils.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- SECTION 3: PACKAGING DESIGNED TO PROTECT --- -->
+  <section class="sourcing-section" id="packagingStandards">
+    <div class="container">
+      <div class="packaging-grid">
+        <div>
+          <span class="section-eyebrow reveal">Preservation Architecture</span>
+          <h2 class="section-title reveal delay-1">Packaging Designed to Protect</h2>
+          <p class="sourcing-prose reveal delay-2">
+            A rare harvest deserves a vessel worthy of its character. Mass-market spices and teas degrade rapidly in clear plastic bags exposed to supermarket fluorescent light.
+          </p>
+          <p class="sourcing-prose reveal delay-2" style="margin-top: 1rem;">
+            When your Graceylon package arrives, unwrapping it is your first sensory ritual: clean, fragrant, and meticulously presented.
+          </p>
+
+          <div class="packaging-bullets" style="margin-top: 2rem;">
+            <div class="packaging-bullet-item reveal delay-2">
+              <div class="packaging-bullet-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </div>
+              <div class="packaging-bullet-text">
+                <h4>Light-Impermeable &amp; Airtight</h4>
+                <p>Shields delicate leaves and quills from UV degradation, oxidation, and humidity shifts.</p>
+              </div>
+            </div>
+
+            <div class="packaging-bullet-item reveal delay-3">
+              <div class="packaging-bullet-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="14" x="2" y="5" rx="2"/>
+                  <line x1="2" x2="22" y1="10" y2="10"/>
+                </svg>
+              </div>
+              <div class="packaging-bullet-text">
+                <h4>Recyclable Metal &amp; Dark Glass</h4>
+                <p>Engineered food-grade vessels preserving volatile essential aromatics for months.</p>
+              </div>
+            </div>
+
+            <div class="packaging-bullet-item reveal delay-3">
+              <div class="packaging-bullet-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div class="packaging-bullet-text">
+                <h4>Biodegradable Transit Materials</h4>
+                <p>Unbleached, recyclable protective shipping cartons minimizing single-use waste.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="packaging-visual reveal">
+          <img src="assets/coconut_cup_set.jpg"
+            alt="Graceylon packaging presentation with dark vessels and protective gift box" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- SECTION 4: THE TRANSPARENCY PLEDGE --- -->
+  <section class="sourcing-section alt-bg" id="transparencyPledge">
+    <div class="container">
+      <div style="max-width: 760px; margin: 0 auto; text-align: center;">
+        <span class="section-eyebrow reveal">The Honest Standard</span>
+        <h2 class="section-title reveal delay-1">Our Transparency Pledge</h2>
+        <p class="sourcing-prose reveal delay-2">
+          Quiet luxury requires radical honesty. Here is what Graceylon stands for—and what we refuse to claim.
+        </p>
+      </div>
+
+      <div class="pledge-table-card reveal delay-2">
+        <div class="pledge-header-row">
+          <span class="pledge-col-head claim">What Graceylon Claims &amp; Guarantees</span>
+          <span class="pledge-col-head refuse">What Graceylon Refuses to Claim</span>
+        </div>
+
+        <div class="pledge-row">
+          <div class="pledge-claim-item">
+            <span><strong>100% Sri Lankan Provenance:</strong> Sourced exclusively from verifiable island terroirs.</span>
+          </div>
+          <div class="pledge-refuse-item">
+            <span>We never blend with cheaper harvests from neighboring regions to cut production costs.</span>
+          </div>
+        </div>
+
+        <div class="pledge-row">
+          <div class="pledge-claim-item">
+            <span><strong>True Botanical Species:</strong> Strictly <em>Cinnamomum verum</em> with verified low coumarin.</span>
+          </div>
+          <div class="pledge-refuse-item">
+            <span>We never sell or dilute with common industrial cassia bark under vague generic labels.</span>
+          </div>
+        </div>
+
+        <div class="pledge-row">
+          <div class="pledge-claim-item">
+            <span><strong>Orthodox Whole-Leaf Teas:</strong> Intact leaf grades offering clarity and natural sweetness.</span>
+          </div>
+          <div class="pledge-refuse-item">
+            <span>We never use industrial CTC dust, artificial fragrance sprays, or synthetic flavorings.</span>
+          </div>
+        </div>
+
+        <div class="pledge-row">
+          <div class="pledge-claim-item">
+            <span><strong>Genuine Artisan Handcraft:</strong> Coconut teaware hand-turned from reclaimed fallen shells.</span>
+          </div>
+          <div class="pledge-refuse-item">
+            <span>We never invent fake estate histories, fabricated royal seals, or unverified charity figures.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- CLOSING INVITATION --- -->
+  <section class="sourcing-closing" id="sourcingClosing">
+    <div class="container">
+      <div class="sourcing-closing-content">
+        <span class="hero-eyebrow reveal">QUIET CONFIDENCE</span>
+        <h2 class="section-title reveal delay-1">Experience Honest Luxury</h2>
+        <p class="sourcing-prose reveal delay-2">
+          When you receive a Graceylon parcel, you hold an unhurried, authentic piece of Ceylon, protected with devotion from harvest to your home.
+        </p>
+        <span class="sourcing-closing-tagline reveal delay-3">Ceylon, felt. Luxury, lived.</span>
+
+        <div class="hero-actions reveal delay-3" style="justify-content: center;">
+          <a href="collections.html" class="btn btn-primary" id="closingSourcingCta">Discover Our Harvests</a>
+          <a href="contact.html" class="btn-link" id="closingSourcingContact">
+            <span>Inquire with Curator Desk</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- FOOTER --- -->
+  <footer class="footer" id="mainFooter">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="Graceylon Logo" class="footer-logo">
+          <p class="footer-tagline">Where Ceylon's heritage meets the quiet art of luxury. Artisanal teas, true spices, and handcrafted lifestyle treasures.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">The Brand</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Graceylon</a></li>
+            <li><a href="story.html">Our Story</a></li>
+            <li><a href="heritage.html">Our Heritage</a></li>
+            <li><a href="sourcing.html">Sourcing &amp; Quality</a></li>
+            <li><a href="verify.html">Authenticity Vault</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Our Treasures</h4>
+          <ul class="footer-links">
+            <li><a href="product-tea.html">Ceylon Orthodox Tea</a></li>
+            <li><a href="product-cinnamon.html">True Ceylon Cinnamon</a></li>
+            <li><a href="product-craft.html">Handcrafted Coconut Cups</a></li>
+            <li><a href="collections.html">The Signature Flight</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Concierge &amp; Care</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Concierge Desk</a></li>
+            <li><a href="contact.html#delivery">Delivery &amp; Returns</a></li>
+            <li><a href="about.html#faq">Frequently Asked Questions</a></li>
+            <li><a href="mailto:curator@graceylon.com">curator@graceylon.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2026 Graceylon. All rights reserved. Sourced with devotion from Sri Lanka.</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/gra_ceylon/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/graceylonproducts" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- --- SHOPPING CART DRAWER --- -->
+  <div class="cart-overlay" id="cartOverlay" role="dialog" aria-modal="true" aria-labelledby="cartDrawerTitle">
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <h3 class="cart-header-title" id="cartDrawerTitle">Your Tasting Flight</h3>
+        <button class="cart-close-btn" id="cartCloseBtn" aria-label="Close Shopping Cart">&times;</button>
+      </div>
+
+      <div class="cart-items" id="cartItemsContainer">
+        <div class="cart-empty-message" id="cartEmptyMessage">
+          <img src="assets/logo.png" alt="Graceylon Logo" class="cart-empty-logo">
+          <p>Your flight is currently empty.</p>
+          <p style="font-size: 0.75rem; margin-top: 0.5rem; color: hsl(var(--text-muted));">Begin your journey with Ceylon by adding one of our signature treasures.</p>
+        </div>
+      </div>
+
+      <div class="cart-footer">
+        <div class="cart-quote-email-group">
+          <label for="cartQuoteEmail" class="quote-email-label">Your Contact Email</label>
+          <input type="email" id="cartQuoteEmail" class="quote-email-input" placeholder="Enter your private email address" required>
+        </div>
+        <button class="btn btn-primary checkout-btn" id="checkoutBtn">Request Quote</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- --- TOAST NOTIFICATIONS --- -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- --- CHECKOUT MODAL --- -->
+  <div class="modal-overlay" id="checkoutModalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="checkout-modal glass-panel">
+      <img src="assets/logo.png" alt="Graceylon Logo" class="modal-brand-logo"
+        style="height: 50px; width: auto; margin: 0 auto 2.2rem auto; display: block; opacity: 0.95;">
+      <div class="success-icon-animation">&#10003;</div>
+      <h3 class="modal-title" id="modalTitle">Order Succeeded</h3>
+      <p class="modal-desc">Thank you for embarking on this sensory journey. Your exclusive artisanal treasures are being prepared. A private dispatch email will reach your inbox shortly.</p>
+      <button class="btn btn-primary" id="modalCloseBtn">Return to Sanctuary</button>
+    </div>
+  </div>
+
+  <!-- Core Scripts -->
+  <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Heritage | Ceylon Tea, True Cinnamon &amp; Island Craft</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Explore Ceylon’s living heritage: the high-altitude cloud forests of Ceylon tea, master-rolled true cinnamon, island spice groves, and ancestral artisan craft and teaware.">
+  <meta name="keywords"
+    content="Ceylon heritage, true cinnamon verum, Ceylon tea orthodox, Nuwara Eliya tea, Sri Lanka spice gardens, Sri Lanka artisan crafts, Serendib">
+  <meta name="author" content="Graceylon">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Our Heritage | Ceylon Tea, True Cinnamon & Island Craft">
+  <meta property="og:description"
+    content="Explore Ceylon’s living heritage: high-altitude cloud forest teas, master-rolled true cinnamon, island spice groves, and ancestral artisan craft.">
+  <meta property="og:image" content="assets/graceylon-ceylon-heritage-landscape.jpg">
+  <meta property="og:url" content="https://www.graceylon.com/heritage.html">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Our Heritage | Ceylon Tea, True Cinnamon & Island Craft">
+  <meta name="twitter:description"
+    content="Explore Ceylon’s living heritage: high-altitude cloud forest teas, master-rolled true cinnamon, island spice groves, and ancestral artisan craft.">
+  <meta name="twitter:image" content="assets/graceylon-ceylon-heritage-landscape.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon 512x512.png">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="index.css">
+
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.graceylon.com/#organization",
+        "name": "Graceylon",
+        "url": "https://www.graceylon.com",
+        "logo": "https://www.graceylon.com/assets/logo.png",
+        "description": "Where Ceylon's heritage meets the quiet art of luxury."
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.graceylon.com/heritage.html#webpage",
+        "url": "https://www.graceylon.com/heritage.html",
+        "name": "Our Heritage | Ceylon Tea, True Cinnamon & Island Craft",
+        "description": "Explore Ceylon’s living heritage.",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.graceylon.com/index.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Our Heritage",
+              "item": "https://www.graceylon.com/heritage.html"
+            }
+          ]
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ─── HERITAGE PAGE STYLES ─── */
+    .heritage-hero {
+      position: relative;
+      min-height: 86vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: calc(var(--header-height) + 3rem) 0 6rem 0;
+      background: radial-gradient(circle at 60% 40%, rgba(10, 10, 10, 0.45) 0%, rgba(5, 5, 5, 0.95) 90%),
+        url('assets/ceylon-world-map-dark.jpg') no-repeat center center;
+      background-size: cover;
+      border-bottom: 1px solid var(--border-glass);
+      overflow: hidden;
+    }
+
+    .heritage-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 140px;
+      background: linear-gradient(to top, hsl(var(--bg-primary)) 0%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .heritage-hero-content {
+      max-width: 840px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 2rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: hsl(var(--text-muted));
+    }
+
+    .breadcrumbs a {
+      color: hsl(var(--text-muted));
+      transition: var(--transition-fast);
+    }
+
+    .breadcrumbs a:hover {
+      color: hsl(var(--accent-gold));
+    }
+
+    .breadcrumbs .breadcrumb-sep {
+      opacity: 0.4;
+      font-size: 0.65rem;
+    }
+
+    .breadcrumbs .current {
+      color: hsl(var(--accent-gold));
+      font-weight: 500;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: hsl(var(--accent-gold));
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 1px;
+      background: hsl(var(--accent-gold));
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      font-weight: 600;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+      color: hsl(var(--text-primary));
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-serif);
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+      font-style: italic;
+      color: hsl(var(--accent-gold));
+      margin-bottom: 1.8rem;
+      display: block;
+      line-height: 1.45;
+    }
+
+    .hero-lead {
+      font-size: clamp(1rem, 1.3vw, 1.15rem);
+      color: hsl(var(--text-secondary));
+      line-height: 1.85;
+      max-width: 700px;
+      margin-bottom: 2.8rem;
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-actions .btn-link {
+      color: hsl(var(--text-primary));
+      font-size: 0.82rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: var(--transition-fast);
+      padding: 0.8rem 1rem;
+    }
+
+    .hero-actions .btn-link:hover {
+      color: hsl(var(--accent-gold));
+      transform: translateX(4px);
+    }
+
+    /* ─── HERITAGE EDITORIAL SECTIONS ─── */
+    .heritage-section {
+      padding: 7.5rem 0;
+      position: relative;
+    }
+
+    .heritage-section.alt-bg {
+      background: hsl(var(--bg-secondary));
+      border-top: 1px solid var(--border-glass);
+      border-bottom: 1px solid var(--border-glass);
+    }
+
+    .heritage-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .heritage-grid.reverse {
+      grid-template-columns: 1fr 1.1fr;
+    }
+
+    .heritage-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+    }
+
+    .section-eyebrow {
+      font-size: 0.74rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: hsl(var(--accent-gold));
+      font-weight: 600;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.4vw, 2.8rem);
+      line-height: 1.2;
+      color: hsl(var(--text-primary));
+    }
+
+    .heritage-prose {
+      font-size: 1.02rem;
+      line-height: 1.85;
+      color: hsl(var(--text-secondary));
+      font-weight: 300;
+    }
+
+    .heritage-prose strong {
+      color: hsl(var(--text-primary));
+      font-weight: 500;
+    }
+
+    .aphorism {
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: hsl(var(--accent-gold));
+      font-size: 1.15rem;
+      border-left: 2px solid hsl(var(--accent-gold));
+      padding-left: 1.4rem;
+      margin: 0.6rem 0;
+      line-height: 1.6;
+    }
+
+    /* Visual Media Cards */
+    .heritage-media-card {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border-glass);
+      background: hsl(var(--bg-card));
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+
+    .heritage-media-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .heritage-media-card:hover img {
+      transform: scale(1.03);
+    }
+
+    .media-card-badge {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 1.4rem 1.8rem;
+      background: linear-gradient(to top, rgba(10, 10, 10, 0.95) 0%, transparent 100%);
+      font-size: 0.74rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: hsl(var(--text-secondary));
+    }
+
+    .media-card-badge span {
+      color: hsl(var(--accent-gold));
+      font-weight: 600;
+    }
+
+    /* Interactive Side-by-Side Comparison Module */
+    .comparison-container {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      border-radius: 16px;
+      padding: 2.2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .compare-side {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .compare-side.true-ceylon {
+      border-left: 2px solid hsl(var(--accent-gold));
+      padding-left: 1.5rem;
+    }
+
+    .compare-side.cassia {
+      border-left: 2px solid rgba(255, 255, 255, 0.15);
+      padding-left: 1.5rem;
+    }
+
+    .compare-tag {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    .compare-side.true-ceylon .compare-tag {
+      color: hsl(var(--accent-gold));
+    }
+
+    .compare-side.cassia .compare-tag {
+      color: hsl(var(--text-muted));
+    }
+
+    .compare-title {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      color: hsl(var(--text-primary));
+    }
+
+    .compare-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      font-size: 0.88rem;
+      color: hsl(var(--text-secondary));
+    }
+
+    .compare-list li strong {
+      color: hsl(var(--text-primary));
+    }
+
+    /* 4 Spice Groves Grid */
+    .spices-heritage-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.8rem;
+      margin-top: 3.5rem;
+    }
+
+    .spice-card {
+      background: var(--bg-glass);
+      backdrop-filter: blur(15px);
+      border: 1px solid var(--border-glass);
+      border-radius: 14px;
+      padding: 2rem 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      transition: var(--transition-smooth);
+    }
+
+    .spice-card:hover {
+      border-color: rgba(197, 168, 90, 0.35);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .spice-card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(197, 168, 90, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: hsl(var(--accent-gold));
+      margin-bottom: 0.5rem;
+    }
+
+    .spice-card-title {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: hsl(var(--text-primary));
+    }
+
+    .spice-card-desc {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: hsl(var(--text-secondary));
+      font-weight: 300;
+    }
+
+    /* Coconut Craft Journey Steps */
+    .craft-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .craft-step-item {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      border-radius: 12px;
+      padding: 1.8rem 1.4rem;
+    }
+
+    .craft-step-num {
+      font-family: var(--font-serif-decorative);
+      font-size: 1.2rem;
+      color: hsl(var(--accent-gold));
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .craft-step-item h4 {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      margin-bottom: 0.6rem;
+      color: hsl(var(--text-primary));
+    }
+
+    .craft-step-item p {
+      font-size: 0.86rem;
+      line-height: 1.65;
+      color: hsl(var(--text-secondary));
+    }
+
+    /* Closing */
+    .heritage-closing {
+      position: relative;
+      padding: 10rem 0;
+      background: radial-gradient(circle at center, rgba(10, 10, 10, 0.45) 0%, rgba(5, 5, 5, 0.95) 85%),
+        url('assets/graceylon-evening-invitation.jpg') no-repeat center center;
+      background-size: cover;
+      text-align: center;
+      border-top: 1px solid var(--border-glass);
+      overflow: hidden;
+    }
+
+    .heritage-closing-content {
+      max-width: 740px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .heritage-closing-tagline {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-style: italic;
+      color: hsl(var(--text-primary));
+      margin: 1.8rem 0 2.8rem 0;
+      display: block;
+      letter-spacing: 0.04em;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .heritage-grid,
+      .heritage-grid.reverse {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+      }
+      .comparison-container {
+        grid-template-columns: 1fr;
+      }
+      .spices-heritage-grid,
+      .craft-steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .spices-heritage-grid,
+      .craft-steps-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- --- HEADER / NAVIGATION --- -->
+  <header class="header" id="mainHeader">
+    <div class="container">
+      <div class="logo-wrapper">
+        <a href="index.html" aria-label="Graceylon Home">
+          <img src="assets/logo.png" alt="Graceylon Logo" class="brand-logo-svg" id="headerLogo">
+        </a>
+      </div>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="about.html" class="nav-link" id="navLinkAbout">About Us</a></li>
+          <li><a href="story.html" class="nav-link" id="navLinkStory">Our Story</a></li>
+          <li><a href="heritage.html" class="nav-link active" id="navLinkHeritage">Our Heritage</a></li>
+          <li><a href="sourcing.html" class="nav-link" id="navLinkSourcing">Sourcing &amp; Quality</a></li>
+          <li><a href="collections.html" class="nav-link" id="navLinkCollections">Collections</a></li>
+          <li><a href="sanctuary-chronicles.html" class="nav-link" id="navLinkBlog">The Sanctuary Chronicles</a></li>
+          <li><a href="verify.html" class="nav-link" id="navLinkVerify">Authenticity</a></li>
+          <li><a href="contact.html" class="nav-link" id="navLinkContact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Interactive Cart Trigger Button -->
+        <button class="cart-icon-btn" id="cartOpenBtn" aria-label="Open Shopping Cart" aria-haspopup="dialog">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+            <path d="M3 6h18" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation menu"
+          aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="menuIconOpen">
+            <line x1="4" x2="20" y1="12" y2="12" />
+            <line x1="4" x2="20" y1="6" y2="6" />
+            <line x1="4" x2="20" y1="18" y2="18" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="menuIconClose"
+            style="display:none;">
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- --- HERO SECTION --- -->
+  <section class="heritage-hero" id="heritageHero">
+    <div class="container">
+      <div class="heritage-hero-content">
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep">/</span>
+          <span class="current">Our Heritage</span>
+        </nav>
+
+        <span class="hero-eyebrow reveal">TIME &middot; TERROIR &middot; A LIVING LEGACY</span>
+        <h1 class="hero-title reveal delay-1">Ceylon: An Island Shaped by Mist, Sun, and Human Hands</h1>
+        <span class="hero-subtitle reveal delay-2">Heritage is not history kept behind glass. It is a ritual kept alive.</span>
+
+        <p class="hero-lead reveal delay-2">
+          For thousands of years, Ceylon has captivated the world through its singular terroirs: high-altitude tea clouds, delicate master-rolled true cinnamon, aromatic spice gardens, and living artisanal craft.
+        </p>
+
+        <div class="hero-actions reveal delay-3">
+          <a href="collections.html" class="btn btn-primary" id="heritageCtaDiscover">Discover Ceylon's Treasures</a>
+          <a href="sourcing.html" class="btn-link" id="heritageCtaSourcing">
+            <span>Explore Sourcing &amp; Quality</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- SECTION 1: THE RESPLENDENT ISLAND --- -->
+  <section class="heritage-section" id="resplendentIsland">
+    <div class="container">
+      <div class="heritage-grid">
+        <div class="heritage-content">
+          <span class="section-eyebrow reveal">Historical Provenance</span>
+          <h2 class="section-title reveal delay-1">The Resplendent Island</h2>
+          <p class="heritage-prose reveal delay-2">
+            For thousands of years, navigators, scholars, and spice traders recorded a legendary island set like a jewel in the warm currents of the Indian Ocean. Arab merchants called it <strong>Serendib</strong>, the source of serendipity. Ancient Sanskrit chroniclers named it <strong>Lanka</strong>, resplendent. Portuguese, Dutch, and British seafaring explorers charted it as <strong>Ceylon</strong>.
+          </p>
+          <p class="heritage-prose reveal delay-2">
+            Ceylon was never merely a geographic coordinate. It was an extraordinary biosphere where the equatorial sun met monsoon winds, nourishing mountain cloud forests, fertile river valleys, and aromatic coastal soils.
+          </p>
+          <p class="heritage-prose reveal delay-3">
+            Long before modern global supply chains flattened the flavours of the earth, Ceylon was renowned across empires for three distinct gifts: botanical spices of unmatched purity, delicate mountain teas, and an artisan culture rooted in respect for natural materials.
+          </p>
+          <div class="aphorism reveal delay-3">
+            At Graceylon, we view this heritage not as nostalgia, but as a living standard of excellence.
+          </div>
+        </div>
+
+        <div class="heritage-media-card reveal">
+          <img src="assets/ceylon-world-map.jpg"
+            alt="Historical nautical spice route chart of Ceylon in the Indian Ocean" loading="lazy">
+          <div class="media-card-badge">
+            <span>Ancient Maritime Crossroads</span> &middot; The Spice Jewel of Serendib
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- SECTION 2: TRUE CEYLON CINNAMON --- -->
+  <section class="heritage-section alt-bg" id="cinnamonHeritage">
+    <div class="container">
+      <div class="heritage-grid reverse">
+        <div class="heritage-media-card reveal">
+          <img src="assets/ceylon-cinnamon.jpg"
+            alt="Fine golden multi-layered Ceylon cinnamon quills" loading="lazy">
+          <div class="media-card-badge">
+            <span>Cinnamomum verum</span> &middot; Hand-Rolled Golden Quills
+          </div>
+        </div>
+
+        <div class="heritage-content">
+          <span class="section-eyebrow reveal">Botanical Purity</span>
+          <h2 class="section-title reveal delay-1">True Ceylon Cinnamon: The Golden Quill</h2>
+          <p class="heritage-prose reveal delay-2">
+            No spice reveals the difference between industrial imitation and true heritage more clearly than cinnamon.
+          </p>
+          <p class="heritage-prose reveal delay-2">
+            Most of what the modern world purchases as cinnamon is not cinnamon at all. It is <strong>cassia</strong> (<em>Cinnamomum cassia</em>), harvested from thick, tough tree bark grown across China and Southeast Asia. Cassia is hard, hollow, dark brown, and pungent, containing elevated levels of coumarin—a naturally occurring compound that can be harsh on the body.
+          </p>
+          <p class="heritage-prose reveal delay-3">
+            True cinnamon—<strong>Cinnamomum verum</strong>—is indigenous exclusively to the sunny, sandy soils of southern Sri Lanka. Here, the harvesting of cinnamon is a heritage craft passed down through generations. Master peelers shave only the tender, paper-thin inner bark of the tree. While still moist and fragrant, these gossamer ribbons are carefully rolled by hand, layer upon layer, forming delicate composite quills that resemble rolled parchment.
+          </p>
+          <div class="aphorism reveal delay-3">
+            Not all spice is created to overwhelm. True cinnamon was made to enchant.
+          </div>
+
+          <!-- Interactive Comparison Matrix -->
+          <div class="comparison-container reveal delay-3">
+            <div class="compare-side true-ceylon">
+              <span class="compare-tag">True Ceylon (Graceylon)</span>
+              <h3 class="compare-title">Cinnamomum verum</h3>
+              <ul class="compare-list">
+                <li><strong>Structure:</strong> Up to 40 wafer-thin inner layers</li>
+                <li><strong>Texture:</strong> Soft, brittle, easily crushed by hand</li>
+                <li><strong>Aroma:</strong> Delicate, sweet, citrus-floral notes</li>
+                <li><strong>Coumarin:</strong> Naturally trace / low (&lt;0.02%)</li>
+              </ul>
+            </div>
+
+            <div class="compare-side cassia">
+              <span class="compare-tag">Commercial Cassia</span>
+              <h3 class="compare-title">Cinnamomum cassia</h3>
+              <ul class="compare-list">
+                <li><strong>Structure:</strong> Single thick, hollow, hard tree bark</li>
+                <li><strong>Texture:</strong> Woody, rock-hard, difficult to grind</li>
+                <li><strong>Aroma:</strong> Pungent, harsh, burning aftertaste</li>
+                <li><strong>Coumarin:</strong> High content (can exceed 1.0%)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- SECTION 3: HIGHLAND CLOUD FORESTS & ORTHODOX TEA --- -->
+  <section class="heritage-section" id="teaHeritage">
+    <div class="container">
+      <div class="heritage-grid">
+        <div class="heritage-content">
+          <span class="section-eyebrow reveal">High-Altitude Terroir</span>
+          <h2 class="section-title reveal delay-1">The Highland Cloud Forests: Orthodox Ceylon Tea</h2>
+          <p class="heritage-prose reveal delay-2">
+            In the nineteenth century, when coffee crops across Ceylon failed, the island’s mountainous central spine discovered its true calling: <em>Camellia sinensis</em>, the tea plant.
+          </p>
+          <p class="heritage-prose reveal delay-2">
+            Ceylon tea quickly established an international reputation that rivaled the great wine terroirs of Europe. The island’s geography is singular. Two distinct monsoon systems sweep across the island at different times of the year, creating microclimates where cool highland elevation, persistent cloud mist, and sudden mountain sunshine alter the character of tea bushes within a few miles.
+          </p>
+          <p class="heritage-prose reveal delay-3">
+            We focus exclusively on <strong>orthodox whole-leaf processing</strong>:
+          </p>
+          <ul class="heritage-prose reveal delay-3" style="padding-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+            <li>Leaves grown at high elevations—where cool nights slow plant growth, concentrating essential aromatic oils.</li>
+            <li>Plucked by experienced hands who select only the tender top two leaves and an unopened bud.</li>
+            <li>Withered in mountain air, rolled gently to preserve the leaf structure without crushing, and fermented under careful observation.</li>
+          </ul>
+          <p class="heritage-prose reveal delay-3">
+            Unlike the commodity CTC (Crush, Tear, Curl) dust found in commercial tea bags, orthodox Ceylon tea brews into a bright, golden-amber liquor. It offers refined notes of citrus, honeyed blossom, and smooth mountain sweetness. It requires no milk or sugar to mask bitterness, because true orthodox craft leaves no bitterness behind.
+          </p>
+        </div>
+
+        <div class="heritage-media-card reveal">
+          <img src="assets/ceylon-tea-orthodox.jpg"
+            alt="Hand-selected whole-leaf orthodox Ceylon tea showing golden tips" loading="lazy">
+          <div class="media-card-badge">
+            <span>High-Altitude Orthodox</span> &middot; Whole-Leaf Craft vs CTC Dust
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- SECTION 4: THE ISLAND SPICE GROVES --- -->
+  <section class="heritage-section alt-bg" id="spicesHeritage">
+    <div class="container">
+      <div style="max-width: 760px; margin: 0 auto; text-align: center;">
+        <span class="section-eyebrow reveal">Agro-Forestry Poly-Culture</span>
+        <h2 class="section-title reveal delay-1">The Island Spice Groves</h2>
+        <p class="heritage-prose reveal delay-2">
+          Beyond cinnamon and tea, Ceylon has nurtured an ancient agro-forestry tradition known as spice gardens. Unlike vast monoculture plantations that deplete the soil, island spices grow beneath the multi-tiered canopy of fruit trees, coconut palms, and shade-giving forest giants.
+        </p>
+      </div>
+
+      <div class="spices-heritage-grid">
+        <!-- Pepper -->
+        <article class="spice-card reveal">
+          <div class="spice-card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+            </svg>
+          </div>
+          <h3 class="spice-card-title">Black Pepper</h3>
+          <p class="spice-card-desc">
+            Indigenous to the wet hill slopes, high in piperine, offering crisp sharp heat accompanied by rich fruity undertones.
+          </p>
+        </article>
+
+        <!-- Cloves -->
+        <article class="spice-card reveal delay-1">
+          <div class="spice-card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+          <h3 class="spice-card-title">Royal Cloves</h3>
+          <p class="spice-card-desc">
+            Hand-picked unopened flower buds dried slowly under tropical sun, bursting with dense, fragrant essential eugenol oil.
+          </p>
+        </article>
+
+        <!-- Cardamom -->
+        <article class="spice-card reveal delay-2">
+          <div class="spice-card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+            </svg>
+          </div>
+          <h3 class="spice-card-title">Cardamom Pods</h3>
+          <p class="spice-card-desc">
+            The queen of spices, thriving in cool, shaded ravine microclimates, offering crisp, piney, and herbal brightness.
+          </p>
+        </article>
+
+        <!-- Nutmeg -->
+        <article class="spice-card reveal delay-3">
+          <div class="spice-card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="8"/>
+              <line x1="12" y1="2" x2="12" y2="4"/>
+              <line x1="12" y1="20" x2="12" y2="22"/>
+            </svg>
+          </div>
+          <h3 class="spice-card-title">Nutmeg &amp; Mace</h3>
+          <p class="spice-card-desc">
+            Enclosed within fragrant golden fruit, hand-separated and sun-cured to preserve delicate warm aromatics.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- SECTION 5: ARTISANAL CRAFT HERITAGE --- -->
+  <section class="heritage-section" id="artisanCraft">
+    <div class="container">
+      <div class="heritage-grid">
+        <div class="heritage-media-card reveal">
+          <img src="assets/coconut_cup_gift.jpg"
+            alt="Handcrafted coconut shell tea cups resting on dark linen with wooden spoons" loading="lazy">
+          <div class="media-card-badge">
+            <span>Ancestral Handcraft</span> &middot; Flagship Reclaimed Teaware
+          </div>
+        </div>
+
+        <div class="heritage-content">
+          <span class="section-eyebrow reveal">ANCESTRAL CRAFT</span>
+          <h2 class="section-title reveal delay-1">Formed by Nature: Sri Lanka’s Regenerative Craft Heritage</h2>
+          <p class="heritage-prose reveal delay-2">
+            Sri Lanka’s heritage is not limited to what is grown; it lives equally in what is shaped by hand.
+          </p>
+          <p class="heritage-prose reveal delay-2">
+            Long before mass industrial manufacturing, village communities across Ceylon practiced a philosophy of profound material harmony: <em>take only what the earth offers freely, and leave nothing to waste.</em>
+          </p>
+          <p class="heritage-prose reveal delay-2">
+            Across generations, master craftsmen and women have transformed renewable, wild, and reclaimed island resources—from fallen aged coconut shells and seasoned orchard timbers, to riverbed terracotta and hand-spun endemic reeds—into durable, tactile objects designed to outlast a lifetime.
+          </p>
+          <p class="heritage-prose reveal delay-2">
+            Our artisan collections honor these ancestral wood-turners, carvers, and potters. Free from synthetic plastics, chemical lacquers, or mechanical assembly lines, every piece bears the subtle variations, warmth, and thumbprint of its maker.
+          </p>
+          <p class="heritage-prose reveal delay-3">
+            Our signature Coconut Shell Tea Cup represents this philosophy in its purest form—turning a fallen agricultural byproduct into a refined daily ritual vessel:
+          </p>
+
+          <div class="craft-steps-grid reveal delay-3">
+            <div class="craft-step-item">
+              <span class="craft-step-num">01</span>
+              <h4>Reclaimed &amp; Foraged</h4>
+              <p>Sourcing solely fallen botanical shells, pruned orchard hardwoods, and natural river clays—never felling live forest trees.</p>
+            </div>
+            <div class="craft-step-item">
+              <span class="craft-step-num">02</span>
+              <h4>Generational Hand-Tooling</h4>
+              <p>Shaped on foot-pedal lathes, handheld carving chisels, and potter’s wheels, respecting natural grain and temper.</p>
+            </div>
+            <div class="craft-step-item">
+              <span class="craft-step-num">03</span>
+              <h4>Mechanical Smoothing</h4>
+              <p>Hand-finished with organic fibers and river sand abrasives, creating a warm, tactile patina without synthetic coatings.</p>
+            </div>
+            <div class="craft-step-item">
+              <span class="craft-step-num">04</span>
+              <h4>Zero-Toxic Curing</h4>
+              <p>Sealed solely with cold-pressed virgin plant oils or natural beeswax—100% biodegradable and food-safe for hot infusions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- SECTION 6: WHY HERITAGE MATTERS --- -->
+  <section class="heritage-section alt-bg" id="whyHeritageMatters">
+    <div class="container">
+      <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <span class="section-eyebrow reveal">THE SAGE PERSPECTIVE</span>
+        <h2 class="section-title reveal delay-1">Why Heritage Matters in a Modern World</h2>
+        <p class="heritage-prose reveal delay-2" style="font-size: 1.08rem; margin: 1.5rem 0;">
+          Why does Graceylon celebrate centuries-old methods when modern industry can produce goods in seconds?
+        </p>
+        <p class="heritage-prose reveal delay-2">
+          Because speed strips away soul. When provenance is erased, food becomes an anonymous calorie, tea becomes colored water, and homeware becomes disposable plastic.
+        </p>
+        <p class="heritage-prose reveal delay-3">
+          Heritage gives us anchor. When you brew an orthodox Ceylon leaf, grate a quill of true cinnamon, or sip from a hand-shaped artisan vessel, you participate in a lineage of craftsmanship that has honoured the earth for centuries.
+        </p>
+        <div class="aphorism reveal delay-3" style="max-width: 580px; margin: 2rem auto; text-align: center; border-left: none; border-top: 1px solid hsl(var(--accent-gold)); border-bottom: 1px solid hsl(var(--accent-gold)); padding: 1.2rem 0;">
+          Heritage is not the past. It is the wisdom we choose to carry forward.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- CLOSING INVITATION --- -->
+  <section class="heritage-closing" id="heritageClosing">
+    <div class="container">
+      <div class="heritage-closing-content">
+        <span class="hero-eyebrow reveal">EXPERIENCE THE LEGACY</span>
+        <h2 class="section-title reveal delay-1">Bring Ceylon’s Heritage Home</h2>
+        <p class="heritage-prose reveal delay-2">
+          Step into our sanctuary. Choose a harvest shaped by island soil, seasonal winds, and generational craft.
+        </p>
+        <span class="heritage-closing-tagline reveal delay-3">Ceylon, felt. Luxury, lived.</span>
+
+        <div class="hero-actions reveal delay-3" style="justify-content: center;">
+          <a href="collections.html" class="btn btn-primary" id="closingHeritageCta">Discover Our Treasures</a>
+          <a href="sourcing.html" class="btn-link" id="closingHeritageSourcing">
+            <span>Our Sourcing Standards</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- FOOTER --- -->
+  <footer class="footer" id="mainFooter">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="Graceylon Logo" class="footer-logo">
+          <p class="footer-tagline">Where Ceylon's heritage meets the quiet art of luxury. Artisanal teas, true spices, and handcrafted lifestyle treasures.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">The Brand</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Graceylon</a></li>
+            <li><a href="story.html">Our Story</a></li>
+            <li><a href="heritage.html">Our Heritage</a></li>
+            <li><a href="sourcing.html">Sourcing &amp; Quality</a></li>
+            <li><a href="verify.html">Authenticity Vault</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Our Treasures</h4>
+          <ul class="footer-links">
+            <li><a href="product-tea.html">Ceylon Orthodox Tea</a></li>
+            <li><a href="product-cinnamon.html">True Ceylon Cinnamon</a></li>
+            <li><a href="product-craft.html">Handcrafted Coconut Cups</a></li>
+            <li><a href="collections.html">The Signature Flight</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Concierge &amp; Care</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Concierge Desk</a></li>
+            <li><a href="contact.html#delivery">Delivery &amp; Returns</a></li>
+            <li><a href="about.html#faq">Frequently Asked Questions</a></li>
+            <li><a href="mailto:curator@graceylon.com">curator@graceylon.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2026 Graceylon. All rights reserved. Sourced with devotion from Sri Lanka.</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/gra_ceylon/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/graceylonproducts" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- --- SHOPPING CART DRAWER --- -->
+  <div class="cart-overlay" id="cartOverlay" role="dialog" aria-modal="true" aria-labelledby="cartDrawerTitle">
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <h3 class="cart-header-title" id="cartDrawerTitle">Your Tasting Flight</h3>
+        <button class="cart-close-btn" id="cartCloseBtn" aria-label="Close Shopping Cart">&times;</button>
+      </div>
+
+      <div class="cart-items" id="cartItemsContainer">
+        <div class="cart-empty-message" id="cartEmptyMessage">
+          <img src="assets/logo.png" alt="Graceylon Logo" class="cart-empty-logo">
+          <p>Your flight is currently empty.</p>
+          <p style="font-size: 0.75rem; margin-top: 0.5rem; color: hsl(var(--text-muted));">Begin your journey with Ceylon by adding one of our signature treasures.</p>
+        </div>
+      </div>
+
+      <div class="cart-footer">
+        <div class="cart-quote-email-group">
+          <label for="cartQuoteEmail" class="quote-email-label">Your Contact Email</label>
+          <input type="email" id="cartQuoteEmail" class="quote-email-input" placeholder="Enter your private email address" required>
+        </div>
+        <button class="btn btn-primary checkout-btn" id="checkoutBtn">Request Quote</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- --- TOAST NOTIFICATIONS --- -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- --- CHECKOUT MODAL --- -->
+  <div class="modal-overlay" id="checkoutModalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="checkout-modal glass-panel">
+      <img src="assets/logo.png" alt="Graceylon Logo" class="modal-brand-logo"
+        style="height: 50px; width: auto; margin: 0 auto 2.2rem auto; display: block; opacity: 0.95;">
+      <div class="success-icon-animation">&#10003;</div>
+      <h3 class="modal-title" id="modalTitle">Order Succeeded</h3>
+      <p class="modal-desc">Thank you for embarking on this sensory journey. Your exclusive artisanal treasures are being prepared. A private dispatch email will reach your inbox shortly.</p>
+      <button class="btn btn-primary" id="modalCloseBtn">Return to Sanctuary</button>
+    </div>
+  </div>
+
+  <!-- Core Scripts -->
+  <script src="index.js"></script>
+</body>
+</html>

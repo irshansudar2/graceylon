@@ -1373,6 +1373,181 @@
         padding-bottom: 75px;
       }
     }
+
+    /* ─── ARTISANAL CINNAMON PEELING PROCESS SECTION ─── */
+    .peeling-process-section {
+      padding: 6rem 0;
+      background: hsl(var(--bg-primary));
+      border-top: 1px solid var(--border-glass);
+      border-bottom: 1px solid var(--border-glass);
+      position: relative;
+    }
+
+    .process-header {
+      max-width: 780px;
+      margin: 0 auto 3.5rem auto;
+      text-align: center;
+    }
+
+    .process-header .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.76rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: hsl(var(--accent-gold));
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+
+    .process-header h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.8vw, 3rem);
+      font-weight: 600;
+      line-height: 1.2;
+      color: hsl(var(--text-primary));
+      margin-bottom: 1.2rem;
+    }
+
+    .process-header p {
+      font-size: 1rem;
+      color: hsl(var(--text-secondary));
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    .process-layout-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .process-media-showcase {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-glass);
+      background: hsl(var(--bg-secondary));
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+    }
+
+    .process-video-frame {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      width: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .process-video-frame video,
+    .process-video-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .process-media-overlay-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(10, 10, 10, 0.75);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid var(--border-glass);
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      color: hsl(var(--text-primary));
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 500;
+      z-index: 2;
+    }
+
+    .process-media-overlay-badge .pulse-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: hsl(var(--accent-gold));
+      box-shadow: 0 0 8px hsl(var(--accent-gold));
+    }
+
+    .process-media-caption {
+      padding: 1.25rem 1.5rem;
+      background: rgba(18, 18, 18, 0.95);
+      border-top: 1px solid var(--border-glass);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+      color: hsl(var(--text-secondary));
+    }
+
+    .process-media-caption strong {
+      color: hsl(var(--accent-gold));
+    }
+
+    .process-steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+    }
+
+    .process-step-card {
+      display: flex;
+      gap: 1.4rem;
+      padding: 1.4rem 1.5rem;
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-sm);
+      transition: var(--transition-normal);
+      position: relative;
+    }
+
+    .process-step-card:hover {
+      border-color: rgba(212, 175, 55, 0.35);
+      transform: translateX(4px);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .process-step-number {
+      font-family: var(--font-serif-decorative, var(--font-serif));
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: hsl(var(--accent-gold));
+      min-width: 32px;
+      line-height: 1;
+      padding-top: 2px;
+    }
+
+    .process-step-content h4 {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      color: hsl(var(--text-primary));
+      margin-bottom: 0.4rem;
+      font-weight: 500;
+    }
+
+    .process-step-content p {
+      font-size: 0.86rem;
+      color: hsl(var(--text-secondary));
+      line-height: 1.6;
+      margin: 0;
+      font-weight: 300;
+    }
+
+    @media (max-width: 992px) {
+      .process-layout-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+    }
   </style>
 </head>
 
@@ -1919,6 +2094,81 @@
             <div class="trust-badge-label">
               <strong>Lab Verified</strong>
               <span>&lt;0.004% Daily Safe</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- 4.5 CINNAMON PEELING PROCESS (CRAFT SHOWCASE) --- -->
+  <section class="peeling-process-section" id="cinnamonPeelingProcess">
+    <div class="container">
+      <div class="process-header">
+        <div class="section-eyebrow">
+          <span class="eyebrow-dot"></span>
+          <span>Field to Vessel &middot; Ancestral Peeling Craft</span>
+        </div>
+        <h2>The Art That Machines Cannot Replicate</h2>
+        <p>
+          Unlike coarse Cassia bark stripped by industrial machinery, authentic Alba-grade Ceylon cinnamon is created
+          through surgical hand precision passed down across three centuries. Observe how the tender inner bark is
+          transformed into layered golden quills.
+        </p>
+      </div>
+
+      <div class="process-layout-grid">
+        <!-- Visual Showcase (Supports Video loop or Photography) -->
+        <div class="process-media-showcase">
+          <div class="process-video-frame">
+            <div class="process-media-overlay-badge">
+              <span class="pulse-dot"></span>
+              <span>Craft Documentary &middot; Galle Groves</span>
+            </div>
+            <!-- Video player with poster image fallback -->
+            <video class="process-video-element" controls playsinline preload="metadata" poster="assets/ceylon-cinnamon.jpg" aria-label="Traditional Ceylon cinnamon peeling process in Sri Lanka">
+              <source src="assets/cinnamon-peeling-process.mp4" type="video/mp4">
+              <!-- Fallback Image if video is not yet loaded -->
+              <img src="assets/ceylon-cinnamon.jpg" alt="Artisanal hand-rolling of delicate Alba Ceylon cinnamon quills" loading="lazy">
+            </video>
+          </div>
+          <div class="process-media-caption">
+            <span><strong>Harvest Location:</strong> Southern Sri Lanka Estate</span>
+            <span><strong>Grade:</strong> Alba (&Oslash; &lt; 6mm)</span>
+          </div>
+        </div>
+
+        <!-- 4 Step-by-Step Craft Stages -->
+        <div class="process-steps-list">
+          <div class="process-step-card">
+            <span class="process-step-number">01</span>
+            <div class="process-step-content">
+              <h4>Dawn Branch Selection</h4>
+              <p>Stems of <em>Cinnamomum verum</em> are harvested at early sunrise when morning dew keeps sap and moisture high, allowing the bark to separate cleanly without tearing.</p>
+            </div>
+          </div>
+
+          <div class="process-step-card">
+            <span class="process-step-number">02</span>
+            <div class="process-step-content">
+              <h4>Brass Knife Outer Scraping</h4>
+              <p>A master peeler tenderly scrapes away the coarse, bitter outer bark with a traditional brass scraper, revealing the fragrant, parchment-thin inner cambium layer.</p>
+            </div>
+          </div>
+
+          <div class="process-step-card">
+            <span class="process-step-number">03</span>
+            <div class="process-step-content">
+              <h4>The Micro-Peeling Ribbon</h4>
+              <p>Using a specialized curved blade, the inner bark is hand-sliced in unbroken, translucent ribbons just fractions of a millimeter thick—a skill demanding years of muscle memory.</p>
+            </div>
+          </div>
+
+          <div class="process-step-card">
+            <span class="process-step-number">04</span>
+            <div class="process-step-content">
+              <h4>Telescopic Layering &amp; Shade Cure</h4>
+              <p>Multiple gossamer ribbons are carefully inserted inside one another like a cigar, curled naturally by the tropical air, and shade-dried to lock in essential cinnamaldehyde oils.</p>
             </div>
           </div>
         </div>
