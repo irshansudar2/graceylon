@@ -1548,6 +1548,195 @@
         gap: 2.5rem;
       }
     }
+
+    /* ─── GI CERTIFICATION SECTION ─── */
+    .gi-certification-section {
+      position: relative;
+      padding: 5.5rem 0;
+      background-color: hsl(var(--bg-primary));
+      border-top: 1px solid var(--border-glass);
+      border-bottom: 1px solid var(--border-glass);
+      overflow: hidden;
+    }
+
+    .gi-certification-card {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(280px, 350px) 1fr;
+      gap: 4.5rem;
+      align-items: center;
+    }
+
+    .gi-seal-col {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .gi-seal-card {
+      background: #000000;
+      border-radius: 20px;
+      padding: 1.25rem;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(212, 163, 89, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 340px;
+      aspect-ratio: 1 / 1.2;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+    }
+
+    .gi-seal-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(212, 163, 89, 0.2);
+      border-color: rgba(212, 163, 89, 0.45);
+    }
+
+    .gi-seal-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      border-radius: 12px;
+    }
+
+    .gi-content-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .gi-header-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .gi-flag-icon {
+      width: 36px;
+      height: auto;
+      border-radius: 4px;
+      display: block;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      flex-shrink: 0;
+    }
+
+    .gi-eyebrow-text {
+      font-family: var(--font-serif);
+      font-size: clamp(0.92rem, 1.8vw, 1.15rem);
+      font-weight: 600;
+      color: hsl(40.96deg 85.25% 52.16%);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    .gi-heading-main {
+      font-family: var(--font-serif);
+      font-size: clamp(1.6rem, 3.2vw, 2.35rem);
+      font-weight: 600;
+      color: hsl(40.96deg 85.25% 52.16%);
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+      margin: 0.2rem 0 0.85rem 0;
+    }
+
+    .gi-accent-line {
+      width: 58px;
+      height: 2px;
+      background-color: hsl(40.96deg 85.25% 52.16%);
+      border-radius: 2px;
+      margin-bottom: 1.25rem;
+    }
+
+    .gi-lead-text {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 1.5rem;
+      max-width: 620px;
+      font-weight: 300;
+    }
+
+    .gi-bullets-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .gi-bullet-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.6;
+    }
+
+    .gi-bullet-item span {
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 300;
+    }
+
+    .gi-bullet-item strong {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .gi-bullet-item em {
+      font-style: italic;
+      color: #ffffff;
+    }
+
+    .gi-bullet-icon {
+      color: hsl(40.96deg 85.25% 52.16%);
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+
+    @media (max-width: 991px) {
+      .gi-certification-card {
+        grid-template-columns: 1fr;
+        gap: 2.75rem;
+        text-align: left;
+      }
+
+      .gi-seal-col {
+        justify-content: flex-start;
+      }
+
+      .gi-seal-card {
+        max-width: 300px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .gi-certification-section {
+        padding: 3.5rem 0;
+      }
+
+      .gi-seal-col {
+        justify-content: center;
+      }
+
+      .gi-seal-card {
+        max-width: 260px;
+        padding: 1rem;
+      }
+
+      .gi-eyebrow-text {
+        font-size: 1.05rem;
+      }
+
+      .gi-heading-main {
+        font-size: 1.6rem;
+      }
+    }
   </style>
 </head>
 
@@ -1811,10 +2000,6 @@
         <!-- Cassia Cinnamon Card (Left) -->
         <div class="comparison-card comparison-card--cassia">
           <div class="comparison-card-top">
-            <div class="comparison-card-tag-row">
-              <span class="comparison-tag comparison-tag--hazard">High Coumarin Risk (>5%)</span>
-              <span class="comparison-tag comparison-tag--muted">Commercial Bark</span>
-            </div>
             <h3 class="comparison-card-title">Cassia Cinnamon</h3>
             <p class="comparison-card-meta">Cinnamomum cassia &middot; China, Indonesia &amp; Vietnam</p>
           </div>
@@ -1822,13 +2007,6 @@
           <div class="comparison-card-visual">
             <img src="assets/cassia-cinnamon.jpg"
               alt="Cassia cinnamon sticks showing thick, dark single-layer hollow curls" loading="lazy">
-            <div class="comparison-visual-badge comparison-visual-badge--hazard">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
-              <span>Thick Hollow Single Curl</span>
-            </div>
           </div>
 
           <div class="comparison-features">
@@ -1914,10 +2092,6 @@
         <!-- True Ceylon Cinnamon Card (Right - Featured Hero) -->
         <div class="comparison-card comparison-card--ceylon">
           <div class="comparison-card-top">
-            <div class="comparison-card-tag-row">
-              <span class="comparison-tag comparison-tag--gold">gr&aacute; CEYLON &middot; Alba Grade</span>
-              <span class="comparison-tag comparison-tag--safe">Daily Safe (&lt; 0.004%)</span>
-            </div>
             <h3 class="comparison-card-title">True Ceylon Cinnamon</h3>
             <p class="comparison-card-meta">Cinnamomum zeylanicum &middot; Indigenous to Sri Lanka</p>
           </div>
@@ -1925,12 +2099,6 @@
           <div class="comparison-card-visual">
             <img src="assets/ceylon-cinnamon.jpg"
               alt="True Ceylon cinnamon quills showing delicate, multi-layered golden-tan rolls" loading="lazy">
-            <div class="comparison-visual-badge comparison-visual-badge--gold">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-              </svg>
-              <span>Hand-rolled Artisanal Quills</span>
-            </div>
           </div>
 
           <div class="comparison-features">
@@ -2059,12 +2227,12 @@
 
         <!-- Visual Badges: Sri Lankan Lion Logo & Organic certifications -->
         <div class="comparison-trust-badges">
-          <!-- Sri Lankan Lion Logo (Official GI Seal) -->
-          <div class="trust-badge-item" title="Pure Ceylon Cinnamon Official GI-Certified Lion Logo">
-            <img src="assets/pure-ceylon-cinnamon-gi-logo.png" alt="Pure Ceylon Cinnamon Official Lion GI Logo" class="trust-badge-lion-img">
+          <!-- Pure Sri Lankan Origin Heritage Badge -->
+          <div class="trust-badge-item" title="Pure Sri Lankan Origin - True Island Provenance">
+            <img src="assets/pure-sri-lankan-origin-logo.jpg" alt="Pure Sri Lankan Origin Heritage Emblem" class="trust-badge-lion-img" style="border-radius: 4px;">
             <div class="trust-badge-label">
-              <strong>Official Lion Logo</strong>
-              <span>Protected Sri Lankan GI</span>
+              <strong>PURE SRILANKAN ORIGIN</strong>
+              <span>True Island Provenance</span>
             </div>
           </div>
 
@@ -2245,6 +2413,80 @@
                 hand into slender, delicate quills.</p>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- 5.5 ORIGIN & PROVENANCE SECTION --- -->
+  <section class="gi-certification-section" id="cinnamonGiSection">
+    <div class="container">
+      <div class="gi-certification-card">
+        <!-- Left: Pure Sri Lankan Origin Logo -->
+        <div class="gi-seal-col">
+          <div class="gi-seal-card">
+            <img
+              src="assets/pure-sri-lankan-origin-logo.jpg"
+              alt="Pure Sri Lankan Origin Heritage Emblem"
+              width="340"
+              height="400"
+              loading="lazy"
+              class="gi-seal-image"
+            >
+          </div>
+        </div>
+
+        <!-- Right: Certification & Authority Narrative -->
+        <div class="gi-content-col">
+          <!-- Sri Lankan Flag + Eyebrow -->
+          <div class="gi-header-eyebrow">
+            <img
+              src="assets/flag-sri-lanka.png"
+              alt="Sri Lanka National Flag"
+              width="42"
+              height="26"
+              loading="lazy"
+              class="gi-flag-icon"
+            >
+            <span class="gi-eyebrow-text">TRUE CEYLON ISLAND PROVENANCE</span>
+          </div>
+
+          <!-- Main Title -->
+          <h2 class="gi-heading-main">PURE SRI LANKAN ORIGIN</h2>
+
+          <!-- Gold Accent Divider -->
+          <div class="gi-accent-line" aria-hidden="true"></div>
+
+          <!-- Lead-In Sub-Narrative -->
+          <p class="gi-lead-text">Cultivated in the nutrient-rich soils of southern Sri Lanka, where ancestral harvesting meets uncompromising single-origin purity.</p>
+
+          <!-- Bullet List -->
+          <div class="gi-bullets-list">
+            <div class="gi-bullet-item">
+              <svg class="gi-bullet-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+                <circle cx="12" cy="12" r="3.5" fill="currentColor"/>
+              </svg>
+              <span><strong>100% Sri Lankan Harvest:</strong> Grown, hand-peeled, and shade-cured exclusively in native island groves.</span>
+            </div>
+
+            <div class="gi-bullet-item">
+              <svg class="gi-bullet-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+                <circle cx="12" cy="12" r="3.5" fill="currentColor"/>
+              </svg>
+              <span><strong>Unblended Botanical Purity:</strong> Pure <em>Cinnamomum verum</em> inner bark, sourced directly from local estates.</span>
+            </div>
+
+            <div class="gi-bullet-item">
+              <svg class="gi-bullet-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+                <circle cx="12" cy="12" r="3.5" fill="currentColor"/>
+              </svg>
+              <span><strong>Zero Cassia Adulteration:</strong> Naturally sweet, paper-thin Alba quills free from commercial Cassia fillers.</span>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
