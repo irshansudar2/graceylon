@@ -115,41 +115,9 @@
       font-weight: 600;
     }
 
-    /* ─── BREADCRUMBS ─── */
-    .product-breadcrumbs {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      padding: 1.5rem 0 0.5rem 0;
-      font-size: 0.72rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: hsl(var(--text-muted));
-    }
-
-    .product-breadcrumbs a {
-      color: hsl(var(--text-muted));
-      transition: var(--transition-fast);
-      text-decoration: none;
-    }
-
-    .product-breadcrumbs a:hover {
-      color: hsl(var(--accent-cyan));
-    }
-
-    .breadcrumb-sep {
-      opacity: 0.4;
-      font-size: 0.6rem;
-    }
-
-    .breadcrumb-current {
-      color: hsl(var(--text-primary));
-      font-weight: 600;
-    }
-
     /* ─── 1. BUY BOX SECTION ─── */
     .product-main-section {
-      padding: 1.5rem 0 4.5rem 0;
+      padding: 2.5rem 0 4.5rem 0;
     }
 
     .product-grid {
@@ -191,26 +159,6 @@
       transform: scale(1.03);
     }
 
-    .gallery-caption-tag {
-      position: absolute;
-      bottom: 1rem;
-      left: 1rem;
-      right: 1rem;
-      background: rgba(10, 10, 10, 0.85);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid var(--border-glass);
-      padding: 0.65rem 1rem;
-      border-radius: 8px;
-      font-size: 0.74rem;
-      color: hsl(var(--text-secondary));
-      line-height: 1.4;
-    }
-
-    .gallery-caption-tag strong {
-      color: hsl(var(--accent-gold));
-    }
-
     .gallery-thumbs {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
@@ -241,19 +189,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-    }
-
-    .thumb-label {
-      position: absolute;
-      bottom: 2px;
-      left: 2px;
-      right: 2px;
-      font-size: 0.55rem;
-      background: rgba(0, 0, 0, 0.75);
-      text-align: center;
-      padding: 2px 0;
-      color: hsl(var(--text-primary));
-      letter-spacing: 0.04em;
     }
 
     /* Buy Box Content */
@@ -1428,24 +1363,13 @@
     <!-- ─── 1. BUY BOX SECTION WITH TRUST STRIP ─── -->
     <section class="product-main-section">
       <div class="container">
-        <!-- Breadcrumbs -->
-        <nav class="product-breadcrumbs" aria-label="Breadcrumb">
-          <a href="index.html">Home</a>
-          <span class="breadcrumb-sep">/</span>
-          <a href="collections.html">Collections</a>
-          <span class="breadcrumb-sep">/</span>
-          <span class="breadcrumb-current">Royal Silver Tips — Ceylon White Tea</span>
-        </nav>
-
         <div class="product-grid">
           <!-- Gallery -->
           <div class="gallery-container">
             <div class="gallery-main-view">
               <img src="assets/silver_tips.png" alt="Royal Single-Estate Ceylon Silver Tips White Tea"
                 class="gallery-main-img" id="galleryMainImg">
-              <div class="gallery-caption-tag" id="galleryCaptionTag">
-                <strong>1. Hero View:</strong> Flawlessly preserved intact silver tips and unopened needle buds with shimmering velvet fuzz.
-              </div>
+
             </div>
 
             <div class="gallery-thumbs">
@@ -1453,35 +1377,35 @@
               <button type="button" class="gallery-thumb-btn active" data-img="assets/silver_tips.png"
                 data-caption="1. Hero View: Flawlessly preserved intact silver tips and unopened needle buds with shimmering velvet fuzz.">
                 <img src="assets/silver_tips.png" alt="Hero Silver Tips view">
-                <span class="thumb-label">Silver Tips</span>
+
               </button>
 
               <!-- 2) Scale with Teaware -->
               <button type="button" class="gallery-thumb-btn" data-img="assets/hero.png"
                 data-caption="2. Scale & Presence: Artisanal collector's violet glass tin beside ceremonial white porcelain teaware.">
                 <img src="assets/hero.png" alt="Packaging size perspective">
-                <span class="thumb-label">Scale</span>
+
               </button>
 
               <!-- 3) Macro Orthodox Leaf Texture -->
               <button type="button" class="gallery-thumb-btn" data-img="assets/ceylon-tea-orthodox.jpg"
                 data-caption="3. Macro Orthodox Craft: 100% whole hand-selected buds, intact cellular structures, zero mechanical dust or twigs.">
                 <img src="assets/ceylon-tea-orthodox.jpg" alt="Macro leaf texture">
-                <span class="thumb-label">Whole Leaf</span>
+
               </button>
 
               <!-- 4) Golden Liquor Infusion -->
               <button type="button" class="gallery-thumb-btn" data-img="assets/golden_pekoe.png"
                 data-caption="4. Liquor Clarity: Luminous amber-gold infusion crowned with a delicate honeyed halo rim along the porcelain cup.">
                 <img src="assets/golden_pekoe.png" alt="Tea liquor infusion">
-                <span class="thumb-label">Infusion</span>
+
               </button>
 
               <!-- 5) Orthodox vs CTC comparison -->
               <button type="button" class="gallery-thumb-btn" data-img="assets/commodity-ctc-tea.jpg"
                 data-caption="5. Purity Comparison: Whole orthodox velvety needle buds side-by-side with commercial crushed CTC dust pellets.">
                 <img src="assets/commodity-ctc-tea.jpg" alt="Orthodox vs CTC comparison">
-                <span class="thumb-label">Compare</span>
+
               </button>
             </div>
           </div>
@@ -2139,7 +2063,6 @@
     document.addEventListener('DOMContentLoaded', () => {
       // 1. Gallery thumbnail switching
       const mainImg = document.getElementById('galleryMainImg');
-      const captionTag = document.getElementById('galleryCaptionTag');
       const thumbBtns = document.querySelectorAll('.gallery-thumb-btn');
 
       thumbBtns.forEach(btn => {
@@ -2147,12 +2070,7 @@
           thumbBtns.forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
           const imgUrl = btn.dataset.img;
-          const caption = btn.dataset.caption;
           if (mainImg && imgUrl) mainImg.src = imgUrl;
-          if (captionTag && caption) {
-            const parts = caption.split(':');
-            captionTag.innerHTML = `<strong>${parts[0]}:</strong>${parts.slice(1).join(':')}`;
-          }
         });
       });
 

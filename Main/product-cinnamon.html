@@ -52,40 +52,9 @@
       font-weight: 600;
     }
 
-    /* ─── BREADCRUMBS ─── */
-    .product-breadcrumbs {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      padding: 1.5rem 0 0.5rem 0;
-      font-size: 0.72rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: hsl(var(--text-muted));
-    }
-
-    .product-breadcrumbs a {
-      color: hsl(var(--text-muted));
-      transition: var(--transition-fast);
-    }
-
-    .product-breadcrumbs a:hover {
-      color: hsl(var(--accent-cyan));
-    }
-
-    .breadcrumb-sep {
-      opacity: 0.4;
-      font-size: 0.6rem;
-    }
-
-    .breadcrumb-current {
-      color: hsl(var(--text-primary));
-      font-weight: 600;
-    }
-
     /* ─── PRODUCT HERO / BUY BOX SECTION ─── */
     .product-main-section {
-      padding: 2rem 0 5rem 0;
+      padding: 2.5rem 0 5rem 0;
     }
 
     .product-grid {
@@ -127,22 +96,6 @@
       transform: scale(1.03);
     }
 
-    .gallery-caption-tag {
-      position: absolute;
-      bottom: 1rem;
-      left: 1rem;
-      right: 1rem;
-      background: rgba(10, 10, 10, 0.75);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid var(--border-glass);
-      padding: 0.6rem 1rem;
-      border-radius: var(--radius-sm);
-      font-size: 0.72rem;
-      color: hsl(var(--text-secondary));
-      line-height: 1.4;
-    }
-
     .gallery-thumbs {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
@@ -173,19 +126,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-    }
-
-    .thumb-label {
-      position: absolute;
-      bottom: 2px;
-      left: 2px;
-      right: 2px;
-      font-size: 0.55rem;
-      background: rgba(0, 0, 0, 0.7);
-      text-align: center;
-      padding: 2px 0;
-      color: hsl(var(--text-primary));
-      letter-spacing: 0.04em;
     }
 
     /* ─── BUY BOX ─── */
@@ -1800,16 +1740,6 @@
   <!-- --- MAIN PRODUCT SECTION --- -->
   <main class="product-main-section">
     <div class="container">
-
-      <!-- Breadcrumbs -->
-      <nav class="product-breadcrumbs" aria-label="Breadcrumb">
-        <a href="index.html">Home</a>
-        <span class="breadcrumb-sep">/</span>
-        <a href="collections.html">Collections</a>
-        <span class="breadcrumb-sep">/</span>
-        <span class="breadcrumb-current">True Ceylon Cinnamon Quills – Alba Grade</span>
-      </nav>
-
       <div class="product-grid">
 
         <!-- --- 3. ABOVE THE FOLD — IMAGE GALLERY --- -->
@@ -1817,42 +1747,28 @@
           <div class="gallery-main-view">
             <img src="assets/cinnamon.png" alt="True Ceylon Cinnamon Quills Alba Grade" class="gallery-main-img"
               id="galleryMainImg">
-            <div class="gallery-caption-tag" id="galleryCaptionTag">
-              <strong>1. Hero View:</strong> Verifiable slender quill diameter, consistent light tan color, and delicate
-              cylindrical structure.
-            </div>
           </div>
 
           <div class="gallery-thumbs">
             <!-- 1) Hero product image -->
-            <button class="gallery-thumb-btn active" data-img="assets/cinnamon.png"
-              data-caption="1. Hero View: Verifiable slender quill diameter, consistent light tan color, and delicate cylindrical structure.">
+            <button class="gallery-thumb-btn active" data-img="assets/cinnamon.png" aria-label="View product image 1">
               <img src="assets/cinnamon.png" alt="Hero product view">
-              <span class="thumb-label">Quills</span>
             </button>
             <!-- 2) Packaging beside an object that makes size clear -->
-            <button class="gallery-thumb-btn" data-img="assets/hero.png"
-              data-caption="2. Scale View: Packaging beside standard teaware to verify physical dimensions and scale.">
+            <button class="gallery-thumb-btn" data-img="assets/hero.png" aria-label="View product image 2">
               <img src="assets/hero.png" alt="Packaging size perspective">
-              <span class="thumb-label">Scale</span>
             </button>
             <!-- 3) Macro shot showing the thin, layered quill texture -->
-            <button class="gallery-thumb-btn" data-img="assets/cinnamon.png"
-              data-caption="3. Macro Structure: Verifiable multiple paper-thin, soft concentric layers packed tightly rather than a single thick bark roll.">
+            <button class="gallery-thumb-btn" data-img="assets/cinnamon.png" aria-label="View product image 3">
               <img src="assets/cinnamon.png" alt="Macro layered texture">
-              <span class="thumb-label">Layers</span>
             </button>
             <!-- 4) Tea or baking lifestyle scene -->
-            <button class="gallery-thumb-btn" data-img="assets/silver_tips.png"
-              data-caption="4. Culinary Lifestyle: A whole quill infusing cleanly in hot tea and crumbled into baking without cloudy sludge.">
+            <button class="gallery-thumb-btn" data-img="assets/silver_tips.png" aria-label="View product image 4">
               <img src="assets/silver_tips.png" alt="Culinary lifestyle infusion">
-              <span class="thumb-label">Brew</span>
             </button>
             <!-- 5) Simple Ceylon-versus-Cassia visual comparison -->
-            <button class="gallery-thumb-btn" data-img="assets/cinnamon.png"
-              data-caption="5. Visual Comparison: Ceylon's thin flaky golden-tan layers side-by-side with Cassia's dark, thick hollow bark.">
+            <button class="gallery-thumb-btn" data-img="assets/cinnamon.png" aria-label="View product image 5">
               <img src="assets/cinnamon.png" alt="Ceylon vs Cassia comparison">
-              <span class="thumb-label">Compare</span>
             </button>
           </div>
         </div>
@@ -2601,7 +2517,6 @@
     document.addEventListener('DOMContentLoaded', () => {
       // 1. Gallery thumbnail switching
       const mainImg = document.getElementById('galleryMainImg');
-      const captionTag = document.getElementById('galleryCaptionTag');
       const thumbBtns = document.querySelectorAll('.gallery-thumb-btn');
 
       thumbBtns.forEach(btn => {
@@ -2609,9 +2524,7 @@
           thumbBtns.forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
           const imgUrl = btn.dataset.img;
-          const caption = btn.dataset.caption;
           if (mainImg && imgUrl) mainImg.src = imgUrl;
-          if (captionTag && caption) captionTag.innerHTML = `<strong>${caption.split(':')[0]}:</strong>${caption.split(':')[1] || ''}`;
         });
       });
 

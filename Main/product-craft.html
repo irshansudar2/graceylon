@@ -118,41 +118,9 @@
       font-weight: 600;
     }
 
-    /* ─── BREADCRUMBS ─── */
-    .product-breadcrumbs {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      padding: 1.5rem 0 0.5rem 0;
-      font-size: 0.72rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: hsl(var(--text-muted));
-    }
-
-    .product-breadcrumbs a {
-      color: hsl(var(--text-muted));
-      transition: var(--transition-fast);
-      text-decoration: none;
-    }
-
-    .product-breadcrumbs a:hover {
-      color: hsl(var(--accent-cyan));
-    }
-
-    .breadcrumb-sep {
-      opacity: 0.4;
-      font-size: 0.6rem;
-    }
-
-    .breadcrumb-current {
-      color: hsl(var(--text-primary));
-      font-weight: 600;
-    }
-
     /* ─── 1. BUY BOX SECTION (ABOVE THE FOLD) ─── */
     .product-main-section {
-      padding: 1.5rem 0 4.5rem 0;
+      padding: 2.5rem 0 4.5rem 0;
     }
 
     .product-grid {
@@ -194,26 +162,6 @@
       transform: scale(1.03);
     }
 
-    .gallery-caption-tag {
-      position: absolute;
-      bottom: 1rem;
-      left: 1rem;
-      right: 1rem;
-      background: rgba(10, 10, 10, 0.85);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid var(--border-glass);
-      padding: 0.65rem 1rem;
-      border-radius: 8px;
-      font-size: 0.74rem;
-      color: hsl(var(--text-secondary));
-      line-height: 1.4;
-    }
-
-    .gallery-caption-tag strong {
-      color: hsl(var(--accent-gold));
-    }
-
     .gallery-thumbs {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -244,19 +192,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-    }
-
-    .thumb-label {
-      position: absolute;
-      bottom: 2px;
-      left: 2px;
-      right: 2px;
-      font-size: 0.55rem;
-      background: rgba(0, 0, 0, 0.75);
-      text-align: center;
-      padding: 2px 0;
-      color: hsl(var(--text-primary));
-      letter-spacing: 0.04em;
     }
 
     /* Buy Box Details */
@@ -1328,24 +1263,13 @@
     <!-- ─── 1. BUY BOX SECTION (ABOVE THE FOLD) ─── -->
     <section class="product-main-section">
       <div class="container">
-        <!-- Breadcrumbs -->
-        <nav class="product-breadcrumbs" aria-label="Breadcrumb">
-          <a href="index.html">Home</a>
-          <span class="breadcrumb-sep">/</span>
-          <a href="collections.html">Collections</a>
-          <span class="breadcrumb-sep">/</span>
-          <span class="breadcrumb-current">Coconut Shell Tea Cup</span>
-        </nav>
-
         <div class="product-grid">
           <!-- Gallery (Order: single-cup photo first, row-of-cups photo second labelled 'Set of 6') -->
           <div class="gallery-container">
             <div class="gallery-main-view">
               <img src="assets/coconut_cup_hero.jpg" alt="Handcrafted Coconut Shell Tea Cup" class="gallery-main-img"
                 id="galleryMainImg">
-              <div class="gallery-caption-tag" id="galleryCaptionTag">
-                <strong>1. Single Cup:</strong> Dark textured natural shell with distinctive grain and contrasting curved polished hardwood handle.
-              </div>
+
             </div>
 
             <div class="gallery-thumbs">
@@ -1353,28 +1277,28 @@
               <button type="button" class="gallery-thumb-btn active" data-img="assets/coconut_cup_hero.jpg"
                 data-caption="1. Single Cup: Dark textured natural shell with distinctive grain and contrasting curved polished hardwood handle.">
                 <img src="assets/coconut_cup_hero.jpg" alt="Single coconut shell tea cup">
-                <span class="thumb-label">Single Cup</span>
+
               </button>
 
               <!-- 2) Row-of-cups photo second labelled 'Set of 6' as specified in .md -->
               <button type="button" class="gallery-thumb-btn" data-img="assets/coconut_cup_set.jpg"
                 data-caption="2. Set of 6: Harmonious row showing natural wood grain variations across individually hand-carved cups.">
                 <img src="assets/coconut_cup_set.jpg" alt="Row of 6 coconut tea cups">
-                <span class="thumb-label">Set of 6</span>
+
               </button>
 
               <!-- 3) Macro Craft Detail -->
               <button type="button" class="gallery-thumb-btn" data-img="assets/coconut_cup_craft.jpg"
                 data-caption="3. Artisanal Craft: Silky smooth hand-sanded rim, organic joinery, and natural food-safe coconut oil finish.">
                 <img src="assets/coconut_cup_craft.jpg" alt="Craft detail shot">
-                <span class="thumb-label">Craft</span>
+
               </button>
 
               <!-- 4) Gift-ready packaging -->
               <button type="button" class="gallery-thumb-btn" data-img="assets/coconut_cup_gift.jpg"
                 data-caption="4. Gift Presentation: Arrives gift-ready in eco-kraft packaging with provenance storyteller card.">
                 <img src="assets/coconut_cup_gift.jpg" alt="Gift packaging presentation">
-                <span class="thumb-label">Gift Box</span>
+
               </button>
             </div>
           </div>
@@ -1972,7 +1896,6 @@
     document.addEventListener('DOMContentLoaded', () => {
       // 1. Gallery thumbnail switching
       const mainImg = document.getElementById('galleryMainImg');
-      const captionTag = document.getElementById('galleryCaptionTag');
       const thumbBtns = document.querySelectorAll('.gallery-thumb-btn');
 
       thumbBtns.forEach(btn => {
@@ -1980,12 +1903,7 @@
           thumbBtns.forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
           const imgUrl = btn.dataset.img;
-          const caption = btn.dataset.caption;
           if (mainImg && imgUrl) mainImg.src = imgUrl;
-          if (captionTag && caption) {
-            const parts = caption.split(':');
-            captionTag.innerHTML = `<strong>${parts[0]}:</strong>${parts.slice(1).join(':')}`;
-          }
         });
       });
 
