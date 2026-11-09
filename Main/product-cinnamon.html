@@ -59,26 +59,26 @@
 
     .product-grid {
       display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 3.5rem;
+      grid-template-columns: 1.08fr 1fr;
+      gap: 4.5rem;
       align-items: start;
     }
 
     /* ─── GALLERY ─── */
     .gallery-container {
       position: sticky;
-      top: 100px;
+      top: 110px;
       display: flex;
       flex-direction: column;
-      gap: 1.25rem;
+      gap: 1rem;
     }
 
     .gallery-main-view {
       position: relative;
-      border-radius: var(--radius-md);
+      border-radius: 4px;
       overflow: hidden;
-      background: hsl(var(--bg-secondary));
-      border: 1px solid var(--border-glass);
+      background: #151514;
+      border: 1px solid rgba(255, 255, 255, 0.08);
       aspect-ratio: 1 / 1;
       display: flex;
       align-items: center;
@@ -89,43 +89,111 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.5s ease;
+      transition: transform 0.6s ease, opacity 0.4s ease;
     }
 
     .gallery-main-view:hover .gallery-main-img {
-      transform: scale(1.03);
+      transform: scale(1.02);
+    }
+
+    .cinnamon-image-badge {
+      position: absolute;
+      top: 1.25rem;
+      left: 1.25rem;
+      background: rgba(10, 10, 10, 0.78);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.4rem 0.85rem;
+      border-radius: 50px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #edebe4;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .cinnamon-image-badge .dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #c5a85a;
+    }
+
+    .cinnamon-image-counter {
+      position: absolute;
+      bottom: 1.25rem;
+      right: 1.25rem;
+      background: rgba(10, 10, 10, 0.75);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.35rem 0.85rem;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: #8c897f;
+      font-variant-numeric: tabular-nums;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .cinnamon-image-counter .active-num {
+      color: #edebe4;
+      font-weight: 600;
     }
 
     .gallery-thumbs {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 0.75rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.85rem;
     }
 
     .gallery-thumb-btn {
-      background: hsl(var(--bg-secondary));
-      border: 1px solid var(--border-glass);
-      border-radius: var(--radius-sm);
+      background: #151514;
+      border: 1.5px solid rgba(255, 255, 255, 0.08);
+      border-radius: 3px;
       padding: 0;
       aspect-ratio: 1 / 1;
       overflow: hidden;
       cursor: pointer;
-      opacity: 0.65;
-      transition: var(--transition-fast);
+      opacity: 0.6;
+      transition: all 0.25s ease;
       position: relative;
     }
 
-    .gallery-thumb-btn:hover,
+    .gallery-thumb-btn:hover {
+      opacity: 0.9;
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
     .gallery-thumb-btn.active {
       opacity: 1;
-      border-color: hsl(var(--text-primary));
-      box-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
+      border-color: #c5a85a;
+      box-shadow: 0 0 12px rgba(197, 168, 90, 0.2);
     }
 
     .gallery-thumb-btn img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
+    }
+
+    .cinnamon-gallery-poetic {
+      text-align: right;
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-style: italic;
+      color: #c5a85a;
+      line-height: 1.35;
+      margin-top: 0.75rem;
+      padding-right: 0.25rem;
     }
 
     /* ─── BUY BOX ─── */
@@ -135,218 +203,329 @@
       gap: 1.4rem;
     }
 
-    .product-grade-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      width: fit-content;
-      padding: 0.35rem 0.85rem;
-      border-radius: 50px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border-glass);
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: hsl(var(--accent-gold, 43, 74%, 66%));
+    .cinnamon-eyebrow {
+      font-size: 0.72rem;
       font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #c5a85a;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .cinnamon-eyebrow::before {
+      content: "";
+      display: inline-block;
+      width: 18px;
+      height: 1px;
+      background: #c5a85a;
     }
 
     .product-title {
       font-family: var(--font-serif);
-      font-size: clamp(1.8rem, 3vw, 2.4rem);
-      line-height: 1.2;
-      color: hsl(var(--text-primary));
-      font-weight: 500;
+      font-size: clamp(2.5rem, 4vw, 3.25rem);
+      line-height: 1.1;
+      color: #f7f6f2;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      margin: 0;
     }
 
-    .product-price-row {
+    .cinnamon-subheading {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-style: italic;
+      color: #a6a6a6;
+      line-height: 1.4;
+      margin-top: -0.5rem;
+    }
+
+    .cinnamon-price-row {
       display: flex;
-      align-items: baseline;
+      align-items: center;
       gap: 1rem;
+      margin-top: 0.2rem;
     }
 
     .product-price {
-      font-size: 1.6rem;
+      font-size: 2rem;
       font-weight: 600;
-      color: hsl(var(--text-primary));
+      color: #f7f6f2;
       letter-spacing: -0.02em;
     }
 
-    .product-price-unit {
-      font-size: 0.8rem;
-      color: hsl(var(--text-muted));
+    .cinnamon-price-divider {
+      color: rgba(255, 255, 255, 0.25);
+      font-weight: 300;
+    }
+
+    .cinnamon-origin-tag {
+      font-size: 0.82rem;
+      color: #a6a6a6;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .cinnamon-origin-tag .dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #c5a85a;
     }
 
     .product-short-desc {
       font-size: 0.95rem;
-      line-height: 1.65;
-      color: hsl(var(--text-secondary));
+      line-height: 1.7;
+      color: #a6a6a6;
+      font-weight: 400;
+      margin: 0;
     }
 
-    /* Trust Signal Badges */
-    .trust-signals-grid {
+    /* 4 Pillars */
+    .cinnamon-pillars-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 0.75rem;
-      padding: 1.1rem 0;
-      border-top: 1px solid var(--border-glass);
-      border-bottom: 1px solid var(--border-glass);
+      gap: 1.15rem 1.5rem;
+      padding: 1.25rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .trust-signal-item {
+    .cinnamon-pillar-item {
       display: flex;
       align-items: center;
-      gap: 0.65rem;
-      font-size: 0.78rem;
-      color: hsl(var(--text-secondary));
-      font-weight: 500;
-      letter-spacing: 0.03em;
+      gap: 0.75rem;
+      font-size: 0.84rem;
+      color: #a6a6a6;
     }
 
-    .trust-signal-icon {
-      color: hsl(var(--accent-cyan));
+    .cinnamon-pillar-icon {
+      width: 20px;
+      height: 20px;
       flex-shrink: 0;
+      color: #c5a85a;
     }
 
     /* Variant Selector */
-    .variant-section {
+    .cinnamon-harvest-section {
       display: flex;
       flex-direction: column;
-      gap: 0.6rem;
+      gap: 0.85rem;
     }
 
-    .variant-label-row {
+    .cinnamon-harvest-header {
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      align-items: center;
-      font-size: 0.75rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: hsl(var(--text-secondary));
-    }
-
-    .variant-options-row {
-      display: flex;
-      gap: 0.75rem;
-    }
-
-    .variant-btn {
-      flex: 1;
-      padding: 0.85rem 1.25rem;
-      background: hsl(var(--bg-secondary));
-      border: 1px solid var(--border-glass);
-      border-radius: var(--radius-sm);
-      color: hsl(var(--text-primary));
-      font-family: var(--font-sans);
-      font-size: 0.88rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: var(--transition-fast);
-      text-align: center;
-    }
-
-    .variant-btn:hover {
-      border-color: rgba(255, 255, 255, 0.4);
-    }
-
-    .variant-btn.active {
-      border-color: hsl(var(--text-primary));
-      background: rgba(255, 255, 255, 0.08);
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.08);
-    }
-
-    .variant-note {
       font-size: 0.72rem;
-      line-height: 1.45;
-      color: hsl(var(--text-muted));
-    }
-
-    /* Purchase Action & Microcopy */
-    .purchase-actions-row {
-      display: flex;
-      gap: 0.75rem;
-      align-items: center;
-      margin-top: 0.5rem;
-    }
-
-    .qty-picker {
-      display: flex;
-      align-items: center;
-      border: 1px solid var(--border-glass);
-      border-radius: var(--radius-sm);
-      background: hsl(var(--bg-secondary));
-      height: 48px;
-    }
-
-    .qty-btn {
-      width: 40px;
-      height: 100%;
-      background: none;
-      border: none;
-      color: hsl(var(--text-primary));
-      cursor: pointer;
-      font-size: 1.1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: var(--transition-fast);
-    }
-
-    .qty-btn:hover {
-      background: rgba(255, 255, 255, 0.08);
-    }
-
-    .qty-value {
-      width: 36px;
-      text-align: center;
-      font-size: 0.9rem;
-      color: hsl(var(--text-primary));
-      font-weight: 500;
-    }
-
-    .primary-add-btn {
-      flex: 1;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.6rem;
-      background: white;
-      color: black;
-      font-size: 0.88rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      border: none;
-      border-radius: var(--radius-sm);
-      cursor: pointer;
-      transition: var(--transition-smooth);
+      font-weight: 600;
     }
 
-    .primary-add-btn:hover {
-      background: hsl(var(--text-secondary));
-      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
-      transform: translateY(-1px);
+    .cinnamon-harvest-header-title {
+      color: #f7f6f2;
     }
 
-    .microcopy-group {
+    .cinnamon-harvest-header-status {
+      color: #737373;
+      letter-spacing: 0.05em;
+      text-transform: none;
+      font-size: 0.8rem;
+    }
+
+    .cinnamon-harvest-options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.85rem;
+      width: 100%;
+    }
+
+    .cinnamon-harvest-btn {
+      background: #151514;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 3px;
+      padding: 1rem 1.15rem;
       display: flex;
-      flex-direction: column;
-      gap: 0.45rem;
-      font-size: 0.75rem;
-      line-height: 1.5;
-      color: hsl(var(--text-muted));
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      text-align: left;
+      width: 100%;
+      box-sizing: border-box;
+      color: #edebe4;
     }
 
-    .microcopy-line {
+    .cinnamon-harvest-btn:hover {
+      border-color: rgba(255, 255, 255, 0.25);
+      background: #1c1c1b;
+    }
+
+    .cinnamon-harvest-btn.active {
+      border-color: #c5a85a;
+      background: rgba(197, 168, 90, 0.06);
+    }
+
+    .cinnamon-harvest-btn-label {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: #edebe4;
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
 
-    .microcopy-icon {
-      color: hsl(var(--accent-cyan));
+    .cinnamon-harvest-check {
+      color: #c5a85a;
+      font-size: 0.9rem;
+      display: none;
+    }
+
+    .cinnamon-harvest-btn.active .cinnamon-harvest-check {
+      display: inline-block;
+    }
+
+    .cinnamon-harvest-save {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #c5a85a;
+      background: rgba(197, 168, 90, 0.15);
+      padding: 0.2rem 0.5rem;
+      border-radius: 2px;
+    }
+
+    /* Purchase Action */
+    .purchase-actions-row {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 1rem;
+      margin-top: 0.5rem;
+      align-items: center;
+    }
+
+    .qty-picker {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 3px;
+      background: #151514;
+      padding: 0 0.5rem;
+      height: 52px;
+      width: 110px;
+      box-sizing: border-box;
+    }
+
+    .qty-btn {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #8c897f;
+      font-size: 1.1rem;
+      line-height: 1;
+      border-radius: 2px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      margin: 0;
+      transition: all 0.25s ease;
+    }
+
+    .qty-btn:hover:not(:disabled) {
+      color: #edebe4;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .qty-btn:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    .qty-value {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #edebe4;
+      min-width: 20px;
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+      line-height: 1;
+    }
+
+    .primary-add-btn {
+      height: 52px;
+      background: #f7f6f2;
+      color: #0d0d0c;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      border-radius: 3px;
+      border: none;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      width: 100%;
+      box-shadow: none;
+      text-decoration: none;
+    }
+
+    .primary-add-btn:hover {
+      background: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .primary-add-btn:active {
+      transform: translateY(0);
+    }
+
+    .primary-add-btn .arrow-icon {
+      transition: transform 0.25s ease;
+    }
+
+    .primary-add-btn:hover .arrow-icon {
+      transform: translateX(4px);
+    }
+
+    /* Reassurance */
+    .cinnamon-reassurance-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding-top: 0.5rem;
+    }
+
+    .cinnamon-reassurance-line {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 0.8rem;
+      color: #a6a6a6;
+    }
+
+    .cinnamon-reassurance-line .icon {
+      color: #c5a85a;
       flex-shrink: 0;
+    }
+
+    .cinnamon-reassurance-note {
+      font-size: 0.75rem;
+      color: #737373;
+      line-height: 1.5;
+      margin: 0;
     }
 
     /* Cross-sell Container */
@@ -385,6 +564,67 @@
     .cross-sell-add-btn:hover {
       border-color: white;
       background: rgba(255, 255, 255, 0.05);
+    }
+
+    /* ─── 3.5 VALUES / TRUST STRIP SECTION ─── */
+    .values-strip-section {
+      background: #0d0d0c;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 3rem 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+
+    .value-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .value-icon {
+      width: 22px;
+      height: 22px;
+      color: #c5a85a;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .value-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .value-title {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #f5f2eb;
+    }
+
+    .value-sub {
+      font-size: 0.8rem;
+      color: #8a8a8a;
+    }
+
+    @media (max-width: 992px) {
+      .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem 1.5rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .values-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
     }
 
     /* ─── VALUE PROPOSITION: CEYLON VS CASSIA COMPARISON SECTION ─── */
@@ -1743,151 +1983,161 @@
       <div class="product-grid">
 
         <!-- --- 3. ABOVE THE FOLD — IMAGE GALLERY --- -->
-        <div class="gallery-container">
-          <div class="gallery-main-view">
-            <img src="assets/cinnamon.png" alt="True Ceylon Cinnamon Quills Alba Grade" class="gallery-main-img"
-              id="galleryMainImg">
+        <div class="gallery-container" id="cinnamonGallery">
+          <div class="gallery-main-view" id="cinnamonMainImageFrame">
+            <span class="cinnamon-image-badge">
+              <span class="dot"></span>
+              <span>100% Pure Ceylon Cinnamon</span>
+            </span>
+            <img src="assets/cinnamon.png" alt="True Ceylon Cinnamon Quills Alba Grade" class="gallery-main-img" id="galleryMainImg">
+            <span class="cinnamon-image-counter">
+              <span class="active-num" id="cinnamonActiveIndex">01</span> / 03
+            </span>
           </div>
 
-          <div class="gallery-thumbs">
-            <!-- 1) Hero product image -->
-            <button class="gallery-thumb-btn active" data-img="assets/cinnamon.png" aria-label="View product image 1">
-              <img src="assets/cinnamon.png" alt="Hero product view">
+          <div class="gallery-thumbs" id="cinnamonThumbs">
+            <button class="gallery-thumb-btn active" data-img="assets/cinnamon.png" data-index="01" aria-label="Alba Grade Ceylon Cinnamon Quills presentation view">
+              <img src="assets/cinnamon.png" alt="Alba Grade Quills presentation">
             </button>
-            <!-- 2) Packaging beside an object that makes size clear -->
-            <button class="gallery-thumb-btn" data-img="assets/hero.png" aria-label="View product image 2">
-              <img src="assets/hero.png" alt="Packaging size perspective">
+            <button class="gallery-thumb-btn" data-img="assets/ceylon-cinnamon.jpg" data-index="02" aria-label="Layered quill texture detail">
+              <img src="assets/ceylon-cinnamon.jpg" alt="Layered quill texture detail">
             </button>
-            <!-- 3) Macro shot showing the thin, layered quill texture -->
-            <button class="gallery-thumb-btn" data-img="assets/cinnamon.png" aria-label="View product image 3">
-              <img src="assets/cinnamon.png" alt="Macro layered texture">
+            <button class="gallery-thumb-btn" data-img="assets/silver_tips.png" data-index="03" aria-label="Cinnamon culinary infusion pairing">
+              <img src="assets/silver_tips.png" alt="Cinnamon culinary infusion pairing">
             </button>
-            <!-- 4) Tea or baking lifestyle scene -->
-            <button class="gallery-thumb-btn" data-img="assets/silver_tips.png" aria-label="View product image 4">
-              <img src="assets/silver_tips.png" alt="Culinary lifestyle infusion">
-            </button>
-            <!-- 5) Simple Ceylon-versus-Cassia visual comparison -->
-            <button class="gallery-thumb-btn" data-img="assets/cinnamon.png" aria-label="View product image 5">
-              <img src="assets/cinnamon.png" alt="Ceylon vs Cassia comparison">
-            </button>
+          </div>
+
+          <div class="cinnamon-gallery-poetic">
+            Grown slowly.<br>
+            Enjoyed daily.
           </div>
         </div>
 
         <!-- --- 2. ABOVE THE FOLD — BUY BOX --- -->
         <div class="buy-box">
 
-          <span class="product-grade-badge">Alba Grade · Estate Origin</span>
+          <div class="cinnamon-eyebrow">The Single-Estate Harvest Collection</div>
 
           <!-- Product title -->
-          <h1 class="product-title">True Ceylon Cinnamon Quills – Alba Grade</h1>
+          <h1 class="product-title">True Ceylon Cinnamon Quills</h1>
+
+          <p class="cinnamon-subheading">Alba Grade. Hand-peeled and sun-cured in Galle.</p>
 
           <!-- Price -->
-          <div class="product-price-row">
-            <span class="product-price">[PRICE]</span>
-            <span class="product-price-unit">Single-Estate Sri Lanka</span>
+          <div class="cinnamon-price-row">
+            <span class="product-price" id="cinnamonPriceDisplay">$28.00</span>
+            <span class="cinnamon-price-divider">|</span>
+            <span class="cinnamon-origin-tag">
+              <span class="dot"></span>
+              <span>Sourced from Mirissa Estate, Sri Lanka</span>
+            </span>
           </div>
 
           <!-- Short description -->
           <p class="product-short-desc">
-            Hand-rolled into delicate, paper-thin layers that crumble easily between your fingers, these Alba-grade
-            quills deliver a naturally warm, sweet aroma accented with subtle citrus notes. Crafted from authentic
-            Ceylon cinnamon (<em>Cinnamomum verum</em>), they offer a mellow culinary profile suited for infusions,
-            delicate pastries, and everyday brewing. Unlike common Cassia bark, true Ceylon cinnamon naturally contains
-            substantially lower levels of coumarin.
+            Hand-rolled into delicate, paper-thin layers that crumble easily between your fingers. Our Alba-grade quills deliver a naturally warm, sweet aroma with subtle citrus notes—pure, authentic Ceylon bark with ultra-low coumarin.
           </p>
 
-          <!-- Trust signals: 4 short labels based only on supplied facts -->
-          <div class="trust-signals-grid">
-            <div class="trust-signal-item">
-              <svg class="trust-signal-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10" />
-                <path d="m9 12 2 2 4-4" />
+          <!-- 4 Pillars -->
+          <div class="cinnamon-pillars-grid">
+            <div class="cinnamon-pillar-item">
+              <svg class="cinnamon-pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
               </svg>
-              <span>Alba Grade Quills</span>
+              <span>100% true Ceylon cinnamon</span>
             </div>
-            <div class="trust-signal-item">
-              <svg class="trust-signal-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2">
-                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-                <circle cx="12" cy="10" r="3" />
+            <div class="cinnamon-pillar-item">
+              <svg class="cinnamon-pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 13v-7.5a1.5 1.5 0 0 1 3 0v6.5"/>
+                <path d="M11 5.5v-2a1.5 1.5 0 1 1 3 0v8.5"/>
+                <path d="M14 5.5a1.5 1.5 0 0 1 3 0v6.5"/>
+                <path d="M17 7.5a1.5 1.5 0 0 1 3 0v8.5a6 6 0 0 1-6 6h-2h.208a6 6 0 0 1-5.012-2.7a69.74 69.74 0 0 1-.196-.3c-.312-.479-1.407-2.388-3.286-5.728a1.5 1.5 0 0 1 .536-2.022a1.572 1.572 0 0 1 1.983.202l1.767 1.767v-6.219"/>
               </svg>
-              <span>Sourced from Sri Lanka Estates</span>
+              <span>Rolled entirely by hand</span>
             </div>
-            <div class="trust-signal-item">
-              <svg class="trust-signal-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2">
-                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+            <div class="cinnamon-pillar-item">
+              <svg class="cinnamon-pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <circle cx="12" cy="12" r="5"/>
+                <line x1="12" y1="1" x2="12" y2="3"/>
+                <line x1="12" y1="21" x2="12" y2="23"/>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                <line x1="1" y1="12" x2="3" y2="12"/>
+                <line x1="21" y1="12" x2="23" y2="12"/>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
               </svg>
-              <span>True Ceylon (<em>Cinnamomum verum</em>)</span>
+              <span>Naturally sweet &amp; delicate</span>
             </div>
-            <div class="trust-signal-item">
-              <svg class="trust-signal-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+            <div class="cinnamon-pillar-item">
+              <svg class="cinnamon-pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
               </svg>
-              <span>Naturally Low Coumarin Profile</span>
+              <span>Single-estate Sri Lankan origin</span>
             </div>
           </div>
 
           <!-- Variant selector -->
-          <div class="variant-section">
-            <div class="variant-label-row">
-              <span>Select Quantity (Net Weight)</span>
-              <span id="selectedVariantDisplay">[VARIANT_1_WEIGHT]</span>
+          <div class="cinnamon-harvest-section">
+            <div class="cinnamon-harvest-header">
+              <span class="cinnamon-harvest-header-title">Choose your harvest</span>
+              <span class="cinnamon-harvest-header-status" id="selectedVariantDisplay">50g Reserve</span>
             </div>
-            <div class="variant-options-row">
-              <button class="variant-btn active" data-variant="[VARIANT_1_WEIGHT]">[VARIANT_1_WEIGHT]</button>
-              <button class="variant-btn" data-variant="[VARIANT_2_WEIGHT]">[VARIANT_2_WEIGHT]</button>
-            </div>
-            <p class="variant-note">Note: Quantities reflect net weight rather than individual quill count, as slender
-              Alba quills naturally vary in thickness.</p>
-          </div>
-
-          <!-- Delivery microcopy & Risk-reversal microcopy -->
-          <div class="microcopy-group">
-            <div class="microcopy-line">
-              <svg class="microcopy-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2">
-                <rect width="16" height="13" x="1" y="6" rx="2" />
-                <path d="M16 8h4l3 3v5h-7V8z" />
-                <circle cx="5.5" cy="18.5" r="2.5" />
-                <circle cx="18.5" cy="18.5" r="2.5" />
-              </svg>
-              <span>Estimated delivery to your door: [DELIVERY_ESTIMATE].</span>
-            </div>
-            <div class="microcopy-line">
-              <svg class="microcopy-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
-              </svg>
-              <span>If covered by our guarantee, your purchase is backed by [FLAVOR_GUARANTEE_TERMS].</span>
+            <div class="cinnamon-harvest-options">
+              <button type="button" class="cinnamon-harvest-btn active" data-variant="50g" data-price="$28.00">
+                <span class="cinnamon-harvest-btn-label">50g Reserve</span>
+                <span class="cinnamon-harvest-check">&#10003;</span>
+              </button>
+              <button type="button" class="cinnamon-harvest-btn" data-variant="100g" data-price="$48.00">
+                <span class="cinnamon-harvest-btn-label">
+                  100g Harvest Tin
+                  <span class="cinnamon-harvest-save">Save $8</span>
+                </span>
+                <span class="cinnamon-harvest-check">&#10003;</span>
+              </button>
             </div>
           </div>
 
           <!-- Purchase buttons -->
           <div class="purchase-actions-row">
             <div class="qty-picker">
-              <button class="qty-btn" id="qtyMinus" aria-label="Decrease quantity">−</button>
+              <button type="button" class="qty-btn" id="qtyMinus" aria-label="Decrease quantity" disabled>−</button>
               <span class="qty-value" id="qtyVal">1</span>
-              <button class="qty-btn" id="qtyPlus" aria-label="Increase quantity">+</button>
+              <button type="button" class="qty-btn" id="qtyPlus" aria-label="Increase quantity">+</button>
             </div>
-            <button class="primary-add-btn add-cart-trigger" id="buyBoxAddToCartBtn" data-id="ceylon-alba-quills"
-              data-name="True Ceylon Cinnamon Quills – Alba Grade" data-price="[PRICE]" data-img="assets/cinnamon.png"
+            <button type="button" class="primary-add-btn add-cart-trigger" id="buyBoxAddToCartBtn" data-id="ceylon-alba-quills"
+              data-name="True Ceylon Cinnamon Quills – Alba Grade" data-price="$28.00" data-img="assets/cinnamon.png"
               data-category="True Spices">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
-                <path d="M3 6h18" />
-                <path d="M16 10a4 4 0 0 1-8 0" />
+              <span>Add to bag</span>
+              <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
               </svg>
-              <span>Add Quills to Cart</span>
             </button>
+          </div>
+
+          <!-- Reassurance -->
+          <div class="cinnamon-reassurance-block">
+            <div class="cinnamon-reassurance-line">
+              <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <rect width="16" height="13" x="1" y="6" rx="2"/>
+                <path d="M16 8h4l3 3v5h-7V8z"/>
+                <circle cx="5.5" cy="18.5" r="2.5"/>
+                <circle cx="18.5" cy="18.5" r="2.5"/>
+              </svg>
+              <span>Thoughtfully packed in airtight UV-shielded tins.</span>
+            </div>
+            <p class="cinnamon-reassurance-note">
+              Each harvest is unique. Subtle variations in quill hue and natural sweetness are inherent to pure Ceylon bark.
+            </p>
           </div>
 
           <!-- Cross-sell -->
           <div class="cross-sell-panel">
-            <p class="cross-sell-text">Frequently paired with <strong>[BUNDLE_PRODUCT]</strong> for
-              <strong>[BUNDLE_PRICE_OR_SAVINGS]</strong>.</p>
+            <p class="cross-sell-text">Frequently paired with <strong>Royal Single-Estate Silver Tips</strong> for <strong>$38.00</strong>.</p>
             <button class="cross-sell-add-btn" id="crossSellBtn">Add Pair</button>
           </div>
 
@@ -1895,6 +2145,67 @@
       </div>
     </div>
   </main>
+
+  <!-- --- 3.5 VALUES / TRUST STRIP --- -->
+  <section class="values-strip-section" aria-label="Our Cinnamon Values">
+    <div class="container">
+      <div class="values-grid">
+        <div class="value-card">
+          <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+          </svg>
+          <div class="value-content">
+            <span class="value-title">Nature. Nothing more.</span>
+            <span class="value-sub">Pure cinnamon. No fillers, ever.</span>
+          </div>
+        </div>
+
+        <div class="value-card">
+          <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 13v-7.5a1.5 1.5 0 0 1 3 0v6.5"/>
+            <path d="M11 5.5v-2a1.5 1.5 0 1 1 3 0v8.5"/>
+            <path d="M14 5.5a1.5 1.5 0 0 1 3 0v6.5"/>
+            <path d="M17 7.5a1.5 1.5 0 0 1 3 0v8.5a6 6 0 0 1-6 6h-2h.208a6 6 0 0 1-5.012-2.7a69.74 69.74 0 0 1-.196-.3c-.312-.479-1.407-2.388-3.286-5.728a1.5 1.5 0 0 1 .536-2.022a1.572 1.572 0 0 1 1.983.202l1.767 1.767v-6.219"/>
+          </svg>
+          <div class="value-content">
+            <span class="value-title">Human hands.</span>
+            <span class="value-sub">Generations of quiet knowledge.</span>
+          </div>
+        </div>
+
+        <div class="value-card">
+          <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          <div class="value-content">
+            <span class="value-title">Island origins.</span>
+            <span class="value-sub">Authentically, entirely Sri Lankan.</span>
+          </div>
+        </div>
+
+        <div class="value-card">
+          <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <div class="value-content">
+            <span class="value-title">Made for slow living.</span>
+            <span class="value-sub">Small rituals. Everyday warmth.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- --- 4. VALUE PROPOSITION: CEYLON VS CASSIA COMPARISON --- -->
   <section class="comparison-section" id="cinnamonComparisonSection">
@@ -2515,9 +2826,10 @@
   <script src="index.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // 1. Gallery thumbnail switching
+      // 1. Gallery thumbnail switching & counter
       const mainImg = document.getElementById('galleryMainImg');
       const thumbBtns = document.querySelectorAll('.gallery-thumb-btn');
+      const activeIndexSpan = document.getElementById('cinnamonActiveIndex');
 
       thumbBtns.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -2525,17 +2837,21 @@
           btn.classList.add('active');
           const imgUrl = btn.dataset.img;
           if (mainImg && imgUrl) mainImg.src = imgUrl;
+          const idx = btn.dataset.index;
+          if (activeIndexSpan && idx) activeIndexSpan.textContent = idx.padStart(2, '0');
         });
       });
 
       // 2. Variant selection
-      const variantBtns = document.querySelectorAll('.variant-btn');
+      const variantBtns = document.querySelectorAll('.cinnamon-harvest-btn, .variant-btn');
       const variantDisplay = document.getElementById('selectedVariantDisplay');
+      const priceDisplay = document.getElementById('cinnamonPriceDisplay');
       variantBtns.forEach(btn => {
         btn.addEventListener('click', () => {
           variantBtns.forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
-          if (variantDisplay) variantDisplay.textContent = btn.dataset.variant;
+          if (variantDisplay) variantDisplay.textContent = btn.dataset.variant || btn.querySelector('.cinnamon-harvest-btn-label')?.textContent.trim();
+          if (priceDisplay && btn.dataset.price) priceDisplay.textContent = btn.dataset.price;
         });
       });
 
@@ -2549,11 +2865,13 @@
           if (qty > 1) {
             qty--;
             qtyVal.textContent = qty;
+            minusBtn.disabled = qty <= 1;
           }
         });
         plusBtn.addEventListener('click', () => {
           qty++;
           qtyVal.textContent = qty;
+          minusBtn.disabled = false;
         });
       }
 
